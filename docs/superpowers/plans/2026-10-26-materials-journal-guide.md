@@ -202,11 +202,11 @@ Expected: HTTP 200 and `ok` health body.
 
 Run Git initialization, configure `main`, and commit all tracked files.
 
-- [ ] **Step 5: Create GitHub repository and push**
+- [x] **Step 5: Create GitHub repository and push**
 
 Create the separate public repository `materials-journal-guide`, push `main`, and verify the remote commit.
 
-- [ ] **Step 6: Deploy and verify Streamlit Community Cloud**
+- [x] **Step 6: Deploy and verify Streamlit Community Cloud**
 
 Create the app from `app.py`, wait for a healthy deployment, and open the public URL.
 
