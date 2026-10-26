@@ -1,0 +1,659 @@
+journals:
+  nature:
+    default_article_type: Article
+    requirement_scope: 期刊专属
+    verified_on: '2026-10-26'
+    source_urls:
+      - https://www.nature.com/nature/for-authors/formatting-guide
+      - https://www.nature.com/nature/for-authors/initial-submission
+    section_requirements:
+      - section: 题目
+        requirement: 不超过 75 个字符（含空格）；通常避免数字、缩写、首字母缩略词和标点，并兼顾检索与跨学科可读性。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nature/for-authors/formatting-guide
+      - section: 概要段
+        requirement: Article 以一个充分引用、理想情况下不超过 200 词的加粗概要段开篇；依次写基础背景、研究动机、以“Here we show”或同义表达引出主要结论，再说明普遍意义。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nature/for-authors/formatting-guide
+      - section: 正文与小标题
+        requirement: 物理科学 6 页 Article 的典型配置约为 2500 词正文和 4 个适中展示项目；小标题不超过 40 个字符。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nature/for-authors/formatting-guide
+      - section: 稿件顺序
+        requirement: 顺序为题目、作者、单位、加粗首段、正文、主参考文献、表格、图注、Methods、Methods 参考文献、致谢、基金、作者贡献、利益冲突、Additional information、Extended Data 图注。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nature/for-authors/formatting-guide
+      - section: Methods
+        requirement: 应包含解释和复现实验所需的全部要素，写得尽可能简洁，通常不超过 3000 词；已发表方法可引用并只说明改动。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nature/for-authors/formatting-guide
+      - section: 图注
+        requirement: 每条图注先给整图的简短标题，再说明各分图和符号；定义误差棒与统计信息，并少于 300 词。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nature/for-authors/formatting-guide
+      - section: 参考文献
+        requirement: Article 通常不超过 50 条主参考文献；Methods 和补充信息中的附加参考文献不计入该建议值。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nature/for-authors/formatting-guide
+      - section: 数据与代码声明
+        requirement: Methods 中分别设置 Data availability 和适用时的 Code availability 声明。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nature/for-authors/formatting-guide
+    technical_requirements:
+      - item: 初投稿文件
+        requirement: 鼓励正文与图片合并为一个 Word 或 PDF 文件，大小不超过 30 MB，并给正文加行号。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nature/for-authors/formatting-guide
+      - item: 图片版心
+        requirement: 标准宽度为单栏 90 mm、双栏 180 mm，整页可用深度为 170 mm。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nature/for-authors/formatting-guide
+      - item: Extended Data
+        requirement: 通常最多 10 个 Extended Data 图或表；正文必须在适当位置逐项引用。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nature/for-authors/formatting-guide
+      - item: Supplementary Information
+        requirement: SI 不应放置额外图片；额外图片应整理为 Extended Data figure，大型数据表等不适合 Extended Data 的内容可放入 SI。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nature/for-authors/formatting-guide
+    resources:
+      - label: Nature Article 格式指南
+        kind: 官方指南
+        url: https://www.nature.com/nature/for-authors/formatting-guide
+        note: 查看完整稿件顺序、字数、图表、Methods 和声明要求。
+      - label: 概要段逐句标注实例
+        kind: 官方示例
+        url: https://www.nature.com/documents/nature-summary-paragraph.pdf
+        note: 官方 PDF 展示概要段各句分别承担的背景、结果和意义任务。
+
+  science:
+    default_article_type: Research Article
+    requirement_scope: 官网未公开稳定值
+    verified_on: '2026-10-26'
+    source_urls:
+      - https://www.science.org/content/page/instructions-preparing-initial-manuscript
+    section_requirements:
+      - section: 题目
+        requirement: 官方按稿件类型给出写法与限制；当前公开入口未提供可稳定抓取并适用于全部原创研究的统一字符数。
+        scope: 官网未公开稳定值
+        source_url: https://www.science.org/content/page/instructions-preparing-initial-manuscript
+      - section: 摘要
+        requirement: Research Article 与 Report 的摘要要求分别列于官方初投稿说明，官网没有一个可泛化到所有内容类型的固定值。
+        scope: 官网未公开稳定值
+        source_url: https://www.science.org/content/page/instructions-preparing-initial-manuscript
+      - section: 正文
+        requirement: 正文长度和结构按所选内容类型执行；本页不把 Research Article、Report、Review 的要求合并成单一数字。
+        scope: 官网未公开稳定值
+        source_url: https://www.science.org/content/page/instructions-preparing-initial-manuscript
+      - section: Materials and Methods
+        requirement: 方法信息须使工作能够被理解和复现；具体放置方式依稿件类型和投稿流程的官方说明执行。
+        scope: 官网未公开稳定值
+        source_url: https://www.science.org/content/page/instructions-preparing-initial-manuscript
+      - section: 图表与图注
+        requirement: 展示项目数量和文件规格按稿件类型的官方说明执行，官网未给适用于所有原创研究类型的统一数量。
+        scope: 官网未公开稳定值
+        source_url: https://www.science.org/content/page/instructions-preparing-initial-manuscript
+      - section: 参考文献
+        requirement: 采用编号引用；数量和最终样式按稿件类型及官方格式说明执行。
+        scope: 官网未公开稳定值
+        source_url: https://www.science.org/content/page/instructions-preparing-initial-manuscript
+      - section: 数据与材料
+        requirement: 稿件须满足 AAAS 的数据、材料和代码可获得性政策，并在适用时给出可获得性说明。
+        scope: 期刊专属
+        source_url: https://www.science.org/content/page/instructions-preparing-initial-manuscript
+    technical_requirements:
+      - item: 初投稿清单
+        requirement: 通过 Science 官方初投稿页面选择稿件类型并准备文件；页面会按类型给出对应项目。
+        scope: 官网未公开稳定值
+        source_url: https://www.science.org/content/page/instructions-preparing-initial-manuscript
+    resources:
+      - label: Science 初投稿说明
+        kind: 官方指南
+        url: https://www.science.org/content/page/instructions-preparing-initial-manuscript
+        note: 按 Research Article 或 Report 查看当前要求，不用其他文章类型的数字替代。
+
+  nature-communications:
+    default_article_type: Article
+    requirement_scope: 期刊专属
+    verified_on: '2026-10-26'
+    source_urls:
+      - https://www.nature.com/ncomms/submit
+      - https://www.nature.com/documents/ncomms-formatting-instructions.pdf
+    section_requirements:
+      - section: 题目
+        requirement: 使用简洁、可检索的描述性题目；避免不必要的缩写和高度专业化表达。
+        scope: 期刊专属
+        source_url: https://www.nature.com/documents/ncomms-formatting-instructions.pdf
+      - section: 摘要
+        requirement: 摘要应让非本细分方向读者理解研究问题、核心结果与意义；不在本页给未由当前官方指南稳定确认的字数值。
+        scope: 官网未公开稳定值
+        source_url: https://www.nature.com/ncomms/submit
+      - section: Introduction
+        requirement: 说明研究背景、尚未解决的问题和本文目的，避免把结果提前写成完整讨论。
+        scope: 期刊专属
+        source_url: https://www.nature.com/documents/ncomms-formatting-instructions.pdf
+      - section: Results 与 Discussion
+        requirement: 用描述性小标题组织结果；Discussion 解释主要发现的意义、限制及与已有工作的关系。
+        scope: 期刊专属
+        source_url: https://www.nature.com/documents/ncomms-formatting-instructions.pdf
+      - section: Methods
+        requirement: 提供足以解释和复现研究的实验、计算与统计细节。
+        scope: 期刊专属
+        source_url: https://www.nature.com/documents/ncomms-formatting-instructions.pdf
+      - section: 图注
+        requirement: 每幅图须有简短独立标题和完整图注，逐项解释所有分图；官方格式说明给出的上限为 350 词。
+        scope: 期刊专属
+        source_url: https://www.nature.com/documents/ncomms-formatting-instructions.pdf
+      - section: 数据与代码声明
+        requirement: 原创研究须提供 Data availability；产生关键定制代码时提供 Code availability。
+        scope: 期刊专属
+        source_url: https://www.nature.com/ncomms/submit
+    technical_requirements:
+      - item: 初投稿文件
+        requirement: 初投可使用 Word、TeX/LaTeX 或 PDF，图片可嵌入主文件；补充信息单独提交。
+        scope: 期刊专属
+        source_url: https://www.nature.com/ncomms/submit
+      - item: 图注统计信息
+        requirement: 图注中定义误差棒、样本量、独立重复、统计检验和显著性表达。
+        scope: 期刊专属
+        source_url: https://www.nature.com/documents/ncomms-formatting-instructions.pdf
+    resources:
+      - label: Nature Communications 投稿入口与指南
+        kind: 官方指南
+        url: https://www.nature.com/ncomms/submit
+        note: 进入初投、格式、政策和最终文件要求。
+      - label: Nature Communications 格式说明 PDF
+        kind: 官方指南
+        url: https://www.nature.com/documents/ncomms-formatting-instructions.pdf
+        note: 查看图注、统计报告、图片和稿件组成的细项。
+
+  nature-materials:
+    default_article_type: Article
+    requirement_scope: 期刊专属
+    verified_on: '2026-10-26'
+    source_urls:
+      - https://www.nature.com/nmat/content
+      - https://www.nature.com/nmat/submission-guidelines
+    section_requirements:
+      - section: 摘要
+        requirement: Article 摘要不超过 150 词且不列参考文献；简要说明研究背景、主要发现和意义。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nmat/content
+      - section: 正文长度
+        requirement: Article 主文不超过 3000 词，不计摘要、Methods、参考文献和图注。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nmat/content
+      - section: Introduction
+        requirement: Introduction 不设标题，直接交代背景、问题与研究推进。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nmat/content
+      - section: Results
+        requirement: Results 使用反映具体主题的描述性小标题组织证据。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nmat/content
+      - section: Discussion
+        requirement: Discussion 不设小标题，集中解释意义、局限与领域推进。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nmat/content
+      - section: Online Methods
+        requirement: Online Methods 可用主题小标题，给出复现实验、表征、计算和统计分析所需细节。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nmat/content
+      - section: 图表
+        requirement: Article 最多 6 个展示项目（图和表合计）。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nmat/content
+      - section: 参考文献
+        requirement: Article 最多 50 条参考文献。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nmat/content
+    technical_requirements:
+      - item: 初投稿
+        requirement: 按 Nature Materials submission guidelines 提交主稿、图片和补充信息；不同内容类型使用各自限制。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nmat/submission-guidelines
+      - item: 默认展示边界
+        requirement: 本页上述数值只针对 Article；Letter 使用 2000 词、3–4 个展示项目和约 30 条参考文献的另一套要求。
+        scope: 期刊专属
+        source_url: https://www.nature.com/nmat/content
+    resources:
+      - label: Nature Materials 内容类型要求
+        kind: 官方指南
+        url: https://www.nature.com/nmat/content
+        note: 对照 Article 与 Letter 的长度、结构、图表和参考文献限制。
+      - label: Nature Materials 投稿指南
+        kind: 官方指南
+        url: https://www.nature.com/nmat/submission-guidelines
+        note: 查看投稿文件、政策和提交入口。
+
+  science-advances:
+    default_article_type: Research Article
+    requirement_scope: 官网未公开稳定值
+    verified_on: '2026-10-26'
+    source_urls:
+      - https://www.science.org/content/page/science-advances-information-authors
+    section_requirements:
+      - section: 题目
+        requirement: 按 Science Advances 官方作者页的 Research Article 规范编写描述性题目；当前入口未提供可稳定读取的统一字符数。
+        scope: 官网未公开稳定值
+        source_url: https://www.science.org/content/page/science-advances-information-authors
+      - section: 摘要
+        requirement: 摘要应独立交代问题、方法、关键结果和意义；固定字数以官方 Research Article 条目为准，本站不填二手数值。
+        scope: 官网未公开稳定值
+        source_url: https://www.science.org/content/page/science-advances-information-authors
+      - section: Introduction
+        requirement: 说明领域背景、知识缺口和研究目标，并把工作放入跨领域读者可理解的上下文。
+        scope: 期刊专属
+        source_url: https://www.science.org/content/page/science-advances-information-authors
+      - section: Results
+        requirement: 按逻辑顺序给出主要发现，图表与正文互相引用，不在正文逐字重复全部图表信息。
+        scope: 期刊专属
+        source_url: https://www.science.org/content/page/science-advances-information-authors
+      - section: Discussion
+        requirement: 解释发现的意义、局限和与已有工作的关系；是否与 Results 合并按官方内容类型说明执行。
+        scope: 官网未公开稳定值
+        source_url: https://www.science.org/content/page/science-advances-information-authors
+      - section: Materials and Methods
+        requirement: 提供足够细节以支持复现，并交代统计分析、数据来源和适用的软件或代码。
+        scope: 期刊专属
+        source_url: https://www.science.org/content/page/science-advances-information-authors
+      - section: 参考文献与声明
+        requirement: 使用官方编号格式，并按作者页提供数据、材料、代码、基金、作者贡献和利益冲突声明。
+        scope: 期刊专属
+        source_url: https://www.science.org/content/page/science-advances-information-authors
+    technical_requirements:
+      - item: 投稿材料
+        requirement: 通过官方作者页进入当前投稿清单；不同文章类型的文件和长度要求不能互相套用。
+        scope: 官网未公开稳定值
+        source_url: https://www.science.org/content/page/science-advances-information-authors
+    resources:
+      - label: Science Advances 作者信息
+        kind: 官方指南
+        url: https://www.science.org/content/page/science-advances-information-authors
+        note: 查看 Research Article 当前结构、文件、政策和图片要求。
+
+  communications-materials:
+    default_article_type: Article
+    requirement_scope: 期刊专属
+    verified_on: '2026-10-26'
+    source_urls:
+      - https://www.nature.com/commsmat/submit
+    section_requirements:
+      - section: 题目
+        requirement: 使用能准确描述主要材料体系和核心发现的简洁题目，避免不必要缩写。
+        scope: 期刊专属
+        source_url: https://www.nature.com/commsmat/submit
+      - section: 摘要
+        requirement: 摘要应独立说明研究背景、问题、主要结果和意义；官网未公开适用于所有 Article 的稳定统一字数值时不在本站补写。
+        scope: 官网未公开稳定值
+        source_url: https://www.nature.com/commsmat/submit
+      - section: Introduction
+        requirement: 说明材料科学问题、知识缺口和本文目标，让相邻材料方向读者可理解。
+        scope: 期刊专属
+        source_url: https://www.nature.com/commsmat/submit
+      - section: Results 与 Discussion
+        requirement: 用描述性小标题组织证据，并解释结构、工艺、性能和机制之间的关系；可按研究逻辑分设或合并。
+        scope: 期刊专属
+        source_url: https://www.nature.com/commsmat/submit
+      - section: Methods
+        requirement: 完整报告材料制备、表征、测试、计算和统计细节，以支持重复实验。
+        scope: 期刊专属
+        source_url: https://www.nature.com/commsmat/submit
+      - section: 图表与图注
+        requirement: 图表按首次出现顺序引用，图注应能独立解释分图、符号、误差棒和统计信息。
+        scope: 期刊专属
+        source_url: https://www.nature.com/commsmat/submit
+      - section: 数据与代码声明
+        requirement: 原创研究提供 Data availability；适用时提供 Code availability，并链接支撑结论的数据或代码。
+        scope: 期刊专属
+        source_url: https://www.nature.com/commsmat/submit
+    technical_requirements:
+      - item: 初投稿
+        requirement: 按官方 Submit 页面准备主稿、图、补充信息和声明；初投可采用便于评审的整合文件。
+        scope: 期刊专属
+        source_url: https://www.nature.com/commsmat/submit
+    resources:
+      - label: Communications Materials 投稿指南
+        kind: 官方指南
+        url: https://www.nature.com/commsmat/submit
+        note: 查看 Article 当前文件、格式、数据政策和出版流程。
+
+  advanced-materials:
+    default_article_type: Research Article
+    requirement_scope: 期刊专属
+    verified_on: '2026-10-26'
+    source_urls:
+      - https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines
+    section_requirements:
+      - section: 文件顺序
+        requirement: 题目、作者、可选献词、单位、关键词、摘要、含图/示意图/表的正文、可选 Experimental/Methods、致谢、参考文献、可选作者简介、ToC 文本。
+        scope: 期刊专属
+        source_url: https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines
+      - section: 题目页
+        requirement: 列完整题目、全部作者、单位和通讯作者机构邮箱；题目应使用相关关键词清楚描述研究，避免吸睛但不具描述性的短语。
+        scope: 期刊专属
+        source_url: https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines
+      - section: 关键词
+        requirement: 提供 3–7 个关键词。
+        scope: 期刊专属
+        source_url: https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines
+      - section: 摘要
+        requirement: 不超过 200 词，使用现在时和非人称写法，首次定义缩写，不列参考文献。
+        scope: 期刊专属
+        source_url: https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines
+      - section: Introduction
+        requirement: 概述研究目标和主要结论，为材料领域广泛读者建立问题与推进。
+        scope: 期刊专属
+        source_url: https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines
+      - section: 正文与结论
+        requirement: Research Article 通常全文约 3000–8000 词并含 3–8 个展示项目；正文后设置 Conclusion，总结由数据支持的结论。
+        scope: 期刊专属
+        source_url: https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines
+      - section: Experimental 或 Methods
+        requirement: 可设置独立 Experimental/Methods；无论放在正文还是补充信息，都必须披露核心材料组成并给出可复现实验细节。
+        scope: 期刊专属
+        source_url: https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines
+      - section: Table of Contents 文本
+        requirement: 用 50–60 词概括主要结果，面向普通读者并使用第三人称。
+        scope: 期刊专属
+        source_url: https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines
+      - section: 参考文献
+        requirement: 正文使用方括号编号引用并按出现顺序编号；初投稿不强制最终版式，但全文应使用一致格式。
+        scope: 期刊专属
+        source_url: https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines
+    technical_requirements:
+      - item: ToC 图片
+        requirement: 尺寸为 55 × 50 mm 或 110 × 20 mm；传达文章主信息，作者必须持有图中所有素材的版权。
+        scope: 期刊专属
+        source_url: https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines
+      - item: 位图与矢量图
+        requirement: TIFF/PNG 位图至少 300 dpi，并在单栏尺寸达到至少 1000 px；矢量图使用 PDF、PS 或 EPS。
+        scope: 期刊专属
+        source_url: https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines
+      - item: Supporting Information
+        requirement: 尽可能整理为单个 Word、PDF 或 LaTeX 文档；该材料不会被编辑，作者须确保无误，主文脱离 SI 仍能独立成立。
+        scope: 期刊专属
+        source_url: https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines
+    resources:
+      - label: Advanced Materials 作者指南
+        kind: 官方指南
+        url: https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines
+        note: 查看 Research Article、图表、ToC、引用和材料报告要求。
+      - label: Advanced Materials Word 模板
+        kind: 官方模板
+        url: https://advanced.onlinelibrary.wiley.com/pb-assets/assets/vch/msp/Article-template-1762955552083.docx
+        note: Wiley 官方 Research Article 可编辑模板。
+      - label: Advanced Materials LaTeX 模板
+        kind: 官方模板
+        url: https://advanced.onlinelibrary.wiley.com/pb-assets/assets/vch/msp/LaTeX-template-1782154981423.zip
+        note: Wiley 官方 LaTeX 模板压缩包。
+
+  materials-today:
+    default_article_type: Research Article
+    requirement_scope: 出版社通用
+    verified_on: '2026-10-26'
+    source_urls:
+      - https://www.sciencedirect.com/journal/materials-today/publish/guide-for-authors
+      - https://www.elsevier.com/subject/next/guide-for-authors
+    section_requirements: &elsevier_sections
+      - section: 摘要
+        requirement: 独立概括研究目的、主要结果和结论；避免引用，首次定义非通用缩写。
+        scope: 出版社通用
+        source_url: https://www.elsevier.com/subject/next/guide-for-authors
+      - section: 关键词
+        requirement: 摘要后最多提供 6 个关键词，使用美式拼写，避免过于宽泛或复数词和包含多个概念的长词组。
+        scope: 出版社通用
+        source_url: https://www.elsevier.com/subject/next/guide-for-authors
+      - section: Introduction
+        requirement: 陈述研究目标并提供足够背景，不写成详尽文献综述，也不在此处总结全部结果。
+        scope: 出版社通用
+        source_url: https://www.elsevier.com/subject/next/guide-for-authors
+      - section: Materials and Methods
+        requirement: 给出足以复现工作的细节；已发表方法可引用，但必须明确说明对原方法的改动。
+        scope: 出版社通用
+        source_url: https://www.elsevier.com/subject/next/guide-for-authors
+      - section: Results
+        requirement: 结果应清楚、简洁，并与图表互相引用，避免在正文重复完整表格数据。
+        scope: 出版社通用
+        source_url: https://www.elsevier.com/subject/next/guide-for-authors
+      - section: Discussion
+        requirement: 解释结果的重要性，不重复 Results；出版社允许在合适时使用 Results and Discussion 合并结构。
+        scope: 出版社通用
+        source_url: https://www.elsevier.com/subject/next/guide-for-authors
+      - section: Conclusions
+        requirement: 用短节给出研究的主要结论；可独立成节，也可作为 Discussion 的一个小节。
+        scope: 出版社通用
+        source_url: https://www.elsevier.com/subject/next/guide-for-authors
+      - section: 参考文献
+        requirement: 初投稿可使用任一一致的参考文献格式，信息须完整；录用后由出版社应用期刊样式。
+        scope: 出版社通用
+        source_url: https://www.elsevier.com/subject/next/guide-for-authors
+    technical_requirements: &elsevier_technical
+      - item: 初投稿文件
+        requirement: Your Paper Your Way 允许提交单个可供评审的 Word 或 PDF；录用后须提供可编辑源文件。
+        scope: 出版社通用
+        source_url: https://www.elsevier.com/subject/next/guide-for-authors
+      - item: 电子图片
+        requirement: 彩色或灰度照片 300 dpi、纯线图 1000 dpi、线图与照片组合图 500 dpi；优先 TIFF、JPEG、EPS、PDF 或 Office 格式。
+        scope: 出版社通用
+        source_url: https://www.elsevier.com/subject/next/guide-for-authors
+      - item: 表格
+        requirement: 以可编辑文本提交，表格紧邻首次引用处或置于文末；避免竖线和单元格底纹。
+        scope: 出版社通用
+        source_url: https://www.elsevier.com/subject/next/guide-for-authors
+      - item: 图文摘要
+        requirement: 出版社通用说明中图文摘要为可选项目；若本刊投稿系统要求，则单独上传并遵循 1328 × 531 px 等当前规格。
+        scope: 出版社通用
+        source_url: https://www.elsevier.com/researcher/author/tools-and-resources/graphical-abstract
+    resources:
+      - label: Materials Today 本刊作者指南
+        kind: 官方指南
+        url: https://www.sciencedirect.com/journal/materials-today/publish/guide-for-authors
+        note: 先看本刊稿件类型，再用下方 Elsevier 通用规则准备文件。
+      - label: Elsevier Your Paper Your Way
+        kind: 官方指南
+        url: https://www.elsevier.com/subject/next/guide-for-authors
+        note: 本页展示的章节和技术规格来自出版社通用指南，不冒充本刊专属数字。
+
+  pnas:
+    default_article_type: Research Report
+    requirement_scope: 官网未公开稳定值
+    verified_on: '2026-10-26'
+    source_urls:
+      - https://www.pnas.org/author-center/submitting-your-manuscript
+    section_requirements:
+      - section: 题目
+        requirement: 使用准确描述主要发现的题目；具体长度和样式按 PNAS 官方 Research Report 条目执行。
+        scope: 官网未公开稳定值
+        source_url: https://www.pnas.org/author-center/submitting-your-manuscript
+      - section: Abstract
+        requirement: 摘要独立概括研究背景、方法、结果和意义；本页不填当前官方入口未稳定公开的统一字数值。
+        scope: 官网未公开稳定值
+        source_url: https://www.pnas.org/author-center/submitting-your-manuscript
+      - section: Significance Statement
+        requirement: 原创研究按适用的官方稿件类型提供 Significance Statement，面向广泛读者解释研究为何重要。
+        scope: 期刊专属
+        source_url: https://www.pnas.org/author-center/submitting-your-manuscript
+      - section: 正文
+        requirement: 按 Research Report 当前要求组织 Introduction、Results、Discussion 和 Materials and Methods；官网没有适用于所有内容类型的单一长度。
+        scope: 官网未公开稳定值
+        source_url: https://www.pnas.org/author-center/submitting-your-manuscript
+      - section: Materials and Methods
+        requirement: 提供足够细节支持复现，并在主文或 SI 中清楚给出材料、实验、计算和统计方法。
+        scope: 期刊专属
+        source_url: https://www.pnas.org/author-center/submitting-your-manuscript
+      - section: 图表与参考文献
+        requirement: 按官方提交页的 Research Report 限制和 PNAS 编号格式执行；不把其他稿件类型的数量套入本页。
+        scope: 官网未公开稳定值
+        source_url: https://www.pnas.org/author-center/submitting-your-manuscript
+      - section: 声明
+        requirement: 提供数据可获得性、作者贡献、利益冲突和适用的研究伦理声明。
+        scope: 期刊专属
+        source_url: https://www.pnas.org/author-center/submitting-your-manuscript
+    technical_requirements:
+      - item: 投稿文件
+        requirement: 通过 PNAS Author Center 按 Research Report 清单提交主稿、图、SI 和相关声明。
+        scope: 官网未公开稳定值
+        source_url: https://www.pnas.org/author-center/submitting-your-manuscript
+    resources:
+      - label: PNAS 投稿指南
+        kind: 官方指南
+        url: https://www.pnas.org/author-center/submitting-your-manuscript
+        note: 选择 Research Report 查看当前文件、结构和长度要求。
+      - label: PNAS 材料研究已发表实例
+        kind: 已发表论文实例
+        url: https://www.pnas.org/content/pnas/111/13/4776.full.pdf
+        note: 用于观察 Abstract、Significance、正文和声明的实际呈现，不等同于强制模板。
+
+  acta-materialia:
+    default_article_type: Full Length Article
+    requirement_scope: 出版社通用
+    verified_on: '2026-10-26'
+    source_urls:
+      - https://www.sciencedirect.com/journal/acta-materialia/publish/guide-for-authors
+      - https://www.elsevier.com/subject/next/guide-for-authors
+    section_requirements: *elsevier_sections
+    technical_requirements: *elsevier_technical
+    resources:
+      - label: Acta Materialia 本刊作者指南
+        kind: 官方指南
+        url: https://www.sciencedirect.com/journal/acta-materialia/publish/guide-for-authors
+        note: 查看本刊稿件类型、声明和投稿系统中的当前专属项目。
+      - label: Elsevier 通用章节与文件规范
+        kind: 官方指南
+        url: https://www.elsevier.com/subject/next/guide-for-authors
+        note: 当前页面逐节格式来自出版社通用要求，证据范围已明确标注。
+
+  corrosion-science:
+    default_article_type: Research Paper
+    requirement_scope: 出版社通用
+    verified_on: '2026-10-26'
+    source_urls:
+      - https://www.sciencedirect.com/journal/corrosion-science/publish/guide-for-authors
+      - https://www.elsevier.com/subject/next/guide-for-authors
+    section_requirements: *elsevier_sections
+    technical_requirements: *elsevier_technical
+    resources:
+      - label: Corrosion Science 本刊作者指南
+        kind: 官方指南
+        url: https://www.sciencedirect.com/journal/corrosion-science/publish/guide-for-authors
+        note: 查看本刊稿件类型及腐蚀研究相关的当前提交项目。
+      - label: Elsevier 通用章节与文件规范
+        kind: 官方指南
+        url: https://www.elsevier.com/subject/next/guide-for-authors
+        note: 当前页面逐节格式来自出版社通用要求，证据范围已明确标注。
+
+  intermetallics:
+    default_article_type: Research Paper
+    requirement_scope: 出版社通用
+    verified_on: '2026-10-26'
+    source_urls:
+      - https://www.sciencedirect.com/journal/intermetallics/publish/guide-for-authors
+      - https://www.elsevier.com/subject/next/guide-for-authors
+    section_requirements: *elsevier_sections
+    technical_requirements: *elsevier_technical
+    resources:
+      - label: Intermetallics 本刊作者指南
+        kind: 官方指南
+        url: https://www.sciencedirect.com/journal/intermetallics/publish/guide-for-authors
+        note: 查看本刊稿件类型与当前专属提交项目。
+      - label: Elsevier 通用章节与文件规范
+        kind: 官方指南
+        url: https://www.elsevier.com/subject/next/guide-for-authors
+        note: 当前页面逐节格式来自出版社通用要求，证据范围已明确标注。
+
+  journal-alloys-compounds:
+    default_article_type: Research Article
+    requirement_scope: 出版社通用
+    verified_on: '2026-10-26'
+    source_urls:
+      - https://www.sciencedirect.com/journal/journal-of-alloys-and-compounds/publish/guide-for-authors
+      - https://www.elsevier.com/subject/next/guide-for-authors
+    section_requirements: *elsevier_sections
+    technical_requirements: *elsevier_technical
+    resources:
+      - label: Journal of Alloys and Compounds 本刊作者指南
+        kind: 官方指南
+        url: https://www.sciencedirect.com/journal/journal-of-alloys-and-compounds/publish/guide-for-authors
+        note: 查看本刊稿件类型和当前专属提交项目。
+      - label: JAC 已发表论文列表实例
+        kind: 已发表论文实例
+        url: https://www.sciencedirect.com/journal/journal-of-alloys-and-compounds/vol/1068/suppl/C
+        note: 观察近期 Research Article 的题目、摘要和正文呈现，不等同于格式模板。
+
+  journal-materials-science-technology:
+    default_article_type: Research Article
+    requirement_scope: 出版社通用
+    verified_on: '2026-10-26'
+    source_urls:
+      - https://www.sciencedirect.com/journal/journal-of-materials-science-and-technology/publish/guide-for-authors
+      - https://www.elsevier.com/subject/next/guide-for-authors
+    section_requirements: *elsevier_sections
+    technical_requirements: *elsevier_technical
+    resources:
+      - label: JMST 本刊作者指南
+        kind: 官方指南
+        url: https://www.sciencedirect.com/journal/journal-of-materials-science-and-technology/publish/guide-for-authors
+        note: 查看本刊稿件类型和当前专属提交项目。
+      - label: Elsevier 通用章节与文件规范
+        kind: 官方指南
+        url: https://www.elsevier.com/subject/next/guide-for-authors
+        note: 当前页面逐节格式来自出版社通用要求，证据范围已明确标注。
+
+  materials-design:
+    default_article_type: Research Paper
+    requirement_scope: 出版社通用
+    verified_on: '2026-10-26'
+    source_urls:
+      - https://www.sciencedirect.com/journal/materials-and-design/publish/guide-for-authors
+      - https://www.elsevier.com/subject/next/guide-for-authors
+    section_requirements: *elsevier_sections
+    technical_requirements: *elsevier_technical
+    resources:
+      - label: Materials & Design 本刊作者指南
+        kind: 官方指南
+        url: https://www.sciencedirect.com/journal/materials-and-design/publish/guide-for-authors
+        note: 查看本刊稿件类型和当前专属提交项目。
+      - label: Elsevier 通用章节与文件规范
+        kind: 官方指南
+        url: https://www.elsevier.com/subject/next/guide-for-authors
+        note: 当前页面逐节格式来自出版社通用要求，证据范围已明确标注。
+
+  materials-science-engineering-a:
+    default_article_type: Research Paper
+    requirement_scope: 出版社通用
+    verified_on: '2026-10-26'
+    source_urls:
+      - https://www.sciencedirect.com/journal/materials-science-and-engineering-a/publish/guide-for-authors
+      - https://www.elsevier.com/subject/next/guide-for-authors
+    section_requirements: *elsevier_sections
+    technical_requirements: *elsevier_technical
+    resources:
+      - label: MSEA 本刊作者指南
+        kind: 官方指南
+        url: https://www.sciencedirect.com/journal/materials-science-and-engineering-a/publish/guide-for-authors
+        note: 查看本刊稿件类型和当前专属提交项目。
+      - label: Elsevier 通用章节与文件规范
+        kind: 官方指南
+        url: https://www.elsevier.com/subject/next/guide-for-authors
+        note: 当前页面逐节格式来自出版社通用要求，证据范围已明确标注。
+
+  scripta-materialia:
+    default_article_type: Letter
+    requirement_scope: 出版社通用
+    verified_on: '2026-10-26'
+    source_urls:
+      - https://www.sciencedirect.com/journal/scripta-materialia/publish/guide-for-authors
+      - https://www.elsevier.com/subject/next/guide-for-authors
+    section_requirements: *elsevier_sections
+    technical_requirements: *elsevier_technical
+    resources:
+      - label: Scripta Materialia 本刊作者指南
+        kind: 官方指南
+        url: https://www.sciencedirect.com/journal/scripta-materialia/publish/guide-for-authors
+        note: 先查看 Letter 的本刊篇幅和展示项目限制，再使用出版社通用文件规范。
+      - label: Scripta Materialia 已发表实例
+        kind: 已发表论文实例
+        url: https://www.sciencedirect.com/journal/scripta-materialia/vol/141/suppl/C
+        note: 观察 Letter 的实际信息密度和结构，不等同于强制模板。
+
