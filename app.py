@@ -13,12 +13,12 @@ from journal_guide import (
     explain_requirement,
     filter_journals,
     freshness_notice,
-    load_format_specs,
     load_guidance,
     load_journals,
     load_official_requirements,
     select_for_comparison,
 )
+from journal_guide.format_specs import load_format_specs
 
 
 ROOT = Path(__file__).resolve().parent
