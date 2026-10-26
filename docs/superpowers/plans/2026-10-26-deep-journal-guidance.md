@@ -91,5 +91,5 @@
 - [x] **Step 1: Run Streamlit locally and verify health**
 - [x] **Step 2: Browser-check desktop and narrow layouts, journal switching, storyboards, and evidence tables**
 - [x] **Step 3: Run `python -m pytest -q`, `git diff --check`, and a clean-status audit**
-- [ ] **Step 4: Merge to `main`, push, and verify the remote commit**
-- [ ] **Step 5: Wait for Streamlit redeployment and verify the public workbench**
+- [x] **Step 4: Merge to `main`, push, and verify the remote commit**
+- [x] **Step 5: Wait for Streamlit redeployment and verify the public workbench**
