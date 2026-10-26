@@ -13,6 +13,7 @@ from journal_guide import (
     explain_requirement,
     filter_journals,
     freshness_notice,
+    load_format_specs,
     load_guidance,
     load_journals,
     load_official_requirements,
@@ -24,6 +25,7 @@ ROOT = Path(__file__).resolve().parent
 DATA_PATH = ROOT / "data" / "journals.yaml"
 GUIDANCE_PATH = ROOT / "data" / "journal_guidance.yaml"
 OFFICIAL_REQUIREMENTS_PATH = ROOT / "data" / "journal_official_requirements.yaml"
+FORMAT_SPECS_PATH = ROOT / "data" / "journal_format_specs.yaml"
 
 TIER_DESCRIPTIONS = {
     "正刊": "跨学科影响与普适意义",
@@ -63,6 +65,14 @@ OFFICIAL_REQUIREMENT_FIELDS = (
     ("同行评审", "peer_review"),
 )
 EVIDENCE_FIELDS = {field for _, field in OFFICIAL_REQUIREMENT_FIELDS} | {"oa_model"}
+FORMAT_SPEC_FIELDS = (
+    ("摘要", "abstract"),
+    ("正文骨架", "manuscript_structure"),
+    ("图表数量", "display_items"),
+    ("分图标注", "panel_labels"),
+    ("图注", "figure_legends"),
+    ("参考文献", "references"),
+)
 
 
 @st.cache_data(show_spinner=False)
@@ -80,6 +90,13 @@ def get_official_requirements(
     journal_ids: tuple[str, ...],
 ) -> dict[str, dict[str, Any]]:
     return load_official_requirements(OFFICIAL_REQUIREMENTS_PATH, set(journal_ids))
+
+
+@st.cache_data(show_spinner=False)
+def get_format_specs(
+    journal_ids: tuple[str, ...],
+) -> dict[str, dict[str, Any]]:
+    return load_format_specs(FORMAT_SPECS_PATH, set(journal_ids))
 
 
 def _unique(records: list[dict[str, Any]], field: str) -> list[str]:
@@ -181,6 +198,18 @@ def render_styles() -> None:
         }
         .signal-good { background: #e8f2ed; color: #174f49; }
         .signal-risk { background: #f7ece7; color: #7b3d2b; }
+        .format-card-title {
+          color: var(--teal); font-size: .84rem; font-weight: 800;
+          letter-spacing: .05em; margin-bottom: .55rem;
+        }
+        .format-card-copy { color: var(--ink); line-height: 1.65; margin: .35rem 0 .72rem; }
+        .format-card-advice {
+          background: #f7f1e4; border-radius: 10px; color: #624d27;
+          line-height: 1.6; margin: .55rem 0; padding: .58rem .7rem;
+        }
+        .blueprint-step {
+          color: var(--gold); font-size: .76rem; font-weight: 800; letter-spacing: .08em;
+        }
         @media (max-width: 700px) {
           .block-container { padding-left: 1rem; padding-right: 1rem; }
         }
@@ -308,10 +337,52 @@ def _requirement_rows(
     ]
 
 
+def render_format_quick_sheet(
+    record: dict[str, Any], spec: dict[str, Any]
+) -> None:
+    """Render source-linked house style before the broader submission details."""
+
+    st.subheader("投稿硬参数速查")
+    st.caption(
+        f"默认稿型：{spec['default_article_type']}　·　"
+        f"规则核验：{spec['verified_on']}　·　"
+        "“官网未规定固定上限”表示该数字是本站排稿建议，不冒充期刊硬性要求。"
+    )
+    cards = st.columns(2)
+    for index, (label, key) in enumerate(FORMAT_SPEC_FIELDS):
+        item = spec["quick_specs"][key]
+        with cards[index % 2]:
+            with st.container(border=True):
+                st.markdown(
+                    f'<div class="format-card-title">{escape(label)}</div>'
+                    f'<span class="official-label">官方规则</span> '
+                    f'<span class="evidence-badge">{escape(str(item["scope"]))}</span>'
+                    f'<div class="format-card-copy">{escape(str(item["official"]))}</div>'
+                    f'<div class="format-card-advice"><strong>本站建议</strong>　'
+                    f'{escape(str(item["advice"]))}</div>'
+                    f'<a href="{escape(str(item["source_url"]))}" target="_blank">'
+                    f'{escape(str(record["name"]))} 格式指南 ↗</a>',
+                    unsafe_allow_html=True,
+                )
+
+    st.subheader("推荐排稿骨架")
+    route = " → ".join(str(item["section"]) for item in spec["blueprint"])
+    st.caption(f"建议写作顺序：{route}")
+    for index, item in enumerate(spec["blueprint"], start=1):
+        with st.container(border=True):
+            st.markdown(
+                f'<span class="blueprint-step">STEP {index:02d}</span>　'
+                f'<strong>{escape(str(item["section"]))}</strong><br>'
+                f'{escape(str(item["task"]))}',
+                unsafe_allow_html=True,
+            )
+
+
 def render_deep_workbench(
     records: list[dict[str, Any]],
     guidance: dict[str, dict[str, Any]],
     official_requirements: dict[str, dict[str, Any]],
+    format_specs: dict[str, dict[str, Any]],
 ) -> None:
     st.subheader("深度投稿工作台")
     st.caption("先按官方要求搭好稿件，再使用本站建议检查选刊契合度。默认展示原创研究论文。")
@@ -330,6 +401,8 @@ def render_deep_workbench(
     )
     official = workbench["official"]
     editorial = workbench["editorial"]
+
+    render_format_quick_sheet(record, format_specs[journal_id])
 
     st.subheader("官方要求总览")
     st.markdown(
@@ -463,12 +536,13 @@ def main() -> None:
     journal_ids = tuple(str(record["id"]) for record in records)
     guidance = get_guidance(journal_ids)
     official_requirements = get_official_requirements(journal_ids)
+    format_specs = get_format_specs(journal_ids)
     render_header(records)
     filters = render_sidebar(records)
     filtered = filter_journals(records, **filters)
     render_tier_guide(records)
     st.divider()
-    render_deep_workbench(records, guidance, official_requirements)
+    render_deep_workbench(records, guidance, official_requirements, format_specs)
     st.divider()
     render_catalogue(filtered)
     st.divider()

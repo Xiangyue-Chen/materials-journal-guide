@@ -4,7 +4,12 @@ from pathlib import Path
 
 from streamlit.testing.v1 import AppTest
 
-from journal_guide import load_guidance, load_journals, load_official_requirements
+from journal_guide import (
+    load_format_specs,
+    load_guidance,
+    load_journals,
+    load_official_requirements,
+)
 
 
 APP_PATH = Path(__file__).parents[1] / "app.py"
@@ -59,6 +64,8 @@ def test_app_renders_actionable_deep_submission_workbench() -> None:
 
     assert not app.exception
     assert any("深度投稿工作台" in heading.value for heading in app.subheader)
+    assert any("投稿硬参数速查" in heading.value for heading in app.subheader)
+    assert any("推荐排稿骨架" in heading.value for heading in app.subheader)
     assert any("官方要求总览" in heading.value for heading in app.subheader)
     assert any("稿件各部分格式" in heading.value for heading in app.subheader)
     assert any("提交文件与技术规格" in heading.value for heading in app.subheader)
@@ -66,6 +73,8 @@ def test_app_renders_actionable_deep_submission_workbench() -> None:
     markdown = "\n".join(element.value for element in app.markdown)
     assert "本站写作建议" in markdown
     assert "官方要求" in markdown
+    assert "官方硬性" in markdown
+    assert "本站建议" in markdown
     assert "storyboard-card" not in markdown
     assert "<svg" not in markdown
     assert "主图蓝图" not in visible_text(app)
@@ -73,6 +82,26 @@ def test_app_renders_actionable_deep_submission_workbench() -> None:
     assert "Introduction 不设标题" in tables
     assert "Discussion 不设小标题" in tables
     assert "最多 6 个展示项目" in tables
+
+
+def test_nature_workbench_shows_house_style_and_source_backed_limits() -> None:
+    app = AppTest.from_file(str(APP_PATH)).run(timeout=20)
+    workbench = next(
+        widget for widget in app.selectbox if widget.key == "workbench_journal"
+    )
+    workbench.set_value("Nature")
+    app.run(timeout=20)
+
+    assert not app.exception
+    text = visible_text(app)
+    markdown = "\n".join(element.value for element in app.markdown)
+    assert "摘要" in markdown and "不超过 200 词" in markdown
+    assert "图表数量" in markdown and "5–6 个中等展示项" in markdown
+    assert "小写粗体 a、b、c" in markdown and "8 pt" in markdown
+    assert "每图少于 300 词" in markdown
+    assert "上标编号" in markdown and "最多 50 条" in markdown
+    assert "Nature 格式指南" in markdown
+    assert "概要段 → 主文开端" in text
 
 
 def test_workbench_explains_unknown_requirements_without_raw_placeholder() -> None:
@@ -147,13 +176,17 @@ def test_workbench_warns_when_official_requirements_are_stale(tmp_path: Path) ->
         APP_PATH.parent / "data" / "journal_official_requirements.yaml",
         {item["id"] for item in records},
     )
+    format_specs = load_format_specs(
+        APP_PATH.parent / "data" / "journal_format_specs.yaml",
+        {item["id"] for item in records},
+    )
     stale_official = dict(official["nature"])
     stale_official["verified_on"] = "2020-01-01"
     script = tmp_path / "stale_workbench.py"
     script.write_text(
         "from app import render_deep_workbench\n"
         f"render_deep_workbench({[record]!r}, {{'nature': {guidance['nature']!r}}}, "
-        f"{{'nature': {stale_official!r}}})\n",
+        f"{{'nature': {stale_official!r}}}, {{'nature': {format_specs['nature']!r}}})\n",
         encoding="utf-8",
     )
 
