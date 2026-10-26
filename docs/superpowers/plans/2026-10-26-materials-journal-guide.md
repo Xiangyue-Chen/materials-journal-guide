@@ -182,23 +182,23 @@ Commit message: `feat: build journal comparison web app`
 - Consumes: all prior tasks.
 - Produces: reproducible setup instructions, maintenance rules, verified GitHub repository, and deployed Streamlit URL.
 
-- [ ] **Step 1: Document local use and evidence maintenance**
+- [x] **Step 1: Document local use and evidence maintenance**
 
 Describe setup, run, test, YAML fields, official-source rule, verification dates, correction workflow, and Streamlit deployment.
 
-- [ ] **Step 2: Run full automated verification**
+- [x] **Step 2: Run full automated verification**
 
 Run: `python -m pytest -v`
 
 Expected: all tests PASS.
 
-- [ ] **Step 3: Run noninteractive Streamlit startup check**
+- [x] **Step 3: Run noninteractive Streamlit startup check**
 
 Run Streamlit headless on a temporary port, request its health endpoint, and stop it after a successful response.
 
 Expected: HTTP 200 and `ok` health body.
 
-- [ ] **Step 4: Initialize and commit the repository**
+- [x] **Step 4: Initialize and commit the repository**
 
 Run Git initialization, configure `main`, and commit all tracked files.
 
