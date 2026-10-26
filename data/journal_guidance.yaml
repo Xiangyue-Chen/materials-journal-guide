@@ -1,0 +1,375 @@
+profiles:
+  cross-disciplinary:
+    label: 跨学科概念突破
+    structure:
+      - title: 题目与摘要
+        task: 用非本领域读者也能理解的一句话写出“发现了什么、为什么改变认识”，避免只报成分和性能。
+      - title: 引言第一段
+        task: 从广泛科学问题切入，而不是从某一合金体系的研究历史切入。
+      - title: 知识缺口
+        task: 指出既有解释在哪个关键尺度失效，并给出可检验的中心假设。
+      - title: 关键发现
+        task: 先展示最反常或最具普适性的现象，再补实验设计与基准比较。
+      - title: 因果机制
+        task: 用多尺度证据排除替代解释，建立结构—机制—性能的因果链。
+      - title: 普适性与讨论
+        task: 跨成分、工艺或尺度验证，并说明该机制会改变哪些领域的判断或设计原则。
+    figure_story:
+      - title: 概念开场
+        question: 新概念或反常现象是什么？
+        kind: concept
+      - title: 证据全景
+        question: 相、组织和关键变量如何被可靠识别？
+        kind: microstructure
+      - title: 性能坐标
+        question: 相比公认基准，提升发生在哪里？
+        kind: performance
+      - title: 机制闭环
+        question: 哪些原位或多尺度证据证明因果机制？
+        kind: mechanism
+      - title: 普适性检验
+        question: 换成分、温度或工艺后是否仍成立？
+        kind: validation
+      - title: 设计原则
+        question: 读者能带走并复用的规则是什么？
+        kind: summary
+    checklist:
+      - 摘要首句让非金属材料读者理解问题的重要性
+      - 主结论不是单一“强度提高”或“出现新相”
+      - 至少两类独立证据支撑核心机制
+      - 与公认基准在同一坐标和同一测试条件下比较
+      - 数据、代码、样品和统计声明齐全
+      - 补充材料承担验证细节而不是隐藏关键证据
+
+  broad-materials:
+    label: 材料领域广泛推进
+    structure:
+      - title: 题目与摘要
+        task: 明确材料类别、核心机制与可推广价值，不把工艺参数堆进题目。
+      - title: 引言
+        task: 用材料学共性矛盾组织背景，例如强塑协同、稳定性或尺度跨越。
+      - title: 设计逻辑
+        task: 解释为什么选择该成分/工艺，以及它应触发何种结构响应。
+      - title: 组织与性能
+        task: 让组织证据和力学/功能数据按同一假设逐层展开。
+      - title: 机制与边界
+        task: 量化主导机制，并说明它在哪些条件下失效。
+      - title: 讨论与展望
+        task: 把结果提升为可迁移到其他材料体系的设计准则。
+    figure_story:
+      - title: 材料设计
+        question: 成分—工艺—目标机制的逻辑是什么？
+        kind: concept
+      - title: 结构证据
+        question: 多尺度组织是否与设计预期一致？
+        kind: microstructure
+      - title: 核心性能
+        question: 最重要的性能改善是否具有统计可信度？
+        kind: performance
+      - title: 变形/相变机制
+        question: 原位和事后证据如何互相印证？
+        kind: mechanism
+      - title: 竞争基准
+        question: 与同类材料和理论上限相比位于哪里？
+        kind: validation
+      - title: 机制图景
+        question: 能否用一张简洁图总结可推广设计准则？
+        kind: summary
+    checklist:
+      - 研究问题对材料学读者而非单一合金社区有意义
+      - 设计逻辑先于配方筛选结果出现
+      - 关键性能包含重复试验和离散性
+      - 组织统计量与性能提升建立定量联系
+      - 讨论包含机制边界和失败条件
+      - 图注可独立读懂且所有尺度尺、误差和样本量明确
+
+  specialized-advance:
+    label: 专业方向显著推进
+    structure:
+      - title: 题目与摘要
+        task: 直接写清专业问题、主要发现和影响，不夸大跨学科普适性。
+      - title: 引言
+        task: 用三段完成现状、明确缺口和本研究解决路径。
+      - title: 方法/设计
+        task: 给出足以复现的材料制备、表征和统计策略。
+      - title: 结果
+        task: 按假设而不是按仪器顺序组织小标题。
+      - title: 讨论
+        task: 对照文献解释机制、替代解释和适用范围。
+      - title: 结论与数据
+        task: 收束为专业社区可使用的结论，并完成数据/代码可用性声明。
+    figure_story:
+      - title: 问题与路线
+        question: 实验设计如何直接检验中心假设？
+        kind: process
+      - title: 相与组织
+        question: 关键组织特征是否被定量而非只展示照片？
+        kind: microstructure
+      - title: 性能响应
+        question: 主结果、重复性和误差是否同时可见？
+        kind: performance
+      - title: 机制证据
+        question: 结构演化与性能变化如何一一对应？
+        kind: mechanism
+      - title: 稳健性
+        question: 不同条件、批次或模型下结论是否稳定？
+        kind: validation
+      - title: 工作模型
+        question: 最终机制模型是否解释全部主要观察？
+        kind: summary
+    checklist:
+      - 摘要给出定量主结果而非只写“显著提高”
+      - 方法包含样品数量、测试方向和统计方法
+      - 关键图包含原始点、误差和样本量
+      - 讨论主动处理与已有文献的矛盾
+      - Data Availability 和 Code Availability 按适用性准备
+      - 补充信息可独立复核主要分析流程
+
+  mechanism-depth:
+    label: 组织—性能机制深挖
+    structure:
+      - title: 题目与摘要
+        task: 点明控制变量、组织机制和定量性能响应。
+      - title: 引言
+        task: 锁定一个具体材料学争议，给出需要验证的机制假设。
+      - title: 材料与方法
+        task: 完整报告成分、热机械历史、试样几何和测试条件。
+      - title: 组织定量
+        task: 从相、晶粒、析出物、缺陷或织构中提取可比较的统计量。
+      - title: 性能与演化
+        task: 用曲线、局部应变或原位数据建立过程证据。
+      - title: 机制模型
+        task: 把观察转成可检验的定量模型，并讨论适用边界。
+    figure_story:
+      - title: 工艺路径
+        question: 样品经历了什么，控制变量是否唯一？
+        kind: process
+      - title: 初始组织
+        question: 相、晶粒、缺陷与析出物的统计分布是什么？
+        kind: microstructure
+      - title: 力学/功能响应
+        question: 完整曲线和关键指标是否同时呈现？
+        kind: performance
+      - title: 演化证据
+        question: 变形、相变或损伤从哪里开始并如何发展？
+        kind: mechanism
+      - title: 模型验证
+        question: 模型是否解释不同状态和文献数据？
+        kind: validation
+      - title: 机制总结
+        question: 结构参数如何控制最终性能？
+        kind: summary
+    checklist:
+      - 实际成分、制备批次和热机械历史完整
+      - 试样几何、加载方向、应变速率和温度明确
+      - 组织图不仅有代表性照片还有统计分布
+      - 机制结论不只依赖单一表征手段
+      - 模型参数来源、拟合和预测范围可追溯
+      - 断裂、异常点和排除数据有解释
+
+  concise-letter:
+    label: 单一发现快速通讯
+    structure:
+      - title: 题目与摘要
+        task: 一句话只讲一个新发现，删去不能支撑主结论的并列卖点。
+      - title: 引言
+        task: 用最短篇幅建立缺口和为什么现在需要这个结果。
+      - title: 关键证据
+        task: 第一组结果直接展示发现，避免长篇常规表征铺垫。
+      - title: 机制证明
+        task: 选择最具排他性的两到三类证据支撑解释。
+      - title: 结论
+        task: 回答这个发现改变了哪个材料学判断，不重复结果列表。
+    figure_story:
+      - title: 一图定题
+        question: 第一张图能否让编辑立即看到新发现？
+        kind: concept
+      - title: 组织证据
+        question: 最少但充分的表征是什么？
+        kind: microstructure
+      - title: 定量响应
+        question: 主效应有多大、误差多大？
+        kind: performance
+      - title: 排他机制
+        question: 哪个实验最能排除替代解释？
+        kind: mechanism
+      - title: 简洁模型
+        question: 能否用一张机制图收束全文？
+        kind: summary
+    checklist:
+      - 全文只围绕一个主结论
+      - 第一幅图直接呈现新发现而非流程图
+      - 每个主文图都推进论证而不是补充背景
+      - 对照组足以排除最强替代解释
+      - 文字和图数严格控制，细节转入补充材料
+
+  application-design:
+    label: 设计—制造—性能闭环
+    structure:
+      - title: 题目与摘要
+        task: 写清工程需求、设计策略、验证结果和可实施价值。
+      - title: 需求与约束
+        task: 明确真实使用场景中的性能指标、成本或制造约束。
+      - title: 设计方法
+        task: 解释模型、实验设计或制造参数怎样服务目标函数。
+      - title: 制造与结构
+        task: 证明方案可制造，并量化关键组织特征。
+      - title: 性能验证
+        task: 在贴近应用的边界条件下与现有方案比较。
+      - title: 可迁移性
+        task: 给出尺度放大、敏感性、失效模式和推广条件。
+    figure_story:
+      - title: 需求—方案图
+        question: 设计变量如何连接工程目标？
+        kind: concept
+      - title: 制造窗口
+        question: 可行工艺区间和敏感参数在哪里？
+        kind: process
+      - title: 结构实现
+        question: 实际组织是否实现设计意图？
+        kind: microstructure
+      - title: 工况性能
+        question: 在相关边界条件下是否优于基准？
+        kind: performance
+      - title: 鲁棒性/放大
+        question: 批次、尺寸和参数变化后是否稳定？
+        kind: validation
+      - title: 设计准则
+        question: 其他材料或工艺能否复用这套方法？
+        kind: summary
+    checklist:
+      - 工程需求被量化为可验证指标
+      - 设计变量与目标性能之间有机制解释
+      - 方案在真实或接近真实工况下验证
+      - 包含现有工艺或商业材料基准
+      - 报告制造窗口、敏感性和失败样品
+      - 讨论放大、成本或可重复制造问题
+
+  corrosion-mechanism:
+    label: 环境—界面—失效机制
+    structure:
+      - title: 题目与摘要
+        task: 写清材料、环境、主导反应/损伤机制和定量腐蚀响应。
+      - title: 环境问题
+        task: 定义介质、温度、电位、流动或应力等真实边界条件。
+      - title: 初始状态
+        task: 报告合金成分、表面状态、组织与测试前处理。
+      - title: 动力学与膜层
+        task: 结合电化学、质量变化和界面表征建立时间演化。
+      - title: 局部失效
+        task: 证明点蚀、晶间腐蚀、膜破裂或应力腐蚀的起源。
+      - title: 机制与防护
+        task: 建立反应—结构—失效链并给出可验证的防护启示。
+    figure_story:
+      - title: 环境与样品
+        question: 边界条件和表面状态是否可复现？
+        kind: process
+      - title: 腐蚀动力学
+        question: 速率、电位或阻抗如何随时间变化？
+        kind: performance
+      - title: 膜层/界面
+        question: 组成、厚度和缺陷在哪里？
+        kind: microstructure
+      - title: 局部失效
+        question: 损伤萌生与扩展的直接证据是什么？
+        kind: mechanism
+      - title: 条件矩阵
+        question: 环境、成分和组织变化后规律是否稳定？
+        kind: validation
+      - title: 反应机制
+        question: 哪条反应路径控制最终失效？
+        kind: summary
+    checklist:
+      - 溶液组成、pH、温度、气氛和暴露时间完整
+      - 表面制备、面积和电化学装置可复现
+      - 动力学曲线与腐蚀后形貌相互印证
+      - 膜层化学和局部损伤有空间分辨证据
+      - 至少一个环境或材料变量用于验证机制
+      - 腐蚀速率、误差、重复次数和拟合方法明确
+
+journals:
+  nature:
+    profile: cross-disciplinary
+    editorial_angle: 把材料现象写成能够改变多个领域判断的普适科学原理，而不是一套性能更好的新合金。
+    fit_signals: [发现跨材料体系成立的新机制, 有直接证据推翻或修正既有认识, 结果能影响材料以外的科学问题]
+    risk_signals: [主要贡献只是刷新性能纪录, 证据只集中在一个样品和一种测试, 题目和摘要需要大量专业背景才能理解]
+  science:
+    profile: cross-disciplinary
+    editorial_angle: 用紧凑证据链证明一个对广泛科学读者重要的概念推进，并清楚说明为什么现在必须知道。
+    fit_signals: [结论对多个学科都有可识别意义, 主图能独立讲清发现和影响, 数据链足以排除最强替代解释]
+    risk_signals: [材料体系新但科学问题不新, 叙事依赖大量补充材料才成立, 缺少现实或理论上的广泛影响]
+  nature-materials:
+    profile: broad-materials
+    editorial_angle: 从材料学共性矛盾出发，给出有机制深度且可迁移到其他材料体系的解决原则。
+    fit_signals: [解决材料学长期存在的共性矛盾, 机制证据跨尺度且能指导设计, 不局限于单一成分的性能展示]
+    risk_signals: [只有经验优化没有新概念, 机制停留在示意图层面, 普适性仅用文献散点图声称]
+  nature-communications:
+    profile: specialized-advance
+    editorial_angle: 在清晰界定的金属材料问题上提供完整、可靠且对该专业社区重要的推进。
+    fit_signals: [问题边界明确且结论完整, 数据与方法足以复现, 机制和性能证据相互闭合]
+    risk_signals: [主结论被拆成多个松散卖点, 关键分析只给代表性图片, 数据或代码声明缺失]
+  science-advances:
+    profile: cross-disciplinary
+    editorial_angle: 强调研究推进的广度和社会/工程或基础科学意义，同时保持完整技术证据。
+    fit_signals: [科学推进超出单一合金体系, 结果具有跨领域可读性, 主张由完整定量证据支撑]
+    risk_signals: [仅凭高指标声称广泛影响, 缺少清晰的概念主线, 文章过长但核心发现不集中]
+  communications-materials:
+    profile: specialized-advance
+    editorial_angle: 面向一个明确材料专业方向给出显著推进，重视规范结构、可复现方法和完整数据链。
+    fit_signals: [专业问题重要且定义准确, 结果与讨论按假设组织, 方法和统计报告完整]
+    risk_signals: [只有常规表征加性能对比, 讨论只复述结果, 图和表超过叙事所需]
+  advanced-materials:
+    profile: broad-materials
+    editorial_angle: 以简洁、强视觉的方式展示具有广泛材料影响的创新概念和机制，而非单纯体系优化。
+    fit_signals: [概念创新可由一张主图表达, 对材料设计或器件/结构有广泛启发, 机制与性能同样突出]
+    risk_signals: [图件信息密度低或风格不统一, 文章像完整数据库报告而非聚焦故事, 只强调绝对性能没有设计启示]
+  materials-today:
+    profile: broad-materials
+    editorial_angle: 把突破性材料结果与领域趋势、可扩展影响和未来方向连接起来。
+    fit_signals: [结果可能重塑材料研究路线, 机制与应用潜力兼具, 叙事适合广泛材料读者]
+    risk_signals: [工作过于增量, 只对极窄条件有效, 缺少与材料领域前沿的明确联系]
+  pnas:
+    profile: cross-disciplinary
+    editorial_angle: 将金属材料发现放进一个广泛科学问题中，突出跨学科贡献和可验证的普遍原理。
+    fit_signals: [科学问题具有广泛受众, 机制能连接不同尺度或学科, 结论超越材料配方本身]
+    risk_signals: [写成专业期刊风格导致广泛意义不清, 主要结论依赖术语和缩写, 数据链无法支撑普遍性]
+  acta-materialia:
+    profile: mechanism-depth
+    editorial_angle: 围绕结构—性能关系提出并定量验证机制，深度比单纯性能纪录更重要。
+    fit_signals: [组织特征被定量并进入机制模型, 有原位或多尺度证据解释演化, 结果对材料机制有一般意义]
+    risk_signals: [性能很好但机制证据薄弱, 组织描述停留在代表性显微图, 模型只是对结果的事后拟合]
+  scripta-materialia:
+    profile: concise-letter
+    editorial_angle: 用最少篇幅和最强证据报告一个清晰、新颖、及时的材料学发现。
+    fit_signals: [只有一个明确主结论, 第一幅图即可显示新意, 机制证据简洁但排他]
+    risk_signals: [试图容纳完整长期项目, 常规表征占据主要篇幅, 多个结论彼此竞争]
+  materials-science-engineering-a:
+    profile: mechanism-depth
+    editorial_angle: 聚焦结构材料的加工—组织—力学性能关系，要求测试条件和变形/断裂机制完整。
+    fit_signals: [完整力学曲线与组织演化对应, 变形或断裂机制有直接证据, 加工历史和测试条件可复现]
+    risk_signals: [只报告强度和延伸率表格, 不说明试样方向或应变测量方法, 断裂后垂直跌落被误当成断裂应变]
+  journal-materials-science-technology:
+    profile: mechanism-depth
+    editorial_angle: 在材料科学与技术之间建立清晰桥梁，既有机制解释也有工艺或性能价值。
+    fit_signals: [技术问题与科学机制兼具, 表征和性能数据完整, 对同类材料具有可推广启示]
+    risk_signals: [只展示制备成功, 工艺变量缺少控制组, 机理讨论缺少定量支撑]
+  journal-alloys-compounds:
+    profile: mechanism-depth
+    editorial_angle: 围绕合金或化合物的组成—结构—性质关系提供完整且可复现的新认识。
+    fit_signals: [成分和相结构报告完整, 性质变化有组织或电子结构解释, 与同类合金有公平基准]
+    risk_signals: [仅做多成分筛选没有机制, XRD 加显微图不足以证明复杂相结构, 性能比较条件不一致]
+  materials-design:
+    profile: application-design
+    editorial_angle: 强调面向需求的材料设计方法，以及设计—制造—结构—性能闭环的可迁移性。
+    fit_signals: [明确目标函数和约束, 设计方法被实验或高可信模拟验证, 有制造或应用边界分析]
+    risk_signals: [把常规试错称为设计, 模型只拟合不预测, 没有与现有方案在同一工况比较]
+  intermetallics:
+    profile: mechanism-depth
+    editorial_angle: 深入解释金属间化合物、有序相或相关合金的相稳定性、结构演化与性能。
+    fit_signals: [有序结构或相稳定性是核心问题, 热力学/动力学与实验相互验证, 组织演化连接到性能]
+    risk_signals: [金属间相只作为普通析出物背景, 相鉴定证据不足, 缺少温度或时间演化]
+  corrosion-science:
+    profile: corrosion-mechanism
+    editorial_angle: 用严格环境控制和界面证据揭示腐蚀或环境损伤机制，而非只比较腐蚀速率。
+    fit_signals: [环境参数和表面状态完整, 动力学与膜层/损伤证据闭合, 机制经过变量矩阵验证]
+    risk_signals: [只有极化曲线没有界面证据, 腐蚀条件与实际问题脱节, 用单次测试比较微小差异]

@@ -40,11 +40,11 @@
 - Consumes: `load_journals(path: Path) -> list[dict[str, Any]]`.
 - Produces: `load_guidance(path: Path, journal_ids: set[str]) -> dict[str, dict[str, Any]]`, `build_workbench(record, guidance) -> dict[str, Any]`, and `explain_requirement(value: object) -> dict[str, str]`.
 
-- [ ] **Step 1: Write failing tests for full 17-journal coverage, profile validation, merged workbench shape, and uncertainty explanations**
-- [ ] **Step 2: Run `python -m pytest tests/test_guidance.py -v` and verify failures are caused by missing guidance APIs**
-- [ ] **Step 3: Add the guidance catalogue, validation, profile merge, and requirement explanation functions**
-- [ ] **Step 4: Run `python -m pytest tests/test_guidance.py -v` and the full suite**
-- [ ] **Step 5: Commit the validated guidance model**
+- [x] **Step 1: Write failing tests for full 17-journal coverage, profile validation, merged workbench shape, and uncertainty explanations**
+- [x] **Step 2: Run `python -m pytest tests/test_guidance.py -v` and verify failures are caused by missing guidance APIs**
+- [x] **Step 3: Add the guidance catalogue, validation, profile merge, and requirement explanation functions**
+- [x] **Step 4: Run `python -m pytest tests/test_guidance.py -v` and the full suite**
+- [x] **Step 5: Commit the validated guidance model**
 
 ### Task 2: Deep submission workbench UI
 
