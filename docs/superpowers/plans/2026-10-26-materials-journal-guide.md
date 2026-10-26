@@ -77,27 +77,27 @@ Commit message: `feat: add validated journal data model`
 - Consumes: `load_journals()` and `validate_journals()` from Task 1.
 - Produces: 17 validated records ordered by `tier_order` and `name`.
 
-- [ ] **Step 1: Add failing seed-data assertions**
+- [x] **Step 1: Add failing seed-data assertions**
 
 Assert the expected 17 IDs, supported tiers, official URLs, nonempty source lists, and ISO-format verification dates.
 
-- [ ] **Step 2: Run seed-data tests and confirm failure**
+- [x] **Step 2: Run seed-data tests and confirm failure**
 
 Run: `python -m pytest tests/test_data.py -v`
 
 Expected: FAIL because `data/journals.yaml` is missing.
 
-- [ ] **Step 3: Add 17 source-backed journal records**
+- [x] **Step 3: Add 17 source-backed journal records**
 
 Populate the exact fields in the spec. Use `需投稿前复核` for any official requirement not confirmed on a current official page.
 
-- [ ] **Step 4: Run seed-data tests and confirm pass**
+- [x] **Step 4: Run seed-data tests and confirm pass**
 
 Run: `python -m pytest tests/test_data.py -v`
 
 Expected: PASS with 17 records.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 Commit message: `data: add metallic materials journal requirements`
 

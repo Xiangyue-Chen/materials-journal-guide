@@ -9,6 +9,35 @@ import yaml
 from journal_guide.data import load_journals, validate_journals
 
 
+CATALOGUE_PATH = Path(__file__).parents[1] / "data" / "journals.yaml"
+EXPECTED_JOURNAL_IDS = {
+    "nature",
+    "science",
+    "nature-materials",
+    "nature-communications",
+    "science-advances",
+    "communications-materials",
+    "advanced-materials",
+    "materials-today",
+    "pnas",
+    "acta-materialia",
+    "scripta-materialia",
+    "materials-science-engineering-a",
+    "journal-materials-science-technology",
+    "journal-alloys-compounds",
+    "materials-design",
+    "intermetallics",
+    "corrosion-science",
+}
+EXPECTED_TIERS = {
+    "正刊",
+    "大子刊",
+    "小子刊",
+    "材料综合旗舰刊",
+    "金属材料核心刊",
+}
+
+
 def valid_record(**overrides: object) -> dict[str, object]:
     record: dict[str, object] = {
         "id": "acta-materialia",
@@ -98,3 +127,20 @@ def test_load_journals_normalizes_list_fields(tmp_path: Path) -> None:
     assert loaded[0]["article_types"] == ["Article"]
     assert loaded[0]["special_notes"] == []
     assert loaded[0]["source_urls"] == ["https://example.com/guide"]
+
+
+def test_seed_catalogue_contains_expected_source_backed_journals() -> None:
+    records = load_journals(CATALOGUE_PATH)
+
+    assert len(records) == 17
+    assert {record["id"] for record in records} == EXPECTED_JOURNAL_IDS
+    assert {record["tier"] for record in records} == EXPECTED_TIERS
+    assert all(record["source_urls"] for record in records)
+    assert all(record["verified_on"] == "2026-10-26" for record in records)
+
+
+def test_seed_catalogue_is_ordered_by_tier_then_name() -> None:
+    records = load_journals(CATALOGUE_PATH)
+
+    keys = [(record["tier_order"], record["name"].casefold()) for record in records]
+    assert keys == sorted(keys)

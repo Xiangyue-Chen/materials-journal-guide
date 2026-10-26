@@ -1,0 +1,497 @@
+- id: nature
+  name: Nature
+  abbreviation: Nature
+  publisher: Springer Nature
+  tier: 正刊
+  tier_order: 1
+  topics: [综合科学, 材料科学, 金属材料, 高熵合金]
+  scope: 面向跨学科读者、具有广泛和即时影响的重要原创研究；材料工作通常需要超越单一专业方向的普适意义。
+  article_types: [Article, Review, Perspective]
+  initial_submission: 初投建议将正文与图片合并为单个 Word 或 PDF，文件不超过 30 MB。
+  abstract_limit: Article 以不超过 200 词的加粗概要段开篇。
+  word_limit: 物理科学 Article 印刷版通常平均不超过 6 页，最终长度由编辑决定。
+  graphical_abstract: 未列为 Article 常规必交项
+  highlights: 未列为 Article 常规必交项
+  references: 采用 Nature 编号制；详细格式以最终投稿指南为准。
+  figures: 初投图片达到审稿可读质量即可；终稿需按电子图片规范提供高质量文件。
+  data_policy: 稿件需包含独立的数据可用性和代码可用性声明（适用时）。
+  oa_model: Hybrid
+  peer_review: Single anonymized；部分流程可能提供透明评审选项，提交时复核
+  special_notes:
+    - 投稿梯队仅用于导航，不代表官方排名。
+    - Article 的内容组织、Extended Data 与终稿图片要求较细，投稿前需通读完整指南。
+  homepage_url: https://www.nature.com/nature/
+  guide_url: https://www.nature.com/nature/for-authors/formatting-guide
+  source_urls:
+    - https://www.nature.com/nature/for-authors
+    - https://www.nature.com/nature/for-authors/formatting-guide
+  verified_on: '2026-10-26'
+  verification_status: 已核验核心格式
+
+- id: science
+  name: Science
+  abbreviation: Science
+  publisher: AAAS
+  tier: 正刊
+  tier_order: 1
+  topics: [综合科学, 材料科学, 金属材料, 高熵合金]
+  scope: 发表对广泛科学读者具有重要意义的原创研究；材料论文需体现跨领域影响与明确概念推进。
+  article_types: [Research Article, Report, Review, Perspective]
+  initial_submission: 按 Science 官方初投稿清单在线提交；稿件类型和文件要求需在投稿前复核。
+  abstract_limit: 需投稿前复核
+  word_limit: 随稿件类型变化，需投稿前复核
+  graphical_abstract: 需投稿前复核
+  highlights: 需投稿前复核
+  references: 采用 Science 编号制，具体上限和格式随稿件类型变化。
+  figures: 图片需清晰可供评审；终稿格式和分辨率按官方图片指南执行。
+  data_policy: 需满足 AAAS 数据、材料和代码可获得性政策，并在适用时提供声明。
+  oa_model: Hybrid
+  peer_review: 需投稿前复核
+  special_notes:
+    - Science 官网会按文章类型给出不同限制，本条不把单一类型要求泛化到全部投稿。
+  homepage_url: https://www.science.org/journal/science
+  guide_url: https://www.science.org/content/page/instructions-preparing-initial-manuscript
+  source_urls:
+    - https://www.science.org/journal/science
+    - https://www.science.org/content/page/instructions-preparing-initial-manuscript
+  verified_on: '2026-10-26'
+  verification_status: 核验入口；细项需复核
+
+- id: nature-communications
+  name: Nature Communications
+  abbreviation: Nat. Commun.
+  publisher: Springer Nature
+  tier: 大子刊
+  tier_order: 2
+  topics: [综合科学, 材料科学, 金属材料, 高熵合金]
+  scope: 开放获取综合期刊，发表各学科内具有重要推进的高质量研究，不要求达到 Nature 主刊的跨学科广度。
+  article_types: [Article, Review, Perspective, Comment]
+  initial_submission: 初投可将正文和图片合并为单个 Word、TeX/LaTeX 或 PDF，单文件不超过 30 MB；补充信息另交。
+  abstract_limit: 随内容类型变化，需投稿前复核
+  word_limit: 初投在合理范围内格式和长度较灵活，具体内容类型要求需复核
+  graphical_abstract: 未列为 Article 常规必交项
+  highlights: 未列为 Article 常规必交项
+  references: Nature 编号制；LaTeX 初投应将参考文献写入主 tex 文件。
+  figures: 初投可嵌入正文；录用前需提供独立、可出版质量的图片文件。
+  data_policy: Article 需包含 Data Availability；适用时需包含 Code Availability。
+  oa_model: Gold Open Access
+  peer_review: 需投稿前复核
+  special_notes:
+    - 不接受预投稿询问，鼓励直接提交完整稿件。
+    - Author Contributions 与 Competing Interests 声明为常规要求。
+  homepage_url: https://www.nature.com/ncomms/
+  guide_url: https://www.nature.com/ncomms/submit/how-to-submit
+  source_urls:
+    - https://www.nature.com/ncomms/submit/guide-to-authors
+    - https://www.nature.com/ncomms/submit/how-to-submit
+    - https://www.nature.com/ncomms/submit/policy
+  verified_on: '2026-10-26'
+  verification_status: 已核验核心格式
+
+- id: nature-materials
+  name: Nature Materials
+  abbreviation: Nat. Mater.
+  publisher: Springer Nature
+  tier: 大子刊
+  tier_order: 2
+  topics: [材料科学, 金属材料, 高熵合金, 结构材料]
+  scope: 覆盖材料科学全领域，强调具有广泛材料学意义的概念性和机制性突破。
+  article_types: [Article, Letter, Review, Perspective, Correspondence]
+  initial_submission: 初投按 Nature Portfolio 指南准备，可采用便于评审的合并稿件；接受前需转为期刊规定格式。
+  abstract_limit: Article 不超过 150 词且不列参考文献
+  word_limit: Article 主文不超过 3000 词，不含摘要、Methods、参考文献和图注
+  graphical_abstract: 未列为 Article 常规必交项
+  highlights: 未列为 Article 常规必交项
+  references: Nature 编号制；具体数量随内容类型变化。
+  figures: 初投保证可读；接受原则后按期刊图片规范提交。
+  data_policy: 遵循 Nature Portfolio 数据与代码政策，适用时提供可用性声明。
+  oa_model: Hybrid
+  peer_review: 可申请 double-anonymized；具体选项以投稿系统为准
+  special_notes:
+    - 不同内容类型的篇幅差异显著，本页默认展示 Article。
+    - 支持预投稿询问，是否适合应按官网最新说明判断。
+  homepage_url: https://www.nature.com/nmat/
+  guide_url: https://www.nature.com/nmat/submission-guidelines
+  source_urls:
+    - https://www.nature.com/nmat/submission-guidelines
+    - https://www.nature.com/nmat/content
+  verified_on: '2026-10-26'
+  verification_status: 已核验 Article 核心限制
+
+- id: science-advances
+  name: Science Advances
+  abbreviation: Sci. Adv.
+  publisher: AAAS
+  tier: 大子刊
+  tier_order: 2
+  topics: [综合科学, 材料科学, 金属材料, 高熵合金]
+  scope: 开放获取综合期刊，覆盖生命、物理、环境、工程、材料与社会科学的重要研究推进。
+  article_types: [Research Article, Review, Focus]
+  initial_submission: 通过 AAAS 投稿系统提交，文件组织和稿件类型要求以 Information for Authors 为准。
+  abstract_limit: 需投稿前复核
+  word_limit: 随文章类型变化，需投稿前复核
+  graphical_abstract: 需投稿前复核
+  highlights: 需投稿前复核
+  references: 采用 AAAS 编号制，具体限制需按文章类型复核。
+  figures: 初投需清晰可评审；终稿按 AAAS 图片规范准备。
+  data_policy: 需满足 AAAS 数据与材料可获得性政策；适用时共享代码和数据。
+  oa_model: Gold Open Access
+  peer_review: 需投稿前复核
+  special_notes:
+    - 页面要求会按内容类型更新，提交前应重新查看官方作者指南。
+  homepage_url: https://www.science.org/journal/sciadv
+  guide_url: https://www.science.org/content/page/science-advances-information-authors
+  source_urls:
+    - https://www.science.org/journal/sciadv
+    - https://www.science.org/content/page/science-advances-information-authors
+  verified_on: '2026-10-26'
+  verification_status: 核验入口；细项需复核
+
+- id: communications-materials
+  name: Communications Materials
+  abbreviation: Commun. Mater.
+  publisher: Springer Nature
+  tier: 小子刊
+  tier_order: 3
+  topics: [材料科学, 金属材料, 高熵合金, 结构材料]
+  scope: 开放获取材料学期刊，兼顾基础与应用研究，强调对某一材料专业方向具有显著推进。
+  article_types: [Article, Review, Perspective, Comment]
+  initial_submission: 按官方 Formatting Guidelines 和 Policy Guide 在线提交；初投格式相对灵活。
+  abstract_limit: 需投稿前复核
+  word_limit: 需投稿前复核
+  graphical_abstract: 需投稿前复核
+  highlights: 未列为常规必交项
+  references: Nature Portfolio 编号制；初投具体格式需按指南复核。
+  figures: 初投需达到评审可读质量；接受后按 Nature Portfolio 图片规范提交。
+  data_policy: 需提供 Data Availability；适用时提供 Code Availability。
+  oa_model: Gold Open Access
+  peer_review: 由内部编辑与编辑委员会成员协同处理；匿名方式需投稿前复核
+  special_notes:
+    - 适合在具体材料方向具有显著推进、但不一定具备跨学科广度的工作。
+  homepage_url: https://www.nature.com/commsmat/
+  guide_url: https://www.nature.com/commsmat/submit
+  source_urls:
+    - https://www.nature.com/commsmat/submit
+    - https://www.nature.com/commsmat/submit/editorial-process
+  verified_on: '2026-10-26'
+  verification_status: 已核验定位与流程
+
+- id: advanced-materials
+  name: Advanced Materials
+  abbreviation: Adv. Mater.
+  publisher: Wiley
+  tier: 材料综合旗舰刊
+  tier_order: 4
+  topics: [材料科学, 金属材料, 高熵合金, 功能材料]
+  scope: 面向跨学科材料科学读者，要求工作在材料化学、物理或工程方向具有显著和广泛推进。
+  article_types: [Research Article, Review, Perspective]
+  initial_submission: 支持 Free Format；可交含正文、图表的可编辑文件，或由 LaTeX 生成的单个 PDF。
+  abstract_limit: 不超过 200 词
+  word_limit: Research Article 通常 3000–8000 词，约 3–8 个 display items；科学内容可支持更长稿件
+  graphical_abstract: 需提供 Table of Contents 图和 50–60 词说明
+  highlights: 未列为独立必交项
+  references: 初投参考文献格式不限，但全文须一致；录用后转为期刊格式。
+  figures: 位图图片建议 TIFF 或 PNG，每个图部件至少 300 dpi；矢量图可用 PDF、PS 或 EPS。
+  data_policy: 标题页需包含适用的数据可用性、基金、利益冲突及伦理声明。
+  oa_model: Hybrid
+  peer_review: Single anonymized
+  special_notes:
+    - 要求披露论文核心材料的结构和组成，包括商业或专有材料。
+    - 修回稿需同时提供带标记和清洁版本，并逐条回复审稿意见。
+  homepage_url: https://advanced.onlinelibrary.wiley.com/journal/15214095
+  guide_url: https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines
+  source_urls:
+    - https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines
+    - https://advanced.onlinelibrary.wiley.com/journal/15214095
+  verified_on: '2026-10-26'
+  verification_status: 已核验核心格式
+
+- id: materials-today
+  name: Materials Today
+  abbreviation: Mater. Today
+  publisher: Elsevier
+  tier: 材料综合旗舰刊
+  tier_order: 4
+  topics: [材料科学, 金属材料, 高熵合金, 结构材料]
+  scope: Materials Today 系列旗舰刊，发表对广泛材料学群体有影响的突破性原创研究、短通讯和综述。
+  article_types: [Research Article, Short Communication, Review]
+  initial_submission: 采用在线投稿；是否适用 Your Paper Your Way 及所需文件以本刊 Guide for Authors 为准。
+  abstract_limit: 需投稿前复核
+  word_limit: 需投稿前复核
+  graphical_abstract: 需投稿前复核
+  highlights: 需投稿前复核
+  references: 初投格式要求需按本刊 Guide for Authors 复核。
+  figures: 初投图片需足以供评审；终稿遵循 Elsevier 电子图片规范。
+  data_policy: 鼓励链接支撑研究结论的数据、代码和方法；强制项按文章类型复核。
+  oa_model: Hybrid
+  peer_review: 需投稿前复核
+  special_notes:
+    - 官方定位强调仅接收最重要的稿件并快速进行编辑评估。
+  homepage_url: https://www.sciencedirect.com/journal/materials-today
+  guide_url: https://www.sciencedirect.com/journal/materials-today/publish/guide-for-authors
+  source_urls:
+    - https://www.elsevier.com/subject/materials-today/submit
+    - https://www.sciencedirect.com/journal/materials-today/publish/guide-for-authors
+  verified_on: '2026-10-26'
+  verification_status: 已核验定位；细项需复核
+
+- id: pnas
+  name: PNAS
+  abbreviation: Proc. Natl. Acad. Sci. U.S.A.
+  publisher: National Academy of Sciences
+  tier: 材料综合旗舰刊
+  tier_order: 4
+  topics: [综合科学, 材料科学, 金属材料, 高熵合金]
+  scope: 覆盖自然、社会与工程科学的重要原创研究；材料论文通常需要对广泛科学问题有清晰贡献。
+  article_types: [Research Report, Brief Report, Review, Perspective]
+  initial_submission: 通过 PNAS 投稿系统提交，稿件组成与文件要求按 Author Center 执行。
+  abstract_limit: 随文章类型变化，需投稿前复核
+  word_limit: 随文章类型变化，需投稿前复核
+  graphical_abstract: 需投稿前复核
+  highlights: 需投稿前复核
+  references: 采用 PNAS 编号制；具体限制随文章类型变化。
+  figures: 初投须清晰可供评审；接受后按 PNAS 图片文件规范准备。
+  data_policy: 需提供数据、材料和代码可获得性信息；具体措辞按 Author Center 复核。
+  oa_model: Hybrid
+  peer_review: 需投稿前复核
+  special_notes:
+    - PNAS 并非材料专刊，但可作为具有广泛科学意义材料工作的综合投稿目标。
+  homepage_url: https://www.pnas.org/
+  guide_url: https://www.pnas.org/author-center/submitting-your-manuscript
+  source_urls:
+    - https://www.pnas.org/author-center
+    - https://www.pnas.org/author-center/submitting-your-manuscript
+  verified_on: '2026-10-26'
+  verification_status: 核验入口；细项需复核
+
+- id: acta-materialia
+  name: Acta Materialia
+  abbreviation: Acta Mater.
+  publisher: Elsevier
+  tier: 金属材料核心刊
+  tier_order: 5
+  topics: [金属材料, 高熵合金, 结构材料, 组织性能, 机理]
+  scope: 关注材料结构与性能关系的基础研究，强调机制深度、定量理解与广泛材料学意义。
+  article_types: [Full Length Article, Review Article, Letter]
+  initial_submission: 通常适用 Elsevier Your Paper Your Way；可用单个 Word 或 PDF 初投，具体以本刊指南为准。
+  abstract_limit: 需投稿前复核
+  word_limit: 需投稿前复核
+  graphical_abstract: 需投稿前复核
+  highlights: 需投稿前复核
+  references: 初投通常可采用任一一致格式；录用后由期刊样式统一。
+  figures: 初投应达到评审可读质量；终稿遵循 Elsevier 电子图片分辨率规范。
+  data_policy: 鼓励共享研究数据并链接数据仓库；强制声明以投稿系统为准。
+  oa_model: Hybrid
+  peer_review: Single anonymized
+  special_notes:
+    - 高熵合金投稿需突出可推广的结构—性能机制，不宜只报告单一成分性能提升。
+  homepage_url: https://www.sciencedirect.com/journal/acta-materialia
+  guide_url: https://www.sciencedirect.com/journal/acta-materialia/publish/guide-for-authors
+  source_urls:
+    - https://www.sciencedirect.com/journal/acta-materialia
+    - https://www.sciencedirect.com/journal/acta-materialia/publish/guide-for-authors
+  verified_on: '2026-10-26'
+  verification_status: 已核验入口；细项需复核
+
+- id: corrosion-science
+  name: Corrosion Science
+  abbreviation: Corros. Sci.
+  publisher: Elsevier
+  tier: 金属材料核心刊
+  tier_order: 5
+  topics: [腐蚀, 金属材料, 高熵合金, 表面与界面]
+  scope: 发表腐蚀过程及其控制的机理研究，覆盖金属、合金与相关材料在环境中的退化行为。
+  article_types: [Research Article, Review Article, Short Communication]
+  initial_submission: 通常适用 Elsevier Your Paper Your Way；具体文件要求按本刊指南复核。
+  abstract_limit: 需投稿前复核
+  word_limit: 需投稿前复核
+  graphical_abstract: 可选或依文章类型，需投稿前复核
+  highlights: 需投稿前复核
+  references: 初投通常可使用任一一致格式。
+  figures: 终稿按 Elsevier 电子图片规范；线图、照片和组合图分辨率要求不同。
+  data_policy: 鼓励共享支撑结论的数据和方法，并在适用时链接数据仓库。
+  oa_model: Hybrid
+  peer_review: Single anonymized
+  special_notes:
+    - 需突出腐蚀机理和可验证证据，单纯性能排序通常不足以支撑期刊定位。
+  homepage_url: https://www.sciencedirect.com/journal/corrosion-science
+  guide_url: https://www.sciencedirect.com/journal/corrosion-science/publish/guide-for-authors
+  source_urls:
+    - https://www.sciencedirect.com/journal/corrosion-science
+    - https://www.sciencedirect.com/journal/corrosion-science/publish/guide-for-authors
+  verified_on: '2026-10-26'
+  verification_status: 已核验入口；细项需复核
+
+- id: intermetallics
+  name: Intermetallics
+  abbreviation: Intermetallics
+  publisher: Elsevier
+  tier: 金属材料核心刊
+  tier_order: 5
+  topics: [金属间化合物, 高熵合金, 相稳定性, 组织性能]
+  scope: 覆盖金属间化合物及相关有序合金的基础与应用研究，包括结构、相变、性能和加工。
+  article_types: [Research Article, Review Article, Short Communication]
+  initial_submission: 通常适用 Elsevier Your Paper Your Way；具体要求按本刊指南复核。
+  abstract_limit: 需投稿前复核
+  word_limit: 需投稿前复核
+  graphical_abstract: 可选或依文章类型，需投稿前复核
+  highlights: 需投稿前复核
+  references: 初投通常可使用任一一致格式。
+  figures: 终稿遵循 Elsevier 图片文件类型和分辨率要求。
+  data_policy: 鼓励共享研究数据并提供可用性信息。
+  oa_model: Hybrid
+  peer_review: Single anonymized
+  special_notes:
+    - 高熵或复杂浓缩合金工作应明确与有序相、金属间化合物或相稳定性的关联。
+  homepage_url: https://www.sciencedirect.com/journal/intermetallics
+  guide_url: https://www.sciencedirect.com/journal/intermetallics/publish/guide-for-authors
+  source_urls:
+    - https://www.sciencedirect.com/journal/intermetallics
+    - https://www.sciencedirect.com/journal/intermetallics/publish/guide-for-authors
+  verified_on: '2026-10-26'
+  verification_status: 已核验入口；细项需复核
+
+- id: journal-alloys-compounds
+  name: Journal of Alloys and Compounds
+  abbreviation: J. Alloys Compd.
+  publisher: Elsevier
+  tier: 金属材料核心刊
+  tier_order: 5
+  topics: [合金, 金属材料, 高熵合金, 功能材料, 结构材料]
+  scope: 发表合金与化合物的合成、结构、性质和应用研究，覆盖结构与功能材料。
+  article_types: [Research Article, Review Article, Short Communication]
+  initial_submission: 通常适用 Elsevier Your Paper Your Way；可按可评审的单文件格式初投。
+  abstract_limit: 需投稿前复核
+  word_limit: 需投稿前复核
+  graphical_abstract: 可选或依文章类型，需投稿前复核
+  highlights: 需投稿前复核
+  references: 初投通常格式灵活但须一致；录用后套用期刊格式。
+  figures: 初投需清晰；终稿遵循 Elsevier 电子图片规范。
+  data_policy: 鼓励共享研究数据、软件和方法，并可链接数据仓库。
+  oa_model: Hybrid
+  peer_review: Single anonymized
+  special_notes:
+    - 选题范围较宽，投稿时需清楚说明合金设计、相结构或性能关系的新增量。
+  homepage_url: https://www.sciencedirect.com/journal/journal-of-alloys-and-compounds
+  guide_url: https://www.sciencedirect.com/journal/journal-of-alloys-and-compounds/publish/guide-for-authors
+  source_urls:
+    - https://www.sciencedirect.com/journal/journal-of-alloys-and-compounds
+    - https://www.sciencedirect.com/journal/journal-of-alloys-and-compounds/publish/guide-for-authors
+  verified_on: '2026-10-26'
+  verification_status: 已核验入口；细项需复核
+
+- id: journal-materials-science-technology
+  name: Journal of Materials Science & Technology
+  abbreviation: J. Mater. Sci. Technol.
+  publisher: Elsevier / Chinese Society for Metals
+  tier: 金属材料核心刊
+  tier_order: 5
+  topics: [材料科学, 金属材料, 高熵合金, 结构材料]
+  scope: 覆盖材料科学与技术的重要研究，包括金属、合金、组织调控、加工及性能。
+  article_types: [Research Article, Review Article, Letter]
+  initial_submission: 通过 Elsevier 投稿系统提交；是否适用自由格式及文件组合需按本刊指南复核。
+  abstract_limit: 需投稿前复核
+  word_limit: 需投稿前复核
+  graphical_abstract: 需投稿前复核
+  highlights: 需投稿前复核
+  references: 初投格式及参考文献数量限制需按本刊指南复核。
+  figures: 初投需达到评审质量；终稿遵循 Elsevier 图片规范。
+  data_policy: 数据共享和可用性声明要求需按投稿系统最新提示复核。
+  oa_model: 需投稿前复核
+  peer_review: Single anonymized
+  special_notes:
+    - 出版模式和费用可能调整，提交前必须打开官方 Guide for Authors 核对。
+  homepage_url: https://www.sciencedirect.com/journal/journal-of-materials-science-and-technology
+  guide_url: https://www.sciencedirect.com/journal/journal-of-materials-science-and-technology/publish/guide-for-authors
+  source_urls:
+    - https://www.sciencedirect.com/journal/journal-of-materials-science-and-technology
+    - https://www.sciencedirect.com/journal/journal-of-materials-science-and-technology/publish/guide-for-authors
+  verified_on: '2026-10-26'
+  verification_status: 已核验入口；细项需复核
+
+- id: materials-design
+  name: Materials & Design
+  abbreviation: Mater. Des.
+  publisher: Elsevier
+  tier: 金属材料核心刊
+  tier_order: 5
+  topics: [材料设计, 金属材料, 高熵合金, 制造, 结构性能]
+  scope: 强调材料设计、加工、结构与性能之间的联系，以及面向工程问题的创新方法。
+  article_types: [Research Article, Review Article, Short Communication]
+  initial_submission: 通常适用 Elsevier Your Paper Your Way；具体稿件文件要求按本刊指南复核。
+  abstract_limit: 需投稿前复核
+  word_limit: 需投稿前复核
+  graphical_abstract: 可选或依文章类型，需投稿前复核
+  highlights: 需投稿前复核
+  references: 初投通常格式灵活但须一致。
+  figures: 终稿遵循 Elsevier 图片格式和分辨率要求。
+  data_policy: 鼓励共享研究数据、代码、模型和方法。
+  oa_model: Gold Open Access
+  peer_review: Single anonymized
+  special_notes:
+    - 适合同时具备材料设计逻辑、加工路线和性能验证的工作。
+  homepage_url: https://www.sciencedirect.com/journal/materials-and-design
+  guide_url: https://www.sciencedirect.com/journal/materials-and-design/publish/guide-for-authors
+  source_urls:
+    - https://www.sciencedirect.com/journal/materials-and-design
+    - https://www.sciencedirect.com/journal/materials-and-design/publish/guide-for-authors
+  verified_on: '2026-10-26'
+  verification_status: 已核验入口；细项需复核
+
+- id: materials-science-engineering-a
+  name: Materials Science and Engineering A
+  abbreviation: Mater. Sci. Eng. A
+  publisher: Elsevier
+  tier: 金属材料核心刊
+  tier_order: 5
+  topics: [结构材料, 金属材料, 高熵合金, 力学性能, 变形与断裂]
+  scope: 聚焦结构材料的组织、加工、力学行为和性能，尤其关注结构—性能—机理关系。
+  article_types: [Research Article, Review Article, Short Communication]
+  initial_submission: 通常适用 Elsevier Your Paper Your Way；可用单个 Word 或 PDF 初投，具体以本刊指南为准。
+  abstract_limit: 需投稿前复核
+  word_limit: 需投稿前复核
+  graphical_abstract: 可选或依文章类型，需投稿前复核
+  highlights: 需投稿前复核
+  references: 初投通常可采用任一一致格式。
+  figures: 初投达到评审可读质量；终稿遵循 Elsevier 电子图片规范。
+  data_policy: 鼓励共享支撑研究结论的数据、代码和模型。
+  oa_model: Hybrid
+  peer_review: Single anonymized
+  special_notes:
+    - 特别适合拉伸、疲劳、断裂、变形机制和热机械加工相关的结构材料研究。
+  homepage_url: https://www.sciencedirect.com/journal/materials-science-and-engineering-a
+  guide_url: https://www.sciencedirect.com/journal/materials-science-and-engineering-a/publish/guide-for-authors
+  source_urls:
+    - https://www.sciencedirect.com/journal/materials-science-and-engineering-a
+    - https://www.sciencedirect.com/journal/materials-science-and-engineering-a/publish/guide-for-authors
+  verified_on: '2026-10-26'
+  verification_status: 已核验入口；细项需复核
+
+- id: scripta-materialia
+  name: Scripta Materialia
+  abbreviation: Scr. Mater.
+  publisher: Elsevier
+  tier: 金属材料核心刊
+  tier_order: 5
+  topics: [金属材料, 高熵合金, 结构材料, 快报, 机理]
+  scope: 快速发表材料科学中简洁而重要的原创研究，强调清晰的新发现和较广泛的材料学意义。
+  article_types: [Viewpoint, Regular Article, Letter]
+  initial_submission: 通常适用 Elsevier Your Paper Your Way；篇幅与文章类型约束需在投稿前重点核对。
+  abstract_limit: 需投稿前复核
+  word_limit: 期刊强调短篇幅，具体等效页数或字数需按最新作者指南复核
+  graphical_abstract: 需投稿前复核
+  highlights: 需投稿前复核
+  references: 初投通常可使用任一一致格式；短篇稿件应控制文献和展示项数量。
+  figures: 初投需清晰可评审；终稿按 Elsevier 图片规范准备。
+  data_policy: 鼓励共享支撑结论的数据和方法。
+  oa_model: Hybrid
+  peer_review: Single anonymized
+  special_notes:
+    - 与 Acta Materialia 相比更强调简洁、及时和单一清晰发现，投稿前务必核对长度限制。
+  homepage_url: https://www.sciencedirect.com/journal/scripta-materialia
+  guide_url: https://www.sciencedirect.com/journal/scripta-materialia/publish/guide-for-authors
+  source_urls:
+    - https://www.sciencedirect.com/journal/scripta-materialia
+    - https://www.sciencedirect.com/journal/scripta-materialia/publish/guide-for-authors
+  verified_on: '2026-10-26'
+  verification_status: 已核验入口；细项需复核
