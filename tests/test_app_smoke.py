@@ -4,6 +4,8 @@ from pathlib import Path
 
 from streamlit.testing.v1 import AppTest
 
+from journal_guide import load_guidance, load_journals
+
 
 APP_PATH = Path(__file__).parents[1] / "app.py"
 
@@ -94,3 +96,33 @@ def test_comparison_uses_explanatory_evidence_states() -> None:
     text = visible_text(app)
     assert "需投稿前复核" not in text
     assert "证据状态" in text
+
+
+def test_oa_filter_never_exposes_raw_review_placeholder() -> None:
+    app = AppTest.from_file(str(APP_PATH)).run(timeout=20)
+    oa_filter = next(
+        widget for widget in app.multiselect if widget.label == "开放获取模式"
+    )
+
+    assert "需投稿前复核" not in oa_filter.options
+    assert "官网未给统一值" in oa_filter.options
+
+
+def test_workbench_warns_when_official_requirements_are_stale(tmp_path: Path) -> None:
+    records = load_journals(APP_PATH.parent / "data" / "journals.yaml")
+    record = dict(next(item for item in records if item["id"] == "nature"))
+    record["verified_on"] = "2020-01-01"
+    guidance = load_guidance(
+        APP_PATH.parent / "data" / "journal_guidance.yaml", {item["id"] for item in records}
+    )
+    script = tmp_path / "stale_workbench.py"
+    script.write_text(
+        "from app import render_deep_workbench\n"
+        f"render_deep_workbench({[record]!r}, {{'nature': {guidance['nature']!r}}})\n",
+        encoding="utf-8",
+    )
+
+    app = AppTest.from_file(str(script)).run(timeout=20)
+
+    assert not app.exception
+    assert any("超过 180 天未核验" in warning.value for warning in app.error)

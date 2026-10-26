@@ -10,6 +10,15 @@ import yaml
 
 
 JOURNAL_LIST_FIELDS = ("fit_signals", "risk_signals")
+FIGURE_KINDS = {
+    "concept",
+    "process",
+    "microstructure",
+    "performance",
+    "mechanism",
+    "validation",
+    "summary",
+}
 
 
 def _nonblank(value: object) -> bool:
@@ -51,6 +60,10 @@ def _validate_profile(profile_id: str, profile: object) -> None:
         ):
             raise ValueError(
                 f"profile {profile_id}: figure_story items require title, question and kind"
+            )
+        if figure["kind"] not in FIGURE_KINDS:
+            raise ValueError(
+                f"profile {profile_id}: unknown figure kind {figure['kind']}"
             )
 
     _validate_string_list(profile_id, "checklist", profile.get("checklist"), 5)
@@ -98,6 +111,7 @@ def load_guidance(
         profile.update(deepcopy(override))
         profile["profile_id"] = profile_id
         profile["profile_label"] = profiles[profile_id]["label"]
+        _validate_profile(str(journal_id), profile)
         merged[journal_id] = profile
 
     return merged
@@ -107,6 +121,14 @@ def explain_requirement(value: object) -> dict[str, str]:
     """Turn a raw requirement into an explicit evidence state and explanation."""
 
     raw = str(value).strip()
+    if ("稿件类型" in raw or "文章类型" in raw) and "变化" in raw:
+        summary = raw.replace("，需投稿前复核", "").replace("需投稿前复核", "").strip("，；。 ")
+        return {
+            "status": "按文章类型变化",
+            "summary": summary,
+            "reason": "Article、Review、Letter 等内容类型使用不同限制，不能合并成一个数字。",
+        }
+
     if raw == "需投稿前复核":
         return {
             "status": "官网未给统一值",
@@ -126,6 +148,14 @@ def explain_requirement(value: object) -> dict[str, str]:
             "status": "以投稿系统为准",
             "summary": summary or "提交时由投稿系统给出",
             "reason": "该选项会随稿件或投稿流程动态出现，公开页面没有稳定的统一设置。",
+        }
+
+    if "需按最新作者指南复核" in raw:
+        summary = raw.replace("需按最新作者指南复核", "").strip("，；。 ")
+        return {
+            "status": "官网未给统一值",
+            "summary": summary or "当前未找到稳定统一值",
+            "reason": "公开指南未给出稳定统一值；保留问题本身，不用二手信息补空。",
         }
 
     if raw.startswith("未列为"):

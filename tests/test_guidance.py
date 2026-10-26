@@ -54,6 +54,36 @@ def test_load_guidance_reports_unknown_profile_with_journal_id(tmp_path: Path) -
 
 
 @pytest.mark.parametrize(
+    ("field", "value", "message"),
+    [
+        ("structure", [], r"nature.*structure.*at least 5"),
+        ("figure_story", None, r"nature.*figure_story.*at least 5"),
+        ("checklist", [""], r"nature.*checklist.*at least 5"),
+    ],
+)
+def test_load_guidance_validates_merged_journal_overrides(
+    tmp_path: Path, field: str, value: object, message: str
+) -> None:
+    data = yaml.safe_load(GUIDANCE_PATH.read_text(encoding="utf-8"))
+    data["journals"]["nature"][field] = value
+    path = tmp_path / "guidance.yaml"
+    path.write_text(yaml.safe_dump(data, allow_unicode=True), encoding="utf-8")
+
+    with pytest.raises(ValueError, match=message):
+        load_guidance(path, set(data["journals"]))
+
+
+def test_load_guidance_rejects_unknown_storyboard_kind(tmp_path: Path) -> None:
+    data = yaml.safe_load(GUIDANCE_PATH.read_text(encoding="utf-8"))
+    data["profiles"]["cross-disciplinary"]["figure_story"][0]["kind"] = "typo"
+    path = tmp_path / "guidance.yaml"
+    path.write_text(yaml.safe_dump(data, allow_unicode=True), encoding="utf-8")
+
+    with pytest.raises(ValueError, match=r"cross-disciplinary.*unknown figure kind.*typo"):
+        load_guidance(path, set(data["journals"]))
+
+
+@pytest.mark.parametrize(
     ("raw", "status", "summary_fragment", "reason_fragment"),
     [
         ("需投稿前复核", "官网未给统一值", "未找到稳定统一值", "公开指南"),
@@ -70,6 +100,18 @@ def test_load_guidance_reports_unknown_profile_with_journal_id(tmp_path: Path) -
             "不是常规必交材料",
         ),
         ("Abstract 不超过 250 词", "官网明确", "Abstract 不超过 250 词", "已记录明确要求"),
+        (
+            "具体等效页数或字数需按最新作者指南复核",
+            "官网未给统一值",
+            "具体等效页数或字数",
+            "公开指南",
+        ),
+        (
+            "采用 Science 编号制，具体上限和格式随稿件类型变化。",
+            "按文章类型变化",
+            "采用 Science 编号制",
+            "Article、Review、Letter",
+        ),
     ],
 )
 def test_explain_requirement_replaces_placeholder_with_specific_evidence(

@@ -101,6 +101,13 @@ def _render_requirement(label: str, value: object) -> None:
         st.caption(explained["reason"])
 
 
+def _oa_filter_label(value: str) -> str:
+    explained = explain_requirement(value)
+    if explained["status"] == "官网明确":
+        return explained["summary"]
+    return explained["status"]
+
+
 def render_styles() -> None:
     st.markdown(
         """
@@ -236,7 +243,10 @@ def render_sidebar(records: list[dict[str, Any]]) -> dict[str, object]:
             "研究方向", _unique(records, "topics"), placeholder="全部方向"
         )
         oa_models = st.multiselect(
-            "开放获取模式", _unique(records, "oa_model"), placeholder="全部模式"
+            "开放获取模式",
+            _unique(records, "oa_model"),
+            placeholder="全部模式",
+            format_func=_oa_filter_label,
         )
         st.divider()
         st.caption("多个筛选类别之间取交集；同一类别内取并集。")
@@ -420,6 +430,8 @@ def render_deep_workbench(
         f'<a href="{escape(str(record["guide_url"]))}">打开官方作者指南</a>',
         unsafe_allow_html=True,
     )
+    if notice := freshness_notice(str(record["verified_on"])):
+        st.error(notice)
     st.caption("证据状态：官网明确 / 按文章类型变化 / 官网未给统一值 / 非必交项 / 以投稿系统为准")
     st.table(_official_requirement_rows(record))
 
