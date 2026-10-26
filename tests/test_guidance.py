@@ -26,7 +26,6 @@ def test_guidance_covers_every_catalogue_journal_with_actionable_content() -> No
     for record in records:
         workbench = build_workbench(record, guidance[record["id"]])
         assert len(workbench["structure"]) >= 5
-        assert len(workbench["figure_story"]) >= 5
         assert len(workbench["fit_signals"]) >= 3
         assert len(workbench["risk_signals"]) >= 3
         assert len(workbench["checklist"]) >= 5
@@ -57,7 +56,6 @@ def test_load_guidance_reports_unknown_profile_with_journal_id(tmp_path: Path) -
     ("field", "value", "message"),
     [
         ("structure", [], r"nature.*structure.*at least 5"),
-        ("figure_story", None, r"nature.*figure_story.*at least 5"),
         ("checklist", [""], r"nature.*checklist.*at least 5"),
     ],
 )
@@ -70,16 +68,6 @@ def test_load_guidance_validates_merged_journal_overrides(
     path.write_text(yaml.safe_dump(data, allow_unicode=True), encoding="utf-8")
 
     with pytest.raises(ValueError, match=message):
-        load_guidance(path, set(data["journals"]))
-
-
-def test_load_guidance_rejects_unknown_storyboard_kind(tmp_path: Path) -> None:
-    data = yaml.safe_load(GUIDANCE_PATH.read_text(encoding="utf-8"))
-    data["profiles"]["cross-disciplinary"]["figure_story"][0]["kind"] = "typo"
-    path = tmp_path / "guidance.yaml"
-    path.write_text(yaml.safe_dump(data, allow_unicode=True), encoding="utf-8")
-
-    with pytest.raises(ValueError, match=r"cross-disciplinary.*unknown figure kind.*typo"):
         load_guidance(path, set(data["journals"]))
 
 

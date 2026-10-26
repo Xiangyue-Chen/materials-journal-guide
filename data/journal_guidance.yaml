@@ -14,25 +14,6 @@ profiles:
         task: 用多尺度证据排除替代解释，建立结构—机制—性能的因果链。
       - title: 普适性与讨论
         task: 跨成分、工艺或尺度验证，并说明该机制会改变哪些领域的判断或设计原则。
-    figure_story:
-      - title: 概念开场
-        question: 新概念或反常现象是什么？
-        kind: concept
-      - title: 证据全景
-        question: 相、组织和关键变量如何被可靠识别？
-        kind: microstructure
-      - title: 性能坐标
-        question: 相比公认基准，提升发生在哪里？
-        kind: performance
-      - title: 机制闭环
-        question: 哪些原位或多尺度证据证明因果机制？
-        kind: mechanism
-      - title: 普适性检验
-        question: 换成分、温度或工艺后是否仍成立？
-        kind: validation
-      - title: 设计原则
-        question: 读者能带走并复用的规则是什么？
-        kind: summary
     checklist:
       - 摘要首句让非金属材料读者理解问题的重要性
       - 主结论不是单一“强度提高”或“出现新相”
@@ -56,25 +37,6 @@ profiles:
         task: 量化主导机制，并说明它在哪些条件下失效。
       - title: 讨论与展望
         task: 把结果提升为可迁移到其他材料体系的设计准则。
-    figure_story:
-      - title: 材料设计
-        question: 成分—工艺—目标机制的逻辑是什么？
-        kind: concept
-      - title: 结构证据
-        question: 多尺度组织是否与设计预期一致？
-        kind: microstructure
-      - title: 核心性能
-        question: 最重要的性能改善是否具有统计可信度？
-        kind: performance
-      - title: 变形/相变机制
-        question: 原位和事后证据如何互相印证？
-        kind: mechanism
-      - title: 竞争基准
-        question: 与同类材料和理论上限相比位于哪里？
-        kind: validation
-      - title: 机制图景
-        question: 能否用一张简洁图总结可推广设计准则？
-        kind: summary
     checklist:
       - 研究问题对材料学读者而非单一合金社区有意义
       - 设计逻辑先于配方筛选结果出现
@@ -98,25 +60,6 @@ profiles:
         task: 对照文献解释机制、替代解释和适用范围。
       - title: 结论与数据
         task: 收束为专业社区可使用的结论，并完成数据/代码可用性声明。
-    figure_story:
-      - title: 问题与路线
-        question: 实验设计如何直接检验中心假设？
-        kind: process
-      - title: 相与组织
-        question: 关键组织特征是否被定量而非只展示照片？
-        kind: microstructure
-      - title: 性能响应
-        question: 主结果、重复性和误差是否同时可见？
-        kind: performance
-      - title: 机制证据
-        question: 结构演化与性能变化如何一一对应？
-        kind: mechanism
-      - title: 稳健性
-        question: 不同条件、批次或模型下结论是否稳定？
-        kind: validation
-      - title: 工作模型
-        question: 最终机制模型是否解释全部主要观察？
-        kind: summary
     checklist:
       - 摘要给出定量主结果而非只写“显著提高”
       - 方法包含样品数量、测试方向和统计方法
@@ -140,25 +83,6 @@ profiles:
         task: 用曲线、局部应变或原位数据建立过程证据。
       - title: 机制模型
         task: 把观察转成可检验的定量模型，并讨论适用边界。
-    figure_story:
-      - title: 工艺路径
-        question: 样品经历了什么，控制变量是否唯一？
-        kind: process
-      - title: 初始组织
-        question: 相、晶粒、缺陷与析出物的统计分布是什么？
-        kind: microstructure
-      - title: 力学/功能响应
-        question: 完整曲线和关键指标是否同时呈现？
-        kind: performance
-      - title: 演化证据
-        question: 变形、相变或损伤从哪里开始并如何发展？
-        kind: mechanism
-      - title: 模型验证
-        question: 模型是否解释不同状态和文献数据？
-        kind: validation
-      - title: 机制总结
-        question: 结构参数如何控制最终性能？
-        kind: summary
     checklist:
       - 实际成分、制备批次和热机械历史完整
       - 试样几何、加载方向、应变速率和温度明确
@@ -180,22 +104,6 @@ profiles:
         task: 选择最具排他性的两到三类证据支撑解释。
       - title: 结论
         task: 回答这个发现改变了哪个材料学判断，不重复结果列表。
-    figure_story:
-      - title: 一图定题
-        question: 第一张图能否让编辑立即看到新发现？
-        kind: concept
-      - title: 组织证据
-        question: 最少但充分的表征是什么？
-        kind: microstructure
-      - title: 定量响应
-        question: 主效应有多大、误差多大？
-        kind: performance
-      - title: 排他机制
-        question: 哪个实验最能排除替代解释？
-        kind: mechanism
-      - title: 简洁模型
-        question: 能否用一张机制图收束全文？
-        kind: summary
     checklist:
       - 全文只围绕一个主结论
       - 第一幅图直接呈现新发现而非流程图
@@ -218,25 +126,6 @@ profiles:
         task: 在贴近应用的边界条件下与现有方案比较。
       - title: 可迁移性
         task: 给出尺度放大、敏感性、失效模式和推广条件。
-    figure_story:
-      - title: 需求—方案图
-        question: 设计变量如何连接工程目标？
-        kind: concept
-      - title: 制造窗口
-        question: 可行工艺区间和敏感参数在哪里？
-        kind: process
-      - title: 结构实现
-        question: 实际组织是否实现设计意图？
-        kind: microstructure
-      - title: 工况性能
-        question: 在相关边界条件下是否优于基准？
-        kind: performance
-      - title: 鲁棒性/放大
-        question: 批次、尺寸和参数变化后是否稳定？
-        kind: validation
-      - title: 设计准则
-        question: 其他材料或工艺能否复用这套方法？
-        kind: summary
     checklist:
       - 工程需求被量化为可验证指标
       - 设计变量与目标性能之间有机制解释
@@ -260,25 +149,6 @@ profiles:
         task: 证明点蚀、晶间腐蚀、膜破裂或应力腐蚀的起源。
       - title: 机制与防护
         task: 建立反应—结构—失效链并给出可验证的防护启示。
-    figure_story:
-      - title: 环境与样品
-        question: 边界条件和表面状态是否可复现？
-        kind: process
-      - title: 腐蚀动力学
-        question: 速率、电位或阻抗如何随时间变化？
-        kind: performance
-      - title: 膜层/界面
-        question: 组成、厚度和缺陷在哪里？
-        kind: microstructure
-      - title: 局部失效
-        question: 损伤萌生与扩展的直接证据是什么？
-        kind: mechanism
-      - title: 条件矩阵
-        question: 环境、成分和组织变化后规律是否稳定？
-        kind: validation
-      - title: 反应机制
-        question: 哪条反应路径控制最终失效？
-        kind: summary
     checklist:
       - 溶液组成、pH、温度、气氛和暴露时间完整
       - 表面制备、面积和电化学装置可复现

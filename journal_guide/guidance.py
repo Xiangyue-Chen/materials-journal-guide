@@ -10,15 +10,6 @@ import yaml
 
 
 JOURNAL_LIST_FIELDS = ("fit_signals", "risk_signals")
-FIGURE_KINDS = {
-    "concept",
-    "process",
-    "microstructure",
-    "performance",
-    "mechanism",
-    "validation",
-    "summary",
-}
 
 
 def _nonblank(value: object) -> bool:
@@ -47,23 +38,6 @@ def _validate_profile(profile_id: str, profile: object) -> None:
         ):
             raise ValueError(
                 f"profile {profile_id}: structure steps require title and task"
-            )
-
-    figure_story = profile.get("figure_story")
-    if not isinstance(figure_story, list) or len(figure_story) < 5:
-        raise ValueError(
-            f"profile {profile_id}: figure_story must contain at least 5 steps"
-        )
-    for figure in figure_story:
-        if not isinstance(figure, dict) or not all(
-            _nonblank(figure.get(field)) for field in ("title", "question", "kind")
-        ):
-            raise ValueError(
-                f"profile {profile_id}: figure_story items require title, question and kind"
-            )
-        if figure["kind"] not in FIGURE_KINDS:
-            raise ValueError(
-                f"profile {profile_id}: unknown figure kind {figure['kind']}"
             )
 
     _validate_string_list(profile_id, "checklist", profile.get("checklist"), 5)
@@ -192,6 +166,5 @@ def build_workbench(
         "fit_signals": deepcopy(guidance["fit_signals"]),
         "risk_signals": deepcopy(guidance["risk_signals"]),
         "structure": deepcopy(guidance["structure"]),
-        "figure_story": deepcopy(guidance["figure_story"]),
         "checklist": deepcopy(guidance["checklist"]),
     }

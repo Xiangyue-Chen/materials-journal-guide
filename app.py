@@ -9,12 +9,13 @@ from typing import Any
 import streamlit as st
 
 from journal_guide import (
-    build_workbench,
+    build_official_workbench,
     explain_requirement,
     filter_journals,
     freshness_notice,
     load_guidance,
     load_journals,
+    load_official_requirements,
     select_for_comparison,
 )
 
@@ -22,6 +23,7 @@ from journal_guide import (
 ROOT = Path(__file__).resolve().parent
 DATA_PATH = ROOT / "data" / "journals.yaml"
 GUIDANCE_PATH = ROOT / "data" / "journal_guidance.yaml"
+OFFICIAL_REQUIREMENTS_PATH = ROOT / "data" / "journal_official_requirements.yaml"
 
 TIER_DESCRIPTIONS = {
     "正刊": "跨学科影响与普适意义",
@@ -71,6 +73,13 @@ def get_journals() -> list[dict[str, Any]]:
 @st.cache_data(show_spinner=False)
 def get_guidance(journal_ids: tuple[str, ...]) -> dict[str, dict[str, Any]]:
     return load_guidance(GUIDANCE_PATH, set(journal_ids))
+
+
+@st.cache_data(show_spinner=False)
+def get_official_requirements(
+    journal_ids: tuple[str, ...],
+) -> dict[str, dict[str, Any]]:
+    return load_official_requirements(OFFICIAL_REQUIREMENTS_PATH, set(journal_ids))
 
 
 def _unique(records: list[dict[str, Any]], field: str) -> list[str]:
@@ -167,37 +176,13 @@ def render_styles() -> None:
           border-radius: 999px; padding: .08rem .45rem; color: #174f49; font-size: .7rem;
           vertical-align: .08rem;
         }
-        .structure-map {
-          display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
-          gap: .7rem; margin: .6rem 0 1.2rem;
-        }
-        .structure-step {
-          position: relative; background: rgba(255,255,255,.82); border: 1px solid rgba(23,35,33,.10);
-          border-radius: 12px; padding: .9rem; min-height: 150px;
-        }
-        .step-number { color: var(--gold); font-weight: 800; font-size: .78rem; }
-        .step-title { color: var(--ink); font-weight: 760; margin: .2rem 0 .45rem; }
-        .step-task { color: var(--muted); font-size: .84rem; line-height: 1.55; }
-        .storyboard-grid {
-          display: grid; grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
-          gap: .85rem; margin: .7rem 0 1.2rem;
-        }
-        .storyboard-card {
-          overflow: hidden; background: #fff; border: 1px solid rgba(23,35,33,.12);
-          border-radius: 14px; box-shadow: 0 10px 24px rgba(27,54,49,.06);
-        }
-        .storyboard-card svg { display: block; width: 100%; height: 126px; background: #eef3f0; }
-        .storyboard-copy { padding: .75rem .85rem .9rem; }
-        .storyboard-title { font-weight: 760; color: var(--ink); margin-bottom: .25rem; }
-        .storyboard-question { color: var(--muted); font-size: .82rem; line-height: 1.5; }
         .signal-good, .signal-risk {
           border-radius: 12px; padding: .8rem 1rem; margin-bottom: .55rem; font-size: .88rem;
         }
         .signal-good { background: #e8f2ed; color: #174f49; }
         .signal-risk { background: #f7ece7; color: #7b3d2b; }
         @media (max-width: 700px) {
-          .structure-map, .storyboard-grid { grid-template-columns: 1fr; }
-          .structure-step { min-height: auto; }
+          .block-container { padding-left: 1rem; padding-right: 1rem; }
         }
         a { color: var(--teal) !important; }
         </style>
@@ -308,80 +293,28 @@ def render_journal_card(record: dict[str, Any]) -> None:
         )
 
 
-def _figure_svg(kind: str, index: int) -> str:
-    """Return an original, decorative mini-figure for a storyboard card."""
-
-    accent = ("#0f6f66", "#b58b3d", "#c66a4a", "#586f8c")[index % 4]
-    common = f'<rect width="240" height="126" rx="14" fill="#eef3f0"/><text x="16" y="22" font-size="11" font-family="Arial" fill="#5d6b67">FIG. {index + 1}</text>'
-    drawings = {
-        "concept": f'{common}<rect x="22" y="43" width="54" height="42" rx="8" fill="#fff" stroke="{accent}"/><rect x="164" y="43" width="54" height="42" rx="8" fill="#fff" stroke="{accent}"/><path d="M82 64 H153" stroke="{accent}" stroke-width="3"/><path d="M145 57 L154 64 L145 71" fill="none" stroke="{accent}" stroke-width="3"/><circle cx="48" cy="64" r="11" fill="{accent}" opacity=".25"/><path d="M178 69 l10 -14 10 14" fill="none" stroke="{accent}" stroke-width="3"/>',
-        "process": f'{common}<path d="M28 70 H212" stroke="#9eb3ad" stroke-width="4"/><circle cx="45" cy="70" r="13" fill="{accent}"/><circle cx="100" cy="70" r="13" fill="#fff" stroke="{accent}" stroke-width="3"/><circle cx="155" cy="70" r="13" fill="#fff" stroke="{accent}" stroke-width="3"/><circle cx="205" cy="70" r="13" fill="{accent}"/><path d="M88 40 h24 v14 H88z M143 86 h24 v14 h-24z" fill="{accent}" opacity=".28"/>',
-        "microstructure": f'{common}<rect x="22" y="37" width="196" height="72" rx="8" fill="#dfe9e5"/><path d="M24 70 Q58 38 92 70 T160 70 T218 70 M24 91 Q58 58 92 91 T160 91 T218 91" fill="none" stroke="#7d9991" stroke-width="2"/><circle cx="60" cy="60" r="8" fill="{accent}"/><circle cx="132" cy="83" r="10" fill="{accent}" opacity=".7"/><circle cx="184" cy="55" r="6" fill="{accent}" opacity=".45"/><rect x="164" y="99" width="34" height="3" fill="#172321"/>',
-        "performance": f'{common}<path d="M38 98 V36 M38 98 H216" stroke="#72827e" stroke-width="2"/><path d="M42 91 C72 86 83 68 108 65 S151 54 174 36 S202 42 212 29" fill="none" stroke="{accent}" stroke-width="4"/><path d="M42 94 C77 88 105 83 132 78 S180 72 210 70" fill="none" stroke="#98aaa5" stroke-width="3" stroke-dasharray="5 5"/><circle cx="174" cy="36" r="5" fill="{accent}"/>',
-        "mechanism": f'{common}<rect x="25" y="43" width="190" height="18" rx="4" fill="#cbdcd7"/><rect x="25" y="73" width="190" height="18" rx="4" fill="#d9c69f"/><path d="M58 38 v62 M104 38 v62 M150 38 v62 M196 38 v62" stroke="{accent}" stroke-width="2" stroke-dasharray="4 3"/><path d="M75 29 l10 10 -10 10 M121 29 l10 10 -10 10 M167 29 l10 10 -10 10" fill="none" stroke="{accent}" stroke-width="3"/>',
-        "validation": f'{common}<g transform="translate(38 38)"><rect width="164" height="68" rx="6" fill="#fff"/>' + "".join(
-            f'<rect x="{c * 32 + 8}" y="{r * 20 + 6}" width="24" height="14" rx="3" fill="{accent}" opacity="{0.22 + 0.13 * ((r + c) % 4)}"/>'
-            for r in range(3) for c in range(5)
-        ) + '</g>',
-        "summary": f'{common}<circle cx="120" cy="66" r="23" fill="{accent}" opacity=".22" stroke="{accent}" stroke-width="2"/><circle cx="48" cy="48" r="12" fill="#fff" stroke="{accent}"/><circle cx="192" cy="48" r="12" fill="#fff" stroke="{accent}"/><circle cx="48" cy="94" r="12" fill="#fff" stroke="{accent}"/><circle cx="192" cy="94" r="12" fill="#fff" stroke="{accent}"/><path d="M60 52 L96 62 M180 52 L144 62 M60 90 L96 72 M180 90 L144 72" stroke="{accent}" stroke-width="2"/>',
-    }
-    drawing = drawings.get(kind, drawings["summary"])
-    return f'<svg viewBox="0 0 240 126" role="img" aria-label="原创图稿布局示意">{drawing}</svg>'
-
-
-def _render_structure_map(structure: list[dict[str, str]]) -> None:
-    cards = []
-    for index, step in enumerate(structure, start=1):
-        cards.append(
-            '<div class="structure-step">'
-            f'<div class="step-number">STEP {index:02d}</div>'
-            f'<div class="step-title">{escape(step["title"])}</div>'
-            f'<div class="step-task">{escape(step["task"])}</div>'
-            '</div>'
-        )
-    st.markdown(
-        f'<div class="structure-map">{"".join(cards)}</div>',
-        unsafe_allow_html=True,
-    )
-
-
-def _render_storyboard(figures: list[dict[str, str]]) -> None:
-    cards = []
-    for index, figure in enumerate(figures):
-        cards.append(
-            '<div class="storyboard-card">'
-            f'{_figure_svg(figure["kind"], index)}'
-            '<div class="storyboard-copy">'
-            f'<div class="storyboard-title">图 {index + 1} · {escape(figure["title"])}</div>'
-            f'<div class="storyboard-question">{escape(figure["question"])}</div>'
-            '</div></div>'
-        )
-    st.markdown(
-        f'<div class="storyboard-grid">{"".join(cards)}</div>',
-        unsafe_allow_html=True,
-    )
-
-
-def _official_requirement_rows(record: dict[str, Any]) -> list[dict[str, str]]:
-    rows = []
-    for label, field in OFFICIAL_REQUIREMENT_FIELDS:
-        explained = explain_requirement(record[field])
-        rows.append(
-            {
-                "项目": label,
-                "证据状态": explained["status"],
-                "当前要求": explained["summary"],
-                "为什么这样标": explained["reason"],
-            }
-        )
-    return rows
+def _requirement_rows(
+    items: list[dict[str, str]], label_key: str
+) -> list[dict[str, str]]:
+    label = "稿件部分" if label_key == "section" else "项目"
+    return [
+        {
+            label: item[label_key],
+            "官方明确要求": item["requirement"],
+            "证据范围": item["scope"],
+            "官方原文": item["source_url"],
+        }
+        for item in items
+    ]
 
 
 def render_deep_workbench(
-    records: list[dict[str, Any]], guidance: dict[str, dict[str, Any]]
+    records: list[dict[str, Any]],
+    guidance: dict[str, dict[str, Any]],
+    official_requirements: dict[str, dict[str, Any]],
 ) -> None:
     st.subheader("深度投稿工作台")
-    st.caption("先搭叙事和主图，再核格式。工作台默认面向原创研究论文。")
+    st.caption("先按官方要求搭好稿件，再使用本站建议检查选刊契合度。默认展示原创研究论文。")
     names = [str(record["name"]) for record in records]
     selected_name = st.selectbox(
         "选择要准备的期刊",
@@ -389,56 +322,77 @@ def render_deep_workbench(
         key="workbench_journal",
     )
     record = next(record for record in records if record["name"] == selected_name)
-    workbench = build_workbench(record, guidance[str(record["id"])])
+    journal_id = str(record["id"])
+    workbench = build_official_workbench(
+        record,
+        official_requirements[journal_id],
+        guidance[journal_id],
+    )
+    official = workbench["official"]
+    editorial = workbench["editorial"]
 
+    st.subheader("官方要求总览")
     st.markdown(
         '<div class="guidance-banner">'
-        '<span class="guidance-label">本站写作建议</span> '
-        f'<strong>{escape(workbench["profile_label"])}</strong><br>'
-        f'{escape(workbench["editorial_angle"])}'
+        '<span class="official-label">官方要求</span> '
+        f'<strong>{escape(str(workbench["journal_name"]))} · '
+        f'{escape(str(official["default_article_type"]))}</strong><br>'
+        f'证据范围：{escape(str(official["requirement_scope"]))}　·　'
+        f'核验日期：{escape(str(official["verified_on"]))}'
         '</div>',
         unsafe_allow_html=True,
     )
-    good, risk = st.columns(2)
-    with good:
-        st.markdown("#### 更像适合这本期刊")
-        for signal in workbench["fit_signals"]:
-            st.markdown(
-                f'<div class="signal-good">✓ {escape(signal)}</div>',
-                unsafe_allow_html=True,
-            )
-    with risk:
-        st.markdown("#### 容易被编辑认为不够")
-        for signal in workbench["risk_signals"]:
-            st.markdown(
-                f'<div class="signal-risk">△ {escape(signal)}</div>',
-                unsafe_allow_html=True,
-            )
-
-    st.subheader("文章结构地图")
-    st.caption("本站写作建议 · 每一段只承担一个论证任务")
-    _render_structure_map(workbench["structure"])
-
-    st.subheader("主图蓝图")
-    st.caption("本站原创示意，不是期刊模板或已发表论文图片；重点是每张图要回答的问题。")
-    _render_storyboard(workbench["figure_story"])
-
-    st.subheader("官方要求 · 逐项证据")
     st.markdown(
-        '<span class="official-label">官方要求</span> '
-        f'核验日期：{escape(str(record["verified_on"]))} · '
-        f'<a href="{escape(str(record["guide_url"]))}">打开官方作者指南</a>',
-        unsafe_allow_html=True,
+        " · ".join(
+            f"[官方来源 {index}]({url})"
+            for index, url in enumerate(official["source_urls"], start=1)
+        )
     )
-    if notice := freshness_notice(str(record["verified_on"])):
+    if notice := freshness_notice(str(official["verified_on"])):
         st.error(notice)
-    st.caption("证据状态：官网明确 / 按文章类型变化 / 官网未给统一值 / 非必交项 / 以投稿系统为准")
-    st.table(_official_requirement_rows(record))
 
-    st.subheader("投稿前清单")
-    st.caption("本站写作建议 · 用于自查，不替代投稿系统中的实时问题")
-    for item in workbench["checklist"]:
-        st.markdown(f"- [ ] {item}")
+    st.subheader("稿件各部分格式")
+    st.caption("每一行都给出证据范围和官方原文；出版社通用规则不会冒充本刊专属要求。")
+    st.table(_requirement_rows(official["section_requirements"], "section"))
+
+    st.subheader("提交文件与技术规格")
+    st.table(_requirement_rows(official["technical_requirements"], "item"))
+
+    st.subheader("官方模板与实例")
+    st.caption("实例用于观察真实呈现，不等同于强制模板；请以资源类型标签为准。")
+    for resource in official["resources"]:
+        st.markdown(
+            f'**[{resource["label"]}]({resource["url"]})**　'
+            f'<span class="evidence-badge">{escape(resource["kind"])}</span><br>'
+            f'{escape(resource["note"])}',
+            unsafe_allow_html=True,
+        )
+
+    with st.expander("本站建议 · 选刊契合度与投稿前自查"):
+        st.markdown(
+            '<span class="guidance-label">本站写作建议</span> '
+            f'<strong>{escape(editorial["profile_label"])}</strong><br>'
+            f'{escape(editorial["editorial_angle"])}',
+            unsafe_allow_html=True,
+        )
+        good, risk = st.columns(2)
+        with good:
+            st.markdown("#### 更像适合这本期刊")
+            for signal in editorial["fit_signals"]:
+                st.markdown(
+                    f'<div class="signal-good">✓ {escape(signal)}</div>',
+                    unsafe_allow_html=True,
+                )
+        with risk:
+            st.markdown("#### 容易被编辑认为不够")
+            for signal in editorial["risk_signals"]:
+                st.markdown(
+                    f'<div class="signal-risk">△ {escape(signal)}</div>',
+                    unsafe_allow_html=True,
+                )
+        st.markdown("#### 投稿前清单")
+        for item in editorial["checklist"]:
+            st.markdown(f"- [ ] {item}")
 
 
 def render_catalogue(records: list[dict[str, Any]]) -> None:
@@ -506,13 +460,15 @@ def main() -> None:
     )
     render_styles()
     records = get_journals()
-    guidance = get_guidance(tuple(str(record["id"]) for record in records))
+    journal_ids = tuple(str(record["id"]) for record in records)
+    guidance = get_guidance(journal_ids)
+    official_requirements = get_official_requirements(journal_ids)
     render_header(records)
     filters = render_sidebar(records)
     filtered = filter_journals(records, **filters)
     render_tier_guide(records)
     st.divider()
-    render_deep_workbench(records, guidance)
+    render_deep_workbench(records, guidance, official_requirements)
     st.divider()
     render_catalogue(filtered)
     st.divider()
