@@ -8,7 +8,12 @@ from typing import Any
 
 import streamlit as st
 
-from journal_guide import filter_journals, load_journals, select_for_comparison
+from journal_guide import (
+    filter_journals,
+    freshness_notice,
+    load_journals,
+    select_for_comparison,
+)
 
 
 ROOT = Path(__file__).resolve().parent
@@ -194,6 +199,8 @@ def render_journal_card(record: dict[str, Any]) -> None:
     c1, c2 = st.columns(2)
     c1.caption(f"OA：{record['oa_model']}")
     c2.caption(f"核验：{record['verified_on']}")
+    if notice := freshness_notice(str(record["verified_on"])):
+        st.error(notice)
     st.markdown(
         f"[期刊主页]({record['homepage_url']}) · "
         f"[官方作者指南]({record['guide_url']})"
@@ -250,7 +257,11 @@ def render_comparison(records: list[dict[str, Any]]) -> None:
     for label, field in COMPARISON_FIELDS:
         row = {"比较项目": label}
         for record in selected:
-            row[str(record["name"])] = _as_text(record[field])
+            value = _as_text(record[field])
+            if field == "verified_on":
+                if notice := freshness_notice(str(record["verified_on"])):
+                    value = f"{value} · {notice}"
+            row[str(record["name"])] = value
         comparison_rows.append(row)
     st.table(comparison_rows)
     st.caption("对比表用于准备初稿；遇到“需投稿前复核”或文章类型差异时，请打开对应官方指南。")

@@ -40,6 +40,10 @@ REQUIRED_FIELDS = (
 
 LIST_FIELDS = ("topics", "article_types", "special_notes", "source_urls")
 URL_FIELDS = ("homepage_url", "guide_url")
+STRING_FIELDS = tuple(
+    field for field in REQUIRED_FIELDS if field not in LIST_FIELDS and field != "tier_order"
+)
+NONEMPTY_LIST_FIELDS = ("topics", "article_types", "source_urls")
 
 
 def _is_https_url(value: object) -> bool:
@@ -62,13 +66,25 @@ def validate_journals(records: list[dict[str, Any]]) -> None:
         if not isinstance(record, dict):
             raise ValueError(f"record {index} must be a mapping")
 
-        journal_id = str(record.get("id") or f"record-{index}")
+        raw_id = record.get("id")
+        journal_id = (
+            raw_id.strip()
+            if isinstance(raw_id, str) and raw_id.strip()
+            else f"record-{index}"
+        )
         for field in REQUIRED_FIELDS:
             if field not in record:
                 raise ValueError(f"{journal_id}: missing required field {field}")
 
-        normalized_id = str(record["id"]).strip().casefold()
-        normalized_name = str(record["name"]).strip().casefold()
+        for field in STRING_FIELDS:
+            value = record[field]
+            if not isinstance(value, str):
+                raise ValueError(f"{journal_id}: {field} must be a string")
+            if not value.strip():
+                raise ValueError(f"{journal_id}: {field} must be a nonblank string")
+
+        normalized_id = record["id"].strip().casefold()
+        normalized_name = record["name"].strip().casefold()
         if normalized_id in seen_ids:
             raise ValueError(f"duplicate id: {record['id']}")
         if normalized_name in seen_names:
@@ -82,6 +98,11 @@ def validate_journals(records: list[dict[str, Any]]) -> None:
         for field in LIST_FIELDS:
             if not isinstance(record[field], list):
                 raise ValueError(f"{journal_id}: {field} must be a list")
+            if any(not isinstance(item, str) or not item.strip() for item in record[field]):
+                raise ValueError(f"{journal_id}: {field} must contain nonblank strings")
+        for field in NONEMPTY_LIST_FIELDS:
+            if not record[field]:
+                raise ValueError(f"{journal_id}: {field} must contain at least one item")
 
         for field in URL_FIELDS:
             if not _is_https_url(record[field]):
@@ -92,8 +113,23 @@ def validate_journals(records: list[dict[str, Any]]) -> None:
 
         try:
             date.fromisoformat(str(record["verified_on"]))
-        except ValueError as exc:
+        except (TypeError, ValueError) as exc:
             raise ValueError(f"{journal_id}: verified_on must use YYYY-MM-DD") from exc
+
+
+def freshness_notice(
+    verified_on: str,
+    *,
+    today: date | None = None,
+    stale_after_days: int = 180,
+) -> str | None:
+    """Return a warning when a record is older than the verification window."""
+
+    verified_date = date.fromisoformat(verified_on)
+    age_days = ((today or date.today()) - verified_date).days
+    if age_days > stale_after_days:
+        return f"已超过 {stale_after_days} 天未核验，请打开官方指南复核"
+    return None
 
 
 def load_journals(path: Path) -> list[dict[str, Any]]:
@@ -108,8 +144,12 @@ def load_journals(path: Path) -> list[dict[str, Any]]:
         if not isinstance(item, dict):
             raise ValueError(f"record {index} must be a mapping")
         record = dict(item)
+        journal_id = record.get("id") or f"record-{index}"
+        for field in REQUIRED_FIELDS:
+            if field not in record:
+                raise ValueError(f"{journal_id}: missing required field {field}")
         for field in LIST_FIELDS:
-            value = record.get(field)
+            value = record[field]
             if value is None:
                 record[field] = []
             elif isinstance(value, str):
