@@ -8,6 +8,11 @@ from streamlit.testing.v1 import AppTest
 APP_PATH = Path(__file__).parents[1] / "app.py"
 
 
+def visible_text(app: AppTest) -> str:
+    groups = (app.markdown, app.caption, app.info, app.warning, app.error)
+    return "\n".join(element.value for group in groups for element in group)
+
+
 def test_app_starts_with_catalogue_filters_and_evidence_notice() -> None:
     app = AppTest.from_file(str(APP_PATH)).run(timeout=20)
 
@@ -68,3 +73,24 @@ def test_workbench_explains_unknown_requirements_without_raw_placeholder() -> No
         for caption in app.caption
     )
     assert len(app.table[0].value) == 9
+
+
+def test_default_view_never_exposes_raw_review_placeholder() -> None:
+    app = AppTest.from_file(str(APP_PATH)).run(timeout=20)
+
+    assert not app.exception
+    assert "需投稿前复核" not in visible_text(app)
+
+
+def test_comparison_uses_explanatory_evidence_states() -> None:
+    app = AppTest.from_file(str(APP_PATH)).run(timeout=20)
+    comparison = next(
+        widget for widget in app.multiselect if widget.key == "comparison_ids"
+    )
+    comparison.select("Science").select("Nature Materials")
+    app.run(timeout=20)
+
+    assert not app.exception
+    text = visible_text(app)
+    assert "需投稿前复核" not in text
+    assert "证据状态" in text

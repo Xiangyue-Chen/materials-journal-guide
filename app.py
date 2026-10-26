@@ -60,6 +60,7 @@ OFFICIAL_REQUIREMENT_FIELDS = (
     ("数据政策", "data_policy"),
     ("同行评审", "peer_review"),
 )
+EVIDENCE_FIELDS = {field for _, field in OFFICIAL_REQUIREMENT_FIELDS} | {"oa_model"}
 
 
 @st.cache_data(show_spinner=False)
@@ -87,6 +88,17 @@ def _as_text(value: object) -> str:
     if isinstance(value, list):
         return "；".join(str(item) for item in value)
     return str(value)
+
+
+def _render_requirement(label: str, value: object) -> None:
+    explained = explain_requirement(value)
+    st.markdown(
+        f'**{escape(label)}**　{escape(explained["summary"])} '
+        f'<span class="evidence-badge">{escape(explained["status"])}</span>',
+        unsafe_allow_html=True,
+    )
+    if explained["status"] != "官网明确":
+        st.caption(explained["reason"])
 
 
 def render_styles() -> None:
@@ -143,6 +155,11 @@ def render_styles() -> None:
         }
         .guidance-label { background: #f6ead1; color: #76571f; }
         .official-label { background: var(--teal-soft); color: #174f49; }
+        .evidence-badge {
+          display: inline-block; margin-left: .35rem; border: 1px solid rgba(15,111,102,.22);
+          border-radius: 999px; padding: .08rem .45rem; color: #174f49; font-size: .7rem;
+          vertical-align: .08rem;
+        }
         .structure-map {
           display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
           gap: .7rem; margin: .6rem 0 1.2rem;
@@ -260,7 +277,8 @@ def render_journal_card(record: dict[str, Any]) -> None:
         unsafe_allow_html=True,
     )
     c1, c2 = st.columns(2)
-    c1.caption(f"OA：{record['oa_model']}")
+    oa = explain_requirement(record["oa_model"])
+    c1.caption(f"OA：{oa['summary']} · {oa['status']}")
     c2.caption(f"核验：{record['verified_on']}")
     if notice := freshness_notice(str(record["verified_on"])):
         st.error(notice)
@@ -270,15 +288,8 @@ def render_journal_card(record: dict[str, Any]) -> None:
     )
     with st.expander("查看投稿要求"):
         st.markdown(f"**文章类型**　{_as_text(record['article_types'])}")
-        st.markdown(f"**初投格式**　{record['initial_submission']}")
-        st.markdown(f"**摘要限制**　{record['abstract_limit']}")
-        st.markdown(f"**篇幅限制**　{record['word_limit']}")
-        st.markdown(f"**图文摘要**　{record['graphical_abstract']}")
-        st.markdown(f"**Highlights**　{record['highlights']}")
-        st.markdown(f"**参考文献**　{record['references']}")
-        st.markdown(f"**图片要求**　{record['figures']}")
-        st.markdown(f"**数据政策**　{record['data_policy']}")
-        st.markdown(f"**同行评审**　{record['peer_review']}")
+        for label, field in OFFICIAL_REQUIREMENT_FIELDS:
+            _render_requirement(label, record[field])
         for note in record["special_notes"]:
             st.warning(str(note))
         st.markdown(
@@ -451,14 +462,18 @@ def render_comparison(records: list[dict[str, Any]]) -> None:
     for label, field in COMPARISON_FIELDS:
         row = {"比较项目": label}
         for record in selected:
-            value = _as_text(record[field])
+            if field in EVIDENCE_FIELDS:
+                explained = explain_requirement(record[field])
+                value = f"{explained['summary']}【{explained['status']}】"
+            else:
+                value = _as_text(record[field])
             if field == "verified_on":
                 if notice := freshness_notice(str(record["verified_on"])):
                     value = f"{value} · {notice}"
             row[str(record["name"])] = value
         comparison_rows.append(row)
     st.table(comparison_rows)
-    st.caption("对比表用于准备初稿；遇到“需投稿前复核”或文章类型差异时，请打开对应官方指南。")
+    st.caption("证据状态已区分官网明确、按文章类型变化、官网未给统一值和投稿系统动态项；对比后可打开对应官方指南定位原文。")
 
 
 def render_footer() -> None:

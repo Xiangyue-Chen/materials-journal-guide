@@ -73,11 +73,11 @@
 - Consumes: `explain_requirement` from Task 1.
 - Produces: concise journal cards and comparison rows with specific evidence states and reasons.
 
-- [ ] **Step 1: Write failing tests that prohibit the raw placeholder phrase in the default and comparison views**
-- [ ] **Step 2: Run focused tests and verify they fail on current raw values**
-- [ ] **Step 3: Replace generic warnings with evidence badges/reasons and document the boundary**
-- [ ] **Step 4: Run the full automated suite and `git diff --check`**
-- [ ] **Step 5: Commit the evidence-focused UI**
+- [x] **Step 1: Write failing tests that prohibit the raw placeholder phrase in the default and comparison views**
+- [x] **Step 2: Run focused tests and verify they fail on current raw values**
+- [x] **Step 3: Replace generic warnings with evidence badges/reasons and document the boundary**
+- [x] **Step 4: Run the full automated suite and `git diff --check`**
+- [x] **Step 5: Commit the evidence-focused UI**
 
 ### Task 4: Visual QA and publication
 
