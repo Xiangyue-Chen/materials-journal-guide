@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.streamlit/secrets.toml
+.superpowers/
+.coverage
+htmlcov/
+.DS_Store
+Thumbs.db
