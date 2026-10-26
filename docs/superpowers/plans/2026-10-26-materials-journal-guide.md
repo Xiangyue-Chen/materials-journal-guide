@@ -43,27 +43,27 @@
 - Produces: `load_journals(path: Path) -> list[dict[str, Any]]`
 - Produces: `validate_journals(records: list[dict[str, Any]]) -> None`
 
-- [ ] **Step 1: Write failing schema tests**
+- [x] **Step 1: Write failing schema tests**
 
 Test that required fields are enforced, duplicate IDs/names are rejected, valid records load, and source URLs use HTTPS.
 
-- [ ] **Step 2: Run tests and confirm failure**
+- [x] **Step 2: Run tests and confirm failure**
 
 Run: `python -m pytest tests/test_data.py -v`
 
 Expected: FAIL because `journal_guide.data` does not exist.
 
-- [ ] **Step 3: Implement validation and loading**
+- [x] **Step 3: Implement validation and loading**
 
 Add the exact interfaces above, YAML root validation, clear `ValueError` messages, and normalized list fields.
 
-- [ ] **Step 4: Run tests and confirm pass**
+- [x] **Step 4: Run tests and confirm pass**
 
 Run: `python -m pytest tests/test_data.py -v`
 
 Expected: PASS.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 Commit message: `feat: add validated journal data model`
 
