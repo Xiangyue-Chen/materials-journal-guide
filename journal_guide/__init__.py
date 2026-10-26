@@ -2,6 +2,7 @@
 
 from .data import freshness_notice, load_journals, validate_journals
 from .filters import filter_journals, select_for_comparison
+from .format_specs import load_format_specs
 from .guidance import build_workbench, explain_requirement, load_guidance
 from .official_requirements import (
     build_official_workbench,
@@ -15,6 +16,7 @@ __all__ = [
     "filter_journals",
     "freshness_notice",
     "load_guidance",
+    "load_format_specs",
     "load_journals",
     "load_official_requirements",
     "select_for_comparison",

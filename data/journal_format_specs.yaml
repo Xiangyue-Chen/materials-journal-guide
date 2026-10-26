@@ -1,0 +1,783 @@
+journals:
+  nature:
+    default_article_type: "Article（物理科学）"
+    verified_on: "2026-10-26"
+    quick_specs:
+      abstract:
+        official: "加粗概要段，理想长度不超过 200 词；采用可被非本领域读者理解的单段叙事。"
+        advice: "控制在 170–200 词：2–3 句背景 → 1 句缺口 → 1 句 Here we show → 2–3 句普适意义。"
+        scope: "官方硬性"
+        source_url: "https://www.nature.com/nature/for-authors/formatting-guide"
+      manuscript_structure:
+        official: "题目 → 作者/单位 → 加粗概要段 → 主文 → 主参考文献 → 图表/图注 → Methods → Data/Code Availability → 文末声明。典型 6 页稿约 2500 词，8 页稿约 4300 词。"
+        advice: "正文用 3–4 个结果导向小标题，不单列传统 Introduction；把技术细节移入 Methods，把跨领域意义留在开头和结尾。"
+        scope: "官方硬性"
+        source_url: "https://www.nature.com/nature/for-authors/formatting-guide"
+      display_items:
+        official: "典型 6 页 Article 配 4 个中等展示项；典型 8 页 Article 配 5–6 个中等展示项（图和表合计）。"
+        advice: "金属/高熵合金稿建议 5 幅主图：设计逻辑、组织、机制证据、力学响应、普适性验证；每幅只承担一个中心论点。"
+        scope: "官方惯例"
+        source_url: "https://www.nature.com/nature/for-authors/formatting-guide"
+      panel_labels:
+        official: "多分图使用 8 pt、无衬线、直立小写粗体 a、b、c；所有主图位置保持一致。"
+        advice: "把 a、b、c 放在每个 panel 左上角；不要混用 (a)、A 或 a)。"
+        scope: "官方硬性"
+        source_url: "https://www.nature.com/nature/for-authors/final-submission"
+      figure_legends:
+        official: "每条图注先写整图短标题，再逐 panel 说明符号和内容；每图少于 300 词，并定义全部误差线与统计量。"
+        advice: "采用“结论式短标题。a，内容；b，内容；c，统计定义”的顺序，让图脱离正文仍可读。"
+        scope: "官方硬性"
+        source_url: "https://www.nature.com/nature/for-authors/formatting-guide"
+      references:
+        official: "按首次出现顺序编号，文内使用上标编号而非方括号；主文通常最多 50 条，每个编号只列一项。"
+        advice: "文内示例：...strength increases¹,²；文末示例：1. Author, A. et al. Title. Journal volume, pages (year)."
+        scope: "官方硬性"
+        source_url: "https://www.nature.com/nature/for-authors/formatting-guide"
+    blueprint:
+      - section: "概要段"
+        task: "170–200 词写清跨学科背景、关键缺口、Here we show 和普适推进。"
+      - section: "主文开端"
+        task: "不用传统综述式引言；在约 3 段内把问题、已有瓶颈和本研究策略推到第一张主图。"
+      - section: "结果 1–2"
+        task: "Fig. 1 建立设计与材料状态；Fig. 2 给出核心性能和关键对照。"
+      - section: "结果 3–4"
+        task: "用多尺度机制证据闭环，并排除至少一个竞争解释。"
+      - section: "收束 + Methods"
+        task: "用最后一段回答为何结论可推广；复现实验细节、统计、数据与代码声明放 Methods 之后。"
+
+  science:
+    default_article_type: "Research Article"
+    verified_on: "2026-10-26"
+    quick_specs:
+      abstract:
+        official: "官网未规定固定上限：公开初投稿说明按 Research Article、Report 等稿件类型分别管理，没有一个跨类型通用字数。"
+        advice: "Research Article 先按 125–150 词单段准备：背景 1 句、问题 1 句、方法 1 句、定量结果 2–3 句、广泛意义 1 句。"
+        scope: "官网未规定固定上限"
+        source_url: "https://www.science.org/content/page/instructions-preparing-initial-manuscript"
+      manuscript_structure:
+        official: "研究稿通常采用 Title → Abstract → Introduction → Results → Discussion → Materials and Methods → References and Notes → Acknowledgments/Supplementary Materials。"
+        advice: "把全文压成一条因果链：科学问题 → 关键观察 → 机制判据 → 广泛结论；Materials and Methods 保证复现，不在 Results 重复步骤。"
+        scope: "官方惯例"
+        source_url: "https://www.science.org/content/page/instructions-preparing-initial-manuscript"
+      display_items:
+        official: "官网未规定固定上限：公开初投稿页没有给 Research Article 与 Report 共用的图表总数。"
+        advice: "Research Article 建议 5–6 幅主图；Report 建议 3–4 幅。金属材料稿每图控制 3–6 个 panel，并把补充验证移至 Supplementary Materials。"
+        scope: "官网未规定固定上限"
+        source_url: "https://www.science.org/content/page/instructions-preparing-initial-manuscript"
+      panel_labels:
+        official: "Science 已发表研究论文采用大写 A、B、C 标识分图，图注对应写作 (A)、(B)、(C)。"
+        advice: "全稿统一大写粗体 A、B、C，放左上角；正文引用写 Fig. 2A 或 Fig. 2, A and B。"
+        scope: "官方惯例"
+        source_url: "https://www.science.org/doi/pdf/10.1126/science.1229054"
+      figure_legends:
+        official: "图号与简短标题置于图注开头；解释所有 panel、符号、误差、样本量和统计检验，使图可独立理解。"
+        advice: "图注按“Fig. 1. 一句结论式标题。(A)... (B)... Statistics...”写，实验流程只保留理解图所必需的信息。"
+        scope: "官方惯例"
+        source_url: "https://www.science.org/content/page/instructions-preparing-initial-manuscript"
+      references:
+        official: "参考文献按首次引用顺序连续编号，正文以数字引用；文末置于 References and Notes，并可把必要说明作为编号 notes。"
+        advice: "正文使用单一连续编号，不按作者字母排序；提交前重点检查补充材料中的编号是否与主文连续。"
+        scope: "官方惯例"
+        source_url: "https://www.science.org/content/page/instructions-preparing-initial-manuscript"
+    blueprint:
+      - section: "Abstract"
+        task: "先写 125–150 词跨学科摘要，用一个定量结论支撑广泛意义。"
+      - section: "Introduction"
+        task: "约 3–5 段界定普适问题、知识缺口和可证伪假设。"
+      - section: "Results"
+        task: "用 3–4 个小节对应主图，证据按观察—机制—验证递进。"
+      - section: "Discussion"
+        task: "比较现有理论、说明边界条件，并明确材料体系之外的启示。"
+      - section: "Materials and Methods"
+        task: "给出合金制备、表征、力学统计与数据/代码可用性，补充材料只放非核心支撑。"
+
+  nature-communications:
+    default_article_type: "Article"
+    verified_on: "2026-10-26"
+    quick_specs:
+      abstract:
+        official: "无参考文献的摘要约 150 词；新版格式说明要求 150 词或更少。"
+        advice: "写 140–150 词：背景/缺口约 45 词，方法约 25 词，关键定量结果约 55 词，意义约 25 词。"
+        scope: "官方硬性"
+        source_url: "https://www.nature.com/documents/ncomms-formatting-instructions.pdf"
+      manuscript_structure:
+        official: "主文不超过 5000 词；Introduction 不设小标题，Results 分小标题，随后 Discussion、Methods、References、Data/Code Availability 与声明。"
+        advice: "采用 Introduction → Results（3–5 个结果小节）→ Discussion → Methods；不要把 Results 与 Discussion 混写。"
+        scope: "官方硬性"
+        source_url: "https://www.nature.com/documents/ncomms-submission-guide.pdf"
+      display_items:
+        official: "Article 最多 10 个展示项（图与表合计）。"
+        advice: "建议主文 5–7 幅图，留出 1–2 个表格名额；超过 7 幅时先检查是否有描述性图可移入补充材料。"
+        scope: "官方硬性"
+        source_url: "https://www.nature.com/documents/ncomms-submission-guide.pdf"
+      panel_labels:
+        official: "多分图按小写 a、b、c 标注，不再划分 a1、a2 等次级 panel。"
+        advice: "标签固定左上角，用 a、b、c；图注对应以“a，”而不是“(a)”开头。"
+        scope: "官方硬性"
+        source_url: "https://www.nature.com/documents/ncomms-formatting-instructions.pdf"
+      figure_legends:
+        official: "每图先写可独立阅读的短标题，再说明全部 panels；每条图注最多 350 词。"
+        advice: "控制在 120–220 词；逐 panel 定义样品、变量、n、误差线和检验，避免在图注重复完整方法。"
+        scope: "官方硬性"
+        source_url: "https://www.nature.com/documents/ncomms-formatting-instructions.pdf"
+      references:
+        official: "参考文献按出现顺序编号；Article 通常最多 70 条，每个编号只列一项并包含文章标题。"
+        advice: "正文使用 Nature 编号制；优先保留直接支撑机制和方法的原始研究，综述只用于建立入口。"
+        scope: "官方硬性"
+        source_url: "https://www.nature.com/documents/ncomms-submission-guide.pdf"
+    blueprint:
+      - section: "Abstract"
+        task: "≤150 词，最后一句明确本工作的材料学推进。"
+      - section: "Introduction"
+        task: "无小标题；最后一段写研究策略、主要结果和结论。"
+      - section: "Results"
+        task: "3–5 个有信息量的小标题，每节对应 1–2 幅主图。"
+      - section: "Discussion"
+        task: "不重复结果，解释机制、局限和可推广范围。"
+      - section: "Methods + 声明"
+        task: "集中给出制备、表征、统计、Data Availability、Code Availability 和贡献声明。"
+
+  nature-materials:
+    default_article_type: "Article"
+    verified_on: "2026-10-26"
+    quick_specs:
+      abstract:
+        official: "无参考文献摘要不超过 150 词。"
+        advice: "控制在 130–150 词，必须同时出现材料设计逻辑、最关键定量结果和一般性机制。"
+        scope: "官方硬性"
+        source_url: "https://www.nature.com/nmat/content"
+      manuscript_structure:
+        official: "主文不超过 3000 词（不含摘要、Methods、参考文献和图注）；Introduction 不设标题，Results 用主题小标题，Discussion 不设小标题，随后 Online Methods。"
+        advice: "用 3 个 Results 小节完成“设计/现象—机制—普适验证”；Discussion 只保留理论推进、边界和未来可检验命题。"
+        scope: "官方硬性"
+        source_url: "https://www.nature.com/nmat/content"
+      display_items:
+        official: "主文最多 6 个展示项（图与表合计）。"
+        advice: "建议 5 幅主图 + 0–1 个关键表；把常规 XRD、重复曲线和参数扫描移入 Extended Data/SI。"
+        scope: "官方硬性"
+        source_url: "https://www.nature.com/nmat/content"
+      panel_labels:
+        official: "沿用 Nature Portfolio 制作规范：小写粗体 a、b、c，多分图标签位置与字号一致。"
+        advice: "统一左上角小写 a、b、c；不要用 A–F 或 (a) 与 a 混排。"
+        scope: "官方惯例"
+        source_url: "https://www.nature.com/nature/for-authors/final-submission"
+      figure_legends:
+        official: "每条图注以整图短标题开头，逐 panel 说明并定义符号、统计量与误差线；沿用 Nature Portfolio 图注格式。"
+        advice: "每图约 100–180 词；标题说结论，正文说明看到了什么，不在图注讨论意义。"
+        scope: "官方惯例"
+        source_url: "https://www.nature.com/nature/for-authors/formatting-guide"
+      references:
+        official: "Article 最多 50 条参考文献；采用 Nature 连续编号制和文内上标引用。"
+        advice: "把参考文献预算分成背景 10–15 条、机制比较 20–25 条、方法/数据 10 条左右。"
+        scope: "官方硬性"
+        source_url: "https://www.nature.com/nmat/content"
+    blueprint:
+      - section: "Abstract"
+        task: "≤150 词，避免堆工艺名，突出材料概念和机制。"
+      - section: "Introduction（无标题）"
+        task: "约 500–650 词，从材料领域瓶颈收敛到可检验的设计命题。"
+      - section: "Results 1"
+        task: "Fig. 1–2 证明材料状态与核心性能，不把常规表征当主结论。"
+      - section: "Results 2–3"
+        task: "Fig. 3–5 给出多尺度机制和跨条件/跨成分验证。"
+      - section: "Discussion + Online Methods"
+        task: "Discussion 无小标题；Methods 给足复现细节、统计和数据声明。"
+
+  science-advances:
+    default_article_type: "Research Article"
+    verified_on: "2026-10-26"
+    quick_specs:
+      abstract:
+        official: "官网未规定固定上限：公开作者信息页未给一个对所有 Research Article 稳定适用的摘要字数。"
+        advice: "建议 150–200 词单段，按背景 → 问题 → 方法 → 2–3 个定量结果 → 意义组织。"
+        scope: "官网未规定固定上限"
+        source_url: "https://www.science.org/content/page/science-advances-information-authors"
+      manuscript_structure:
+        official: "已发表 Research Article 通常为 Abstract → Introduction → Results → Discussion → Materials and Methods → Supplementary Materials → References and Notes → Acknowledgments/声明。"
+        advice: "用 Introduction、Results、Discussion 分开写；材料制备和算法细节放 Materials and Methods，核心验证不得只在补充材料。"
+        scope: "官方惯例"
+        source_url: "https://www.science.org/content/page/science-advances-information-authors"
+      display_items:
+        official: "官网未规定固定上限：作者信息页未公布统一的主图/表总数上限。"
+        advice: "建议 5–7 幅主图，每幅 3–6 个 panel；把参数敏感性、重复实验和完整谱图移到 Supplementary Materials。"
+        scope: "官网未规定固定上限"
+        source_url: "https://www.science.org/content/page/science-advances-information-authors"
+      panel_labels:
+        official: "Science Advances 已发表研究论文采用大写 A、B、C，图注写作 (A)、(B)、(C)。"
+        advice: "主文与补充图统一用大写 A、B、C；避免与坐标轴变量 A、B 冲突。"
+        scope: "官方惯例"
+        source_url: "https://www.science.org/doi/pdf/10.1126/sciadv.abe4166"
+      figure_legends:
+        official: "图注以图号和标题开始，并逐项解释 panels、符号、比例尺、样本量、误差与统计检验。"
+        advice: "用“Fig. 1. 结论标题。(A)... (B)...”格式；每幅图的统计信息一次写全。"
+        scope: "官方惯例"
+        source_url: "https://www.science.org/content/page/science-advances-information-authors"
+      references:
+        official: "采用连续编号的 References and Notes；主文和补充材料共享连续编号，文末按引用顺序排列。"
+        advice: "正文按 (1)、(2–4) 的 AAAS 版式准备；不要为补充材料另开一套参考文献编号。"
+        scope: "官方惯例"
+        source_url: "https://www.science.org/content/page/science-advances-information-authors"
+    blueprint:
+      - section: "Abstract"
+        task: "150–200 词写清推进、证据和影响。"
+      - section: "Introduction"
+        task: "3–5 段界定问题、现有争议与本文策略。"
+      - section: "Results"
+        task: "4–6 个小节，以图为骨架展示材料状态、性能、机制和验证。"
+      - section: "Discussion"
+        task: "联系广泛科学问题，交代局限和适用范围。"
+      - section: "Materials and Methods"
+        task: "提供可复现流程；把非核心扩展放 Supplementary Materials。"
+
+  communications-materials:
+    default_article_type: "Article"
+    verified_on: "2026-10-26"
+    quick_specs:
+      abstract:
+        official: "Article 摘要不超过 150 词，不列参考文献。"
+        advice: "写 130–150 词，最后一句明确对具体材料分支的显著推进。"
+        scope: "官方硬性"
+        source_url: "https://www.nature.com/documents/commsmat-checklist.pdf"
+      manuscript_structure:
+        official: "Article 使用 Introduction → Results → Discussion → Methods → References；Results 和 Methods 用主题小标题，并在 Methods 后给 Data Availability。"
+        advice: "以 4 个 Results 小节组织：材料设计、组织证据、性能/功能、机制与边界。"
+        scope: "官方惯例"
+        source_url: "https://www.nature.com/commsmat/submit"
+      display_items:
+        official: "主文图与表合计最多 10 个。"
+        advice: "建议 5–7 幅主图；除非表格承担比较结论，否则优先把配方/参数表放补充材料。"
+        scope: "官方硬性"
+        source_url: "https://www.nature.com/documents/commsmat-checklist.pdf"
+      panel_labels:
+        official: "每个 panel 用单个字母标识；Nature Portfolio 实例与制作规范采用小写 a、b、c。"
+        advice: "统一小写 a、b、c，置左上角；不使用 a1、a2 二级标号。"
+        scope: "官方惯例"
+        source_url: "https://www.nature.com/documents/commsmat-checklist.pdf"
+      figure_legends:
+        official: "每条图注不超过 350 词；先写整图短标题，再逐 panel 描述并定义误差与统计。"
+        advice: "把图注控制在 100–200 词，使用 a、b、c 顺序对应，不写“左图/右图”。"
+        scope: "官方硬性"
+        source_url: "https://www.nature.com/documents/commsmat-checklist.pdf"
+      references:
+        official: "Article 通常最多 70 条；按正文、表和图中首次出现顺序编号，并按 Communications Materials 样式列出。"
+        advice: "正文用连续编号；确保图注中首次出现的文献不会打乱主文编号。"
+        scope: "官方硬性"
+        source_url: "https://www.nature.com/documents/commsmat-checklist.pdf"
+    blueprint:
+      - section: "Abstract"
+        task: "≤150 词，说明对一个材料专业方向的显著推进。"
+      - section: "Introduction"
+        task: "建立专业问题、缺口与研究策略。"
+      - section: "Results"
+        task: "4 个主题小节，依次回答设计、组织、性能和机制。"
+      - section: "Discussion"
+        task: "说明与现有模型的关系、局限和可推广边界。"
+      - section: "Methods + Data Availability"
+        task: "给足复现细节、统计、原始数据位置与必要代码信息。"
+
+  advanced-materials:
+    default_article_type: "Research Article"
+    verified_on: "2026-10-26"
+    quick_specs:
+      abstract:
+        official: "摘要不超过 200 词，使用现在时和非人称写法，不含参考文献；另列 3–7 个关键词。"
+        advice: "写 170–200 词：问题和设计原则约 50 词，方法约 25 词，定量结果约 85 词，材料意义约 30 词。"
+        scope: "官方硬性"
+        source_url: "https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines"
+      manuscript_structure:
+        official: "Research Article 通常 3000–8000 词；建议包含 Introduction、Main Text、Conclusion，可选 Experimental/Methods，随后 Acknowledgements、References 和 ToC。"
+        advice: "采用 Introduction → Results and Discussion（3–5 个主题小节）→ Conclusion → Experimental Section；结论写设计准则，不逐图复述。"
+        scope: "官方惯例"
+        source_url: "https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines"
+      display_items:
+        official: "典型 Research Article 含 3–8 个展示项（图、示意图和表合计）。"
+        advice: "建议 5–7 个展示项：1 个设计示意、3–5 个数据图、0–1 个比较表；另备 ToC 图。"
+        scope: "官方惯例"
+        source_url: "https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines"
+      panel_labels:
+        official: "分图标签用 12 pt 无衬线小写 a、b、c，所有图保持一致并优先放在左上角。"
+        advice: "使用 Arial/Helvetica 12 pt 小写标签；深色显微图可用白字黑框，但位置不能漂移。"
+        scope: "官方硬性"
+        source_url: "https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines"
+      figure_legends:
+        official: "每个 Figure/Scheme 均有 caption，正文按数字顺序首次提及；标题和必要说明置于 caption，不写进图面。"
+        advice: "图注先写一句结论式标题，再逐 panel 说明样品、测试、n 和误差；统计方法写到能复核。"
+        scope: "官方惯例"
+        source_url: "https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines"
+      references:
+        official: "文内使用方括号连续编号，如 [1]；按首次出现顺序排列，每个编号只放一条文献。初投具体著录格式可自由但须一致。"
+        advice: "直接用 [1]、[2–4] 编号；文末保留文章全标题和 DOI，便于录用后自动套版。"
+        scope: "官方硬性"
+        source_url: "https://advanced.onlinelibrary.wiley.com/hub/journal/15214095/author-guidelines"
+    blueprint:
+      - section: "Abstract + Keywords"
+        task: "≤200 词，3–7 个关键词；强调可迁移的材料设计逻辑。"
+      - section: "Introduction"
+        task: "约 600–900 词，最后一段明确设计、结果和优势。"
+      - section: "Results and Discussion"
+        task: "3–5 个主题小节，把结果与解释就近结合。"
+      - section: "Conclusion"
+        task: "约 200–350 词，总结机制、设计规则和适用范围。"
+      - section: "Experimental + ToC"
+        task: "方法保证复现；另写 50–60 词 ToC 文案并配规定尺寸 ToC 图。"
+
+  materials-today:
+    default_article_type: "Research Article"
+    verified_on: "2026-10-26"
+    quick_specs:
+      abstract:
+        official: "官网未规定固定上限：Materials Today 的公开指南按文章类型管理，未公布一个跨 Research、Review 与 Short Communication 通用字数。"
+        advice: "原创研究建议 180–220 词单段；用 1 句定位问题、1 句策略、2–3 句定量结果和 1 句广泛材料意义。"
+        scope: "官网未规定固定上限"
+        source_url: "https://www.sciencedirect.com/journal/materials-today/publish/guide-for-authors"
+      manuscript_structure:
+        official: "研究稿遵循 Abstract → Keywords → Introduction → Experimental/Methods → Results and Discussion → Conclusions → Declarations → References。"
+        advice: "把综述式背景压到 Introduction；Results and Discussion 以材料概念为小标题，而不是按仪器顺序写。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/materials-today/publish/guide-for-authors"
+      display_items:
+        official: "官网未规定固定上限：公开指南未给 Research Article 统一图表总数。"
+        advice: "建议 5–7 幅主图和不超过 1 个主表；第一幅必须快速说明材料概念，最后一幅给跨体系或应用级验证。"
+        scope: "官网未规定固定上限"
+        source_url: "https://www.sciencedirect.com/journal/materials-today/publish/guide-for-authors"
+      panel_labels:
+        official: "已发表论文和 Elsevier 排版采用小写 (a)、(b)、(c) 分图引用，标签在整稿中保持一致。"
+        advice: "图内用小写 a、b、c 或 (a)、(b)、(c)，一旦选定全稿一致；推荐左上角粗体 (a)。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/materials-today"
+      figure_legends:
+        official: "每幅图必须有独立 caption，按首次出现顺序编号；定义所有符号、比例尺、误差线与统计信息。"
+        advice: "每条图注约 80–180 词；标题讲结论，分图说明只写理解数据所需条件。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/materials-today/publish/guide-for-authors"
+      references:
+        official: "初投可使用任一一致的参考文献格式；录用后套用期刊连续编号样式，文内通常以方括号编号。"
+        advice: "初稿直接使用 [1]、[2–4]，文末按引用顺序排列并补全 DOI，减少转投和校样改动。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/materials-today/publish/guide-for-authors"
+    blueprint:
+      - section: "Abstract"
+        task: "180–220 词，先给广泛材料意义，再给量化证据。"
+      - section: "Introduction"
+        task: "以跨材料门类问题开篇，收敛到本文概念。"
+      - section: "Results and Discussion 1"
+        task: "Fig. 1–3 证明概念、材料状态与核心性能。"
+      - section: "Results and Discussion 2"
+        task: "Fig. 4–6 给出机制、稳健性与应用条件。"
+      - section: "Conclusions + Methods"
+        task: "凝练设计准则；方法、数据声明和利益冲突完整列出。"
+
+  pnas:
+    default_article_type: "Research Report"
+    verified_on: "2026-10-26"
+    quick_specs:
+      abstract:
+        official: "Abstract 不超过 250 词；另需 Significance Statement 不超过 120 词，并至少列 3 个关键词。"
+        advice: "摘要写 180–230 词；Significance 用非专业语言回答“解决什么普遍问题、为什么现在重要”。"
+        scope: "官方硬性"
+        source_url: "https://www.pnas.org/author-center/submitting-your-manuscript"
+      manuscript_structure:
+        official: "Research Report 首选 6 页、最多 12 页；标准 6 页稿约 4000 词。顺序含 Title、Abstract、Significance、Main Text、Materials and Methods、Acknowledgments、References、Figures/Tables。"
+        advice: "采用 Introduction → Results → Discussion → Materials and Methods；用 Significance 承担跨领域解释，不在摘要重复。"
+        scope: "官方硬性"
+        source_url: "https://www.pnas.org/author-center/submitting-your-manuscript"
+      display_items:
+        official: "标准 6 页 Research Report 约配 4 个中等大小图表展示项。"
+        advice: "建议 4 幅主图或 3 图 + 1 表；每幅图合并 3–6 个紧密相关 panel，避免把单一曲线拆成独立图。"
+        scope: "官方惯例"
+        source_url: "https://www.pnas.org/author-center/submitting-your-manuscript"
+      panel_labels:
+        official: "PNAS 已发表版式使用大写 A、B、C 标识分图，图注对应写作 (A)、(B)、(C)。"
+        advice: "全稿统一大写粗体 A、B、C，置左上角；正文引用写 Fig. 2A，不写 Fig. 2a。"
+        scope: "官方惯例"
+        source_url: "https://www.pnas.org/content/pnas/116/51/25535.full.pdf"
+      figure_legends:
+        official: "图注以 Fig. 编号和一句说明开始，随后用 (A)、(B) 逐 panel 解释；定义比例尺、统计量、样本量与显著性。"
+        advice: "每条图注约 100–200 词；把方法细节留在 Materials and Methods，但统计定义必须就地给出。"
+        scope: "官方惯例"
+        source_url: "https://www.pnas.org/author-center/submitting-your-manuscript"
+      references:
+        official: "标准 6 页稿约 50 条参考文献；按出现顺序编号，文内采用圆括号编号，如 (1) 或 (2–4)。"
+        advice: "使用 PNAS 编号样式，不按作者字母排序；方法和 SI 引用也纳入同一连续序列。"
+        scope: "官方惯例"
+        source_url: "https://www.pnas.org/author-center/submitting-your-manuscript"
+    blueprint:
+      - section: "Abstract"
+        task: "≤250 词，完整覆盖问题、方法、结果和结论。"
+      - section: "Significance Statement"
+        task: "≤120 词，用跨学科语言解释为何结果重要。"
+      - section: "Introduction + Results"
+        task: "Introduction 约 3–5 段；Results 由 3–4 幅主图推动。"
+      - section: "Discussion"
+        task: "讨论广泛科学意义、局限和可检验预测。"
+      - section: "Materials and Methods"
+        task: "给足复现信息，补齐数据、代码、贡献和利益声明。"
+
+  acta-materialia:
+    default_article_type: "Full Length Article"
+    verified_on: "2026-10-26"
+    quick_specs:
+      abstract:
+        official: "摘要通常少于 200 词且不得超过 250 词；避免参考文献。"
+        advice: "写 180–220 词，至少包含合金状态、关键工艺、2–3 个定量结果和明确机制结论。"
+        scope: "官方硬性"
+        source_url: "https://www.sciencedirect.com/journal/acta-materialia/publish/guide-for-authors"
+      manuscript_structure:
+        official: "正文采用编号章节；推荐顺序为 Abstract、Introduction、Experimental、Results、Discussion、Conclusions、Acknowledgements、References、Appendices。"
+        advice: "Results 与 Discussion 分开：Results 只建立证据链，Discussion 用模型、定量关系和文献对照解释机制。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/acta-materialia/publish/guide-for-authors"
+      display_items:
+        official: "Full Length Article 的图表总数官网未规定固定上限。"
+        advice: "建议 6–8 幅主图、0–2 个主表；常规组织表征合并，给机制模型和独立验证保留至少 2 幅图。"
+        scope: "官网未规定固定上限"
+        source_url: "https://www.sciencedirect.com/journal/acta-materialia/publish/guide-for-authors"
+      panel_labels:
+        official: "已发表 Acta Materialia 论文采用小写 (a)、(b)、(c) 标识分图。"
+        advice: "用小写粗体 (a)、(b)、(c) 放左上角；所有显微图同时给比例尺。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/acta-materialia"
+      figure_legends:
+        official: "图按正文出现顺序编号，caption 解释所有分图、符号、比例尺和误差；图片源文件在录用阶段独立提交。"
+        advice: "图注结构为“一句描述 + (a)...(b)... + 统计/缩写定义”，避免在 caption 写长篇讨论。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/acta-materialia/publish/guide-for-authors"
+      references:
+        official: "按正文出现顺序编号，文内以方括号显示，如 [1]；文末按编号排列。"
+        advice: "直接使用 [1]、[2–4]；优先引用原始机制论文，并在 Discussion 中逐条对照差异。"
+        scope: "官方硬性"
+        source_url: "https://www.sciencedirect.com/journal/acta-materialia/publish/guide-for-authors"
+    blueprint:
+      - section: "Abstract"
+        task: "180–220 词，量化组织、性能与机制。"
+      - section: "1. Introduction"
+        task: "批判性梳理争议，最后明确假设和推进点。"
+      - section: "2. Experimental"
+        task: "完整写成分、加工历史、样品几何、测试条件和统计。"
+      - section: "3. Results"
+        task: "按证据层级展示相/组织、性能、原位或多尺度观测。"
+      - section: "4. Discussion + 5. Conclusions"
+        task: "用定量模型闭环机制，结论凝练成可推广的处理—结构—性能关系。"
+
+  corrosion-science:
+    default_article_type: "Research Article"
+    verified_on: "2026-10-26"
+    quick_specs:
+      abstract:
+        official: "摘要不得超过 250 词，需简明说明目的、方法、主要结果和结论，通常不列参考文献。"
+        advice: "写 180–220 词，给出介质、温度/电位、暴露时间和至少 2 个定量腐蚀指标。"
+        scope: "官方硬性"
+        source_url: "https://www.sciencedirect.com/journal/corrosion-science/publish/guide-for-authors"
+      manuscript_structure:
+        official: "采用编号章节：Introduction → Experimental/Methods → Results → Discussion → Conclusions → Declarations → References。"
+        advice: "把电化学结果、表面/截面证据与反应机制分层；Discussion 必须解释控制步骤而非只做耐蚀性排序。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/corrosion-science/publish/guide-for-authors"
+      display_items:
+        official: "Research Article 的图表总数官网未规定固定上限。"
+        advice: "建议 6–8 幅主图：环境与流程、动力学、极化/EIS、产物相、表面/截面、机制图和重复性。"
+        scope: "官网未规定固定上限"
+        source_url: "https://www.sciencedirect.com/journal/corrosion-science/publish/guide-for-authors"
+      panel_labels:
+        official: "Elsevier 已发表版式使用小写 (a)、(b)、(c) 分图标识。"
+        advice: "左上角统一 (a)、(b)、(c)；EIS、极化和显微图不要各用一套字号。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/corrosion-science"
+      figure_legends:
+        official: "每幅图提供 caption，并定义测试条件、符号、误差线、比例尺和重复次数。"
+        advice: "腐蚀图注必须写明溶液、温度、时间、电极面积/扫描条件中影响复现的关键量。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/corrosion-science/publish/guide-for-authors"
+      references:
+        official: "初投参考文献格式可自由但须一致；出版采用按出现顺序的方括号编号。"
+        advice: "用 [1]、[2–4]；腐蚀机理引用优先选择给出原始动力学或界面证据的论文。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/corrosion-science/publish/guide-for-authors"
+    blueprint:
+      - section: "Abstract"
+        task: "180–220 词，写清环境参数和定量耐蚀结果。"
+      - section: "Introduction"
+        task: "聚焦失效机理缺口，不写泛化的腐蚀危害综述。"
+      - section: "Experimental"
+        task: "给出材料状态、介质、温度、时间、电化学和表面分析条件。"
+      - section: "Results"
+        task: "按动力学—产物—界面/截面证据排序。"
+      - section: "Discussion + Conclusions"
+        task: "提出受证据约束的反应路径和控制步骤，说明适用边界。"
+
+  intermetallics:
+    default_article_type: "Research Article"
+    verified_on: "2026-10-26"
+    quick_specs:
+      abstract:
+        official: "摘要不超过 250 词，独立概括目的、方法、主要发现和结论。"
+        advice: "写 170–220 词，明确相组成/有序化状态、热处理、关键性能和相稳定机制。"
+        scope: "官方硬性"
+        source_url: "https://www.sciencedirect.com/journal/intermetallics/publish/guide-for-authors"
+      manuscript_structure:
+        official: "编号章节通常按 Introduction → Experimental/Methods → Results and Discussion → Conclusions → Declarations → References。"
+        advice: "相变或有序化工作用“热力学/动力学预测—相证据—性能响应—机制”组织，而不是按表征设备排序。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/intermetallics/publish/guide-for-authors"
+      display_items:
+        official: "Research Article 图表数量官网未规定固定上限。"
+        advice: "建议 5–7 幅主图；至少一幅把相结构证据与性能或动力学直接关联。"
+        scope: "官网未规定固定上限"
+        source_url: "https://www.sciencedirect.com/journal/intermetallics/publish/guide-for-authors"
+      panel_labels:
+        official: "已发表论文通常以小写 (a)、(b)、(c) 标注分图。"
+        advice: "统一左上角 (a)、(b)、(c)；衍射峰、相名和晶向标注保持同一符号体系。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/intermetallics"
+      figure_legends:
+        official: "图注需解释全部 panels、相/符号、比例尺、实验条件和统计信息。"
+        advice: "XRD/TEM 图注明确状态、温度/时间和索引依据；力学图注明确样品数与误差。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/intermetallics/publish/guide-for-authors"
+      references:
+        official: "初投格式灵活但须一致；出版采用按出现顺序的方括号编号。"
+        advice: "使用 [1]、[2–4]，把相图/热力学数据库、原始相结构和机制论文分别引用。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/intermetallics/publish/guide-for-authors"
+    blueprint:
+      - section: "Abstract"
+        task: "170–220 词，突出相稳定性或有序化的新认识。"
+      - section: "Introduction"
+        task: "明确相、缺陷或转变机理争议。"
+      - section: "Experimental/Methods"
+        task: "完整报告成分、热历史、相分析和计算设置。"
+      - section: "Results and Discussion"
+        task: "预测/观察、相证据、动力学和性能逐层闭环。"
+      - section: "Conclusions"
+        task: "给出可推广的相稳定或结构—性能规则。"
+
+  journal-alloys-compounds:
+    default_article_type: "Research Article"
+    verified_on: "2026-10-26"
+    quick_specs:
+      abstract:
+        official: "摘要不超过 250 词，通常为无小标题单段且不含参考文献。"
+        advice: "写 180–220 词，必须给出成分、制备状态、主要结构证据和定量性能增量。"
+        scope: "官方硬性"
+        source_url: "https://www.sciencedirect.com/journal/journal-of-alloys-and-compounds/publish/guide-for-authors"
+      manuscript_structure:
+        official: "研究稿采用 Abstract → Keywords → Introduction → Experimental/Methods → Results and Discussion → Conclusions → Declarations → References。"
+        advice: "Results and Discussion 按科学问题分节；避免将 XRD、SEM、TEM、力学测试各写成互不关联的设备章节。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/journal-of-alloys-and-compounds/publish/guide-for-authors"
+      display_items:
+        official: "Research Article 图表数量官网未规定固定上限。"
+        advice: "建议 5–7 幅主图和 0–2 个表；重复谱图和全参数表放补充材料。"
+        scope: "官网未规定固定上限"
+        source_url: "https://www.sciencedirect.com/journal/journal-of-alloys-and-compounds/publish/guide-for-authors"
+      panel_labels:
+        official: "已发表版式采用小写 (a)、(b)、(c) 标注多分图。"
+        advice: "统一 (a)、(b)、(c) 左上角；同一种相/样品在所有图中保持颜色一致。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/journal-of-alloys-and-compounds"
+      figure_legends:
+        official: "每幅图提供独立 caption，按顺序解释各 panel、符号、缩写、比例尺和误差。"
+        advice: "图注明确 at.%/wt.%、热处理状态和测试条件，避免只写“不同样品的曲线”。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/journal-of-alloys-and-compounds/publish/guide-for-authors"
+      references:
+        official: "初投可采用任一一致格式；出版使用连续方括号编号并按首次引用排序。"
+        advice: "用 [1]、[2–4]；对数据库、标准卡片和软件版本分别给出可追踪引用。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/journal-of-alloys-and-compounds/publish/guide-for-authors"
+    blueprint:
+      - section: "Abstract"
+        task: "180–220 词，量化成分—结构—性能关系。"
+      - section: "Introduction"
+        task: "说明该合金/化合物体系中的具体增量。"
+      - section: "Experimental"
+        task: "列清原料、配比、制备、热处理和测试重复。"
+      - section: "Results and Discussion"
+        task: "按相结构—组织—性能—机制组织，完成交叉证据。"
+      - section: "Conclusions"
+        task: "只保留 3–5 条受数据支持的结论。"
+
+  journal-materials-science-technology:
+    default_article_type: "Research Article"
+    verified_on: "2026-10-26"
+    quick_specs:
+      abstract:
+        official: "摘要应简洁独立；官网未规定固定上限。"
+        advice: "建议 180–250 词，包含材料状态、加工路线、2–3 个定量结果和机制结论。"
+        scope: "官网未规定固定上限"
+        source_url: "https://www.sciencedirect.com/journal/journal-of-materials-science-and-technology/publish/guide-for-authors"
+      manuscript_structure:
+        official: "研究稿通常采用 Introduction → Experimental/Materials and Methods → Results and Discussion → Conclusions → Declarations → References。"
+        advice: "用 4–6 个编号小节组织；先给工艺和组织，再给性能，最后用多尺度证据解释机制。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/journal-of-materials-science-and-technology/publish/guide-for-authors"
+      display_items:
+        official: "Research Article 图表总数官网未规定固定上限。"
+        advice: "建议 6–8 幅主图和不超过 2 个主表；把批量工艺参数和补充谱图移入 SI。"
+        scope: "官网未规定固定上限"
+        source_url: "https://www.sciencedirect.com/journal/journal-of-materials-science-and-technology/publish/guide-for-authors"
+      panel_labels:
+        official: "出版实例使用小写 (a)、(b)、(c) 多分图标识。"
+        advice: "固定左上角 (a)、(b)、(c)，保证缩到单栏后仍不小于约 8 pt。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/journal-of-materials-science-and-technology"
+      figure_legends:
+        official: "caption 需按 panel 解释内容并定义样品、符号、比例尺、误差和统计。"
+        advice: "图注明确合金简称对应的完整成分与处理态，首次出现时不要只写 C1/C2。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/journal-of-materials-science-and-technology/publish/guide-for-authors"
+      references:
+        official: "初投格式可自由但须一致；出版采用按首次出现顺序的方括号编号。"
+        advice: "使用 [1]、[2–4]；近 5 年进展与奠基机制文献兼顾，不用综述替代关键原始证据。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/journal-of-materials-science-and-technology/publish/guide-for-authors"
+    blueprint:
+      - section: "Abstract"
+        task: "180–250 词，突出技术推进和机制。"
+      - section: "Introduction"
+        task: "界定材料技术问题与现有路线局限。"
+      - section: "Experimental"
+        task: "成分、加工、热处理、表征和统计完整可复现。"
+      - section: "Results and Discussion"
+        task: "工艺—组织—性能—机制逐层推进。"
+      - section: "Conclusions"
+        task: "给出可转移的材料设计或工艺窗口。"
+
+  materials-design:
+    default_article_type: "Research Article"
+    verified_on: "2026-10-26"
+    quick_specs:
+      abstract:
+        official: "摘要不超过 250 词，应独立概括目的、方法、主要结果与结论。"
+        advice: "写 180–220 词，明确设计变量、制造/加工路线、性能目标和验证结果。"
+        scope: "官方硬性"
+        source_url: "https://www.sciencedirect.com/journal/materials-and-design/publish/guide-for-authors"
+      manuscript_structure:
+        official: "研究稿采用 Introduction → Materials and Methods → Results and Discussion → Conclusions → Declarations → References。"
+        advice: "把“设计目标—决策变量—制造—验证—机制/模型”作为主线，避免只报告一个优化结果。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/materials-and-design/publish/guide-for-authors"
+      display_items:
+        official: "Research Article 图表数量官网未规定固定上限。"
+        advice: "建议 5–7 幅主图：设计空间、流程、组织、性能、模型解释、基准比较和泛化验证。"
+        scope: "官网未规定固定上限"
+        source_url: "https://www.sciencedirect.com/journal/materials-and-design/publish/guide-for-authors"
+      panel_labels:
+        official: "已发表版式使用小写 (a)、(b)、(c) 标识多分图。"
+        advice: "统一左上角 (a)、(b)、(c)；模型图和实验图共享同一配色含义。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/materials-and-design"
+      figure_legends:
+        official: "每幅图有独立 caption，解释 panels、符号、单位、误差、样本量和统计。"
+        advice: "设计空间/机器学习图注明确训练测试划分和误差定义；实验图注明确重复与材料状态。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/materials-and-design/publish/guide-for-authors"
+      references:
+        official: "初投可用任一一致格式；出版使用连续方括号编号。"
+        advice: "用 [1]、[2–4]；同时引用材料机理、设计方法和验证基准，避免只引用算法论文。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/materials-and-design/publish/guide-for-authors"
+    blueprint:
+      - section: "Abstract"
+        task: "180–220 词写清设计目标、变量、验证和收益。"
+      - section: "Introduction"
+        task: "说明现有设计范式为什么不足。"
+      - section: "Materials and Methods"
+        task: "定义设计空间、制造路径、模型和实验验证。"
+      - section: "Results and Discussion"
+        task: "由设计决策到组织/性能，再做基准和泛化验证。"
+      - section: "Conclusions"
+        task: "输出可执行设计规则与边界，不只重复最优值。"
+
+  materials-science-engineering-a:
+    default_article_type: "Research Article"
+    verified_on: "2026-10-26"
+    quick_specs:
+      abstract:
+        official: "摘要少于 250 词，单段概括原因、主要结果和结论。"
+        advice: "写 180–220 词，给出材料状态、测试温度/应变速率、强塑性指标和变形/断裂机制。"
+        scope: "官方硬性"
+        source_url: "https://www.sciencedirect.com/journal/materials-science-and-engineering-a/publish/guide-for-authors"
+      manuscript_structure:
+        official: "采用编号章节：Introduction → Material/Experimental methods → Results → Discussion → Conclusions → Declarations → References。"
+        advice: "把 Results 与 Discussion 分开；Discussion 围绕变形、损伤或断裂机制建立定量闭环。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/materials-science-and-engineering-a/publish/guide-for-authors"
+      display_items:
+        official: "Research Article 图表总数官网未规定固定上限。"
+        advice: "建议 6–8 幅主图：初始组织、应力应变、加工硬化、断口/局部应变、机制证据、模型与验证。"
+        scope: "官网未规定固定上限"
+        source_url: "https://www.sciencedirect.com/journal/materials-science-and-engineering-a/publish/guide-for-authors"
+      panel_labels:
+        official: "出版实例以小写 (a)、(b)、(c) 标识分图。"
+        advice: "统一左上角 (a)、(b)、(c)；应力应变、加工硬化和 DIC 图采用一致样品颜色。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/materials-science-and-engineering-a"
+      figure_legends:
+        official: "caption 解释每个 panel、样品状态、测试条件、比例尺、误差和统计。"
+        advice: "拉伸图注明确工程/真实应力应变、温度、应变速率、试样数和误差；断口图必须给比例尺。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/materials-science-and-engineering-a/publish/guide-for-authors"
+      references:
+        official: "初投格式可自由但须一致；出版采用连续方括号编号。"
+        advice: "用 [1]、[2–4]；把本构、变形机制和同类合金性能基准分别引用。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/materials-science-and-engineering-a/publish/guide-for-authors"
+    blueprint:
+      - section: "Abstract"
+        task: "180–220 词，量化力学指标并给出机制。"
+      - section: "Introduction"
+        task: "提出结构材料的具体变形/断裂问题。"
+      - section: "Experimental"
+        task: "材料历史、试样几何、测试条件和重复数必须完整。"
+      - section: "Results"
+        task: "组织—曲线—局部变形—断裂证据按顺序呈现。"
+      - section: "Discussion + Conclusions"
+        task: "用加工硬化、本构或微观机制解释，并说明结构应用边界。"
+
+  scripta-materialia:
+    default_article_type: "Regular Article"
+    verified_on: "2026-10-26"
+    quick_specs:
+      abstract:
+        official: "摘要最多 150 词。"
+        advice: "写 120–150 词，只保留一个问题、一个方法组合、2 个关键定量结果和一个机制结论。"
+        scope: "官方硬性"
+        source_url: "https://www.sciencedirect.com/journal/scripta-materialia/publish/guide-for-authors"
+      manuscript_structure:
+        official: "Regular Article 为短篇 Letter 体例，主文约 2500 词；采用 Abstract → 简短 Introduction → Results and Discussion → Conclusions → References。"
+        advice: "围绕单一发现写 4–5 个紧凑部分；不做长综述，不把完整项目压缩进一篇短稿。"
+        scope: "官方硬性"
+        source_url: "https://www.sciencedirect.com/journal/scripta-materialia/publish/guide-for-authors"
+      display_items:
+        official: "Regular Article 主图最多 5 幅。"
+        advice: "最佳结构是 4–5 幅图：问题/材料状态、核心现象、机制证据、对照/验证、简洁模型。"
+        scope: "官方硬性"
+        source_url: "https://www.sciencedirect.com/journal/scripta-materialia/publish/guide-for-authors"
+      panel_labels:
+        official: "已发表 Scripta Materialia 论文采用小写 (a)、(b)、(c) 分图标识。"
+        advice: "统一 (a)、(b)、(c) 左上角；每幅图少做 panel，优先放大关键证据。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/scripta-materialia"
+      figure_legends:
+        official: "每幅图提供简洁 caption 并解释全部 panels、符号、比例尺和统计。"
+        advice: "控制在约 60–130 词；图注越短，越需要图内符号和正文引用完全一致。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/scripta-materialia/publish/guide-for-authors"
+      references:
+        official: "采用按出现顺序的方括号编号；初投格式保持一致即可。"
+        advice: "参考文献只保留直接支撑单一发现的原始论文，避免为完整综述消耗短稿篇幅。"
+        scope: "官方惯例"
+        source_url: "https://www.sciencedirect.com/journal/scripta-materialia/publish/guide-for-authors"
+    blueprint:
+      - section: "Abstract"
+        task: "≤150 词，明确单一新发现。"
+      - section: "Introduction"
+        task: "约 350–500 词，快速到达未解问题。"
+      - section: "Methods"
+        task: "只写复现该发现所需的材料和方法。"
+      - section: "Results and Discussion"
+        task: "4–5 幅图形成短而完整的证据链。"
+      - section: "Conclusions"
+        task: "用 1 段说清发现、机制和材料学意义。"
+
