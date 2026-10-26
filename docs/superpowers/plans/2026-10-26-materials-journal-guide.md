@@ -147,27 +147,27 @@ Commit message: `feat: add journal search and comparison logic`
 - Consumes: `load_journals()`, `filter_journals()`, and `select_for_comparison()`.
 - Produces: Streamlit app with filters, journal cards, comparison table, evidence links, and freshness notices.
 
-- [ ] **Step 1: Write failing app smoke test**
+- [x] **Step 1: Write failing app smoke test**
 
 Use Streamlit AppTest to require the title, 17 loaded records, filter widgets, zero uncaught exceptions, and a visible evidence disclaimer.
 
-- [ ] **Step 2: Run smoke test and confirm failure**
+- [x] **Step 2: Run smoke test and confirm failure**
 
 Run: `python -m pytest tests/test_app_smoke.py -v`
 
 Expected: FAIL because `app.py` does not exist.
 
-- [ ] **Step 3: Implement the responsive Streamlit interface**
+- [x] **Step 3: Implement the responsive Streamlit interface**
 
 Render the academic editorial visual system, sidebar filters, tier summary, expandable cards, 2–4 journal comparison, official links, and Chinese evidence messaging.
 
-- [ ] **Step 4: Run app tests and confirm pass**
+- [x] **Step 4: Run app tests and confirm pass**
 
 Run: `python -m pytest tests/test_app_smoke.py -v`
 
 Expected: PASS.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 Commit message: `feat: build journal comparison web app`
 
