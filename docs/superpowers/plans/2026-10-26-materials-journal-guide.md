@@ -112,27 +112,27 @@ Commit message: `data: add metallic materials journal requirements`
 - Produces: `filter_journals(records, query="", tiers=None, publishers=None, topics=None, oa_models=None) -> list[dict]`
 - Produces: `select_for_comparison(records, ids: list[str]) -> list[dict]`
 
-- [ ] **Step 1: Write failing filtering tests**
+- [x] **Step 1: Write failing filtering tests**
 
 Cover empty filters, case-insensitive multilingual search, AND semantics across filters, OR semantics within one filter, order preservation, unknown IDs, and the 4-journal ceiling.
 
-- [ ] **Step 2: Run tests and confirm failure**
+- [x] **Step 2: Run tests and confirm failure**
 
 Run: `python -m pytest tests/test_filters.py -v`
 
 Expected: FAIL because `journal_guide.filters` does not exist.
 
-- [ ] **Step 3: Implement pure filtering functions**
+- [x] **Step 3: Implement pure filtering functions**
 
 Use normalized text matching and preserve the database order; raise `ValueError` when more than four IDs are supplied.
 
-- [ ] **Step 4: Run tests and confirm pass**
+- [x] **Step 4: Run tests and confirm pass**
 
 Run: `python -m pytest tests/test_filters.py -v`
 
 Expected: PASS.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 Commit message: `feat: add journal search and comparison logic`
 
