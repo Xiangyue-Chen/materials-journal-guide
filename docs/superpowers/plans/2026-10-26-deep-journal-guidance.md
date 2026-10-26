@@ -56,11 +56,11 @@
 - Consumes: Task 1 workbench dictionaries and requirement evidence dictionaries.
 - Produces: `render_deep_workbench(records, guidance)` plus structure, storyboard, evidence-table, and checklist renderers.
 
-- [ ] **Step 1: Write failing AppTest assertions for the workbench title, guidance/official labels, structure map, SVG storyboard, and absence of the raw placeholder phrase**
-- [ ] **Step 2: Run the focused AppTest cases and verify expected failures**
-- [ ] **Step 3: Implement the workbench and responsive SVG/CSS rendering in `app.py`**
-- [ ] **Step 4: Run focused tests and the full suite**
-- [ ] **Step 5: Commit the workbench UI**
+- [x] **Step 1: Write failing AppTest assertions for the workbench title, guidance/official labels, structure map, SVG storyboard, and absence of the raw placeholder phrase**
+- [x] **Step 2: Run the focused AppTest cases and verify expected failures**
+- [x] **Step 3: Implement the workbench and responsive SVG/CSS rendering in `app.py`**
+- [x] **Step 4: Run focused tests and the full suite**
+- [x] **Step 5: Commit the workbench UI**
 
 ### Task 3: Evidence-focused catalogue and comparison
 
