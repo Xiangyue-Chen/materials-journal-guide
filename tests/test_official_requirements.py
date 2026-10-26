@@ -118,6 +118,30 @@ def test_advanced_materials_has_exact_abstract_keyword_toc_and_figure_rules() ->
     )
 
 
+def test_pnas_has_exact_research_report_limits_and_official_templates() -> None:
+    _, official = _load()
+    pnas = official["pnas"]
+    text = _requirements_text(pnas)
+
+    assert pnas["requirement_scope"] == "期刊专属"
+    for fragment in (
+        "首选 6 页",
+        "最多 12 页",
+        "约 4000 词",
+        "50 条参考文献",
+        "4 个中等大小",
+        "少于 135 个字符",
+        "不超过 250 词",
+        "不超过 120 词",
+        "至少 3 个关键词",
+        "格式中立",
+    ):
+        assert fragment in text
+    assert sum(
+        resource["kind"] == "官方模板" for resource in pnas["resources"]
+    ) >= 2
+
+
 def test_elsevier_journals_label_shared_rules_as_publisher_generic() -> None:
     _, official = _load()
 

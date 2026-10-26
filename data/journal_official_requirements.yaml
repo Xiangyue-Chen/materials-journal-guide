@@ -457,49 +457,81 @@ journals:
 
   pnas:
     default_article_type: Research Report
-    requirement_scope: 官网未公开稳定值
+    requirement_scope: 期刊专属
     verified_on: '2026-10-26'
     source_urls:
       - https://www.pnas.org/author-center/submitting-your-manuscript
     section_requirements:
       - section: 题目
-        requirement: 使用准确描述主要发现的题目；具体长度和样式按 PNAS 官方 Research Report 条目执行。
-        scope: 官网未公开稳定值
+        requirement: 少于 135 个字符；保持简短、描述性，并让广泛科学读者可理解；避免数字、首字母缩略词、缩写、标点和双关语。
+        scope: 期刊专属
         source_url: https://www.pnas.org/author-center/submitting-your-manuscript
       - section: Abstract
-        requirement: 摘要独立概括研究背景、方法、结果和意义；本页不填当前官方入口未稳定公开的统一字数值。
-        scope: 官网未公开稳定值
+        requirement: 不超过 250 词，向普通读者说明文章的主要贡献；摘要内引用须在摘要中写全，并同时在正文引用。
+        scope: 期刊专属
         source_url: https://www.pnas.org/author-center/submitting-your-manuscript
       - section: Significance Statement
-        requirement: 原创研究按适用的官方稿件类型提供 Significance Statement，面向广泛读者解释研究为何重要。
+        requirement: Direct 和 Contributed Submission 提供不超过 120 词的 Significance Statement，使本领域之外、受过本科教育的科学家能够理解研究意义。
         scope: 期刊专属
         source_url: https://www.pnas.org/author-center/submitting-your-manuscript
-      - section: 正文
-        requirement: 按 Research Report 当前要求组织 Introduction、Results、Discussion 和 Materials and Methods；官网没有适用于所有内容类型的单一长度。
-        scope: 官网未公开稳定值
+      - section: 关键词
+        requirement: 投稿时至少 3 个关键词；题目页还须列题目、作者、单位、通讯作者、分类和适用的预印本信息。
+        scope: 期刊专属
+        source_url: https://www.pnas.org/author-center/submitting-your-manuscript
+      - section: 正文长度
+        requirement: Research Report 首选 6 页，最多 12 页；标准 6 页文章约 4000 词、50 条参考文献和 4 个中等大小的图或表。
+        scope: 期刊专属
+        source_url: https://www.pnas.org/author-center/submitting-your-manuscript
+      - section: 稿件顺序
+        requirement: 建议依次为题目页、Abstract、Significance Statement、Main text、Acknowledgments and funding、References、Figure legends；正文通常含 Introduction、Results、Discussion、Materials and Methods。
+        scope: 期刊专属
         source_url: https://www.pnas.org/author-center/submitting-your-manuscript
       - section: Materials and Methods
-        requirement: 提供足够细节支持复现，并在主文或 SI 中清楚给出材料、实验、计算和统计方法。
+        requirement: 描述程序时提供足够细节使工作能够重复；若详细方法放入 SI，主文仍须包含让读者理解程序与结果逻辑的充分信息并引用 SI 方法。
         scope: 期刊专属
         source_url: https://www.pnas.org/author-center/submitting-your-manuscript
-      - section: 图表与参考文献
-        requirement: 按官方提交页的 Research Report 限制和 PNAS 编号格式执行；不把其他稿件类型的数量套入本页。
-        scope: 官网未公开稳定值
+      - section: 图注
+        requirement: 多分图的图注首句概述整图，并至少一次明确说明每个分图；定义误差棒、SEM 或 SD、适用的 P 值/尺度尺，并给出独立数据点数量 N。
+        scope: 期刊专属
+        source_url: https://www.pnas.org/author-center/submitting-your-manuscript
+      - section: 参考文献
+        requirement: 采用 PNAS 样式并按正文首次出现顺序编号；主文和 SI 分别维护引用列表，期刊论文条目包含完整题目。
+        scope: 期刊专属
         source_url: https://www.pnas.org/author-center/submitting-your-manuscript
       - section: 声明
         requirement: 提供数据可获得性、作者贡献、利益冲突和适用的研究伦理声明。
         scope: 期刊专属
         source_url: https://www.pnas.org/author-center/submitting-your-manuscript
     technical_requirements:
-      - item: 投稿文件
-        requirement: 通过 PNAS Author Center 按 Research Report 清单提交主稿、图、SI 和相关声明。
-        scope: 官网未公开稳定值
+      - item: 初投稿格式
+        requirement: 初投稿采用格式中立政策；任意格式的主稿须包含题目页、Abstract、Significance Statement、正文、参考文献、带图注的图表和适用的 SI。
+        scope: 期刊专属
+        source_url: https://www.pnas.org/author-center/submitting-your-manuscript
+      - item: 初投稿信息
+        requirement: 另提供全部作者的联系方式和利益冲突信息、数据共享计划、基金与 OA 选择，并至少各推荐 3 名合适的 Editorial Board members、NAS members 和审稿人。
+        scope: 期刊专属
+        source_url: https://www.pnas.org/author-center/submitting-your-manuscript
+      - item: 出版源文件
+        requirement: 录用后主稿使用 Word、RTF 或 LaTeX，主稿中不嵌入图、表或示意图，公式必须可编辑。
+        scope: 期刊专属
+        source_url: https://www.pnas.org/author-center/submitting-your-manuscript
+      - item: 图片文件
+        requirement: 图片在最终尺寸提交，接受 TIFF、EPS、PDF 或 PPT；小、中、大图约为 9 × 6 cm、11 × 11 cm、18 × 22 cm。
+        scope: 期刊专属
         source_url: https://www.pnas.org/author-center/submitting-your-manuscript
     resources:
       - label: PNAS 投稿指南
         kind: 官方指南
         url: https://www.pnas.org/author-center/submitting-your-manuscript
-        note: 选择 Research Report 查看当前文件、结构和长度要求。
+        note: 查看 Research Report 的页面、字数、章节顺序、图表、参考文献和初投稿清单。
+      - label: PNAS Research Report Word 模板
+        kind: 官方模板
+        url: https://www.pnas.org/pb-assets/authors/PNASTemplateforMainManuscript-1755285180130.docx
+        note: PNAS 官方可编辑主稿模板。
+      - label: PNAS Research Report LaTeX 模板
+        kind: 官方模板
+        url: https://www.overleaf.com/latex/templates/template-for-preparing-your-research-report-submission-to-pnas-using-overleaf/fzcbzjvpvnxn
+        note: NAS 提供并由 Overleaf 托管的官方 Research Report 模板。
       - label: PNAS 材料研究已发表实例
         kind: 已发表论文实例
         url: https://www.pnas.org/content/pnas/111/13/4776.full.pdf
