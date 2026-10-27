@@ -19,6 +19,7 @@ from journal_guide import (
     select_for_comparison,
 )
 from journal_guide.format_specs import load_format_specs
+from journal_guide.examples import load_examples
 
 
 ROOT = Path(__file__).resolve().parent
@@ -26,6 +27,7 @@ DATA_PATH = ROOT / "data" / "journals.yaml"
 GUIDANCE_PATH = ROOT / "data" / "journal_guidance.yaml"
 OFFICIAL_REQUIREMENTS_PATH = ROOT / "data" / "journal_official_requirements.yaml"
 FORMAT_SPECS_PATH = ROOT / "data" / "journal_format_specs.yaml"
+EXAMPLES_PATH = ROOT / "data" / "journal_examples.yaml"
 
 TIER_DESCRIPTIONS = {
     "正刊": "跨学科影响与普适意义",
@@ -97,6 +99,13 @@ def get_format_specs(
     journal_ids: tuple[str, ...],
 ) -> dict[str, dict[str, Any]]:
     return load_format_specs(FORMAT_SPECS_PATH, set(journal_ids))
+
+
+@st.cache_data(show_spinner=False)
+def get_examples(
+    journal_ids: tuple[str, ...],
+) -> dict[str, list[dict[str, object]]]:
+    return load_examples(EXAMPLES_PATH, set(journal_ids))
 
 
 def _unique(records: list[dict[str, Any]], field: str) -> list[str]:
@@ -210,6 +219,13 @@ def render_styles() -> None:
         .blueprint-step {
           color: var(--gold); font-size: .76rem; font-weight: 800; letter-spacing: .08em;
         }
+        .paper-card-title {
+          font-size: 1rem; font-weight: 760; line-height: 1.42; margin: .25rem 0 .65rem;
+          min-height: 4.25rem;
+        }
+        .paper-meta { margin-bottom: .75rem; }
+        .paper-copy { color: var(--ink); font-size: .88rem; line-height: 1.62; margin-top: .55rem; }
+        .paper-copy strong { color: #624d27; }
         @media (max-width: 700px) {
           .block-container { padding-left: 1rem; padding-right: 1rem; }
         }
@@ -378,11 +394,42 @@ def render_format_quick_sheet(
             )
 
 
+def render_paper_examples(
+    record: dict[str, Any], examples: list[dict[str, object]]
+) -> None:
+    """Render three real papers as learning examples, not official templates."""
+
+    st.subheader("精选已发表实例")
+    st.caption(
+        "已发表论文只用于观察真实写法、图组和参考文献呈现，不是期刊强制模板，"
+        "也不代表编辑部推荐。"
+    )
+    columns = st.columns(3)
+    for index, item in enumerate(examples):
+        with columns[index]:
+            with st.container(border=True):
+                st.markdown(
+                    f'<div class="paper-card-title"><a href="{escape(str(item["url"]))}" '
+                    f'target="_blank">{escape(str(item["title"]))} ↗</a></div>'
+                    f'<div class="paper-meta">'
+                    f'<span class="tag">{escape(str(item["year"]))}</span>'
+                    f'<span class="tag">{escape(str(item["article_type"]))}</span>'
+                    f'<span class="tag">{escape(str(item["topic"]))}</span>'
+                    f'</div>'
+                    f'<div class="paper-copy"><strong>为什么选</strong>　'
+                    f'{escape(str(item["why_recommended"]))}</div>'
+                    f'<div class="paper-copy"><strong>重点观察</strong>　'
+                    f'{escape(str(item["look_at"]))}</div>',
+                    unsafe_allow_html=True,
+                )
+
+
 def render_deep_workbench(
     records: list[dict[str, Any]],
     guidance: dict[str, dict[str, Any]],
     official_requirements: dict[str, dict[str, Any]],
     format_specs: dict[str, dict[str, Any]],
+    examples: dict[str, list[dict[str, object]]],
 ) -> None:
     st.subheader("深度投稿工作台")
     st.caption("先按官方要求搭好稿件，再使用本站建议检查选刊契合度。默认展示原创研究论文。")
@@ -440,6 +487,8 @@ def render_deep_workbench(
             f'{escape(resource["note"])}',
             unsafe_allow_html=True,
         )
+
+    render_paper_examples(record, examples[journal_id])
 
     with st.expander("本站建议 · 选刊契合度与投稿前自查"):
         st.markdown(
@@ -537,12 +586,15 @@ def main() -> None:
     guidance = get_guidance(journal_ids)
     official_requirements = get_official_requirements(journal_ids)
     format_specs = get_format_specs(journal_ids)
+    examples = get_examples(journal_ids)
     render_header(records)
     filters = render_sidebar(records)
     filtered = filter_journals(records, **filters)
     render_tier_guide(records)
     st.divider()
-    render_deep_workbench(records, guidance, official_requirements, format_specs)
+    render_deep_workbench(
+        records, guidance, official_requirements, format_specs, examples
+    )
     st.divider()
     render_catalogue(filtered)
     st.divider()

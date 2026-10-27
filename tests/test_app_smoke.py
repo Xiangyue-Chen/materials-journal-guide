@@ -5,6 +5,7 @@ from pathlib import Path
 from streamlit.testing.v1 import AppTest
 
 from journal_guide import (
+    load_examples,
     load_format_specs,
     load_guidance,
     load_journals,
@@ -70,6 +71,7 @@ def test_app_renders_actionable_deep_submission_workbench() -> None:
     assert any("稿件各部分格式" in heading.value for heading in app.subheader)
     assert any("提交文件与技术规格" in heading.value for heading in app.subheader)
     assert any("官方模板与实例" in heading.value for heading in app.subheader)
+    assert any("精选已发表实例" in heading.value for heading in app.subheader)
     markdown = "\n".join(element.value for element in app.markdown)
     assert "本站写作建议" in markdown
     assert "官方要求" in markdown
@@ -82,6 +84,37 @@ def test_app_renders_actionable_deep_submission_workbench() -> None:
     assert "Introduction 不设标题" in tables
     assert "Discussion 不设小标题" in tables
     assert "最多 6 个展示项目" in tables
+
+
+def test_nature_workbench_shows_three_curated_papers_with_learning_cues() -> None:
+    app = AppTest.from_file(str(APP_PATH)).run(timeout=20)
+
+    assert not app.exception
+    markdown = "\n".join(element.value for element in app.markdown)
+    captions = "\n".join(element.value for element in app.caption)
+    assert "已发表论文只用于观察" in captions
+    assert "Metastable high-entropy dual-phase alloys" in markdown
+    assert "Short-range order and its impact on the CrCoNi" in markdown
+    assert "Strong yet ductile nanolamellar high-entropy alloys" in markdown
+    assert "https://doi.org/10.1038/nature17981" in markdown
+    assert markdown.count("为什么选") >= 3
+    assert markdown.count("重点观察") >= 3
+
+
+def test_examples_follow_the_selected_journal() -> None:
+    app = AppTest.from_file(str(APP_PATH)).run(timeout=20)
+    workbench = next(
+        widget for widget in app.selectbox if widget.key == "workbench_journal"
+    )
+    workbench.set_value("Acta Materialia")
+    app.run(timeout=20)
+
+    assert not app.exception
+    markdown = "\n".join(element.value for element in app.markdown)
+    assert "A precipitation-hardened high-entropy alloy" in markdown
+    assert "Reasons for the superior mechanical properties" in markdown
+    assert "Directly cast bulk eutectic" in markdown
+    assert "Metastable high-entropy dual-phase alloys" not in markdown
 
 
 def test_nature_workbench_shows_house_style_and_source_backed_limits() -> None:
@@ -180,13 +213,18 @@ def test_workbench_warns_when_official_requirements_are_stale(tmp_path: Path) ->
         APP_PATH.parent / "data" / "journal_format_specs.yaml",
         {item["id"] for item in records},
     )
+    examples = load_examples(
+        APP_PATH.parent / "data" / "journal_examples.yaml",
+        {item["id"] for item in records},
+    )
     stale_official = dict(official["nature"])
     stale_official["verified_on"] = "2020-01-01"
     script = tmp_path / "stale_workbench.py"
     script.write_text(
         "from app import render_deep_workbench\n"
         f"render_deep_workbench({[record]!r}, {{'nature': {guidance['nature']!r}}}, "
-        f"{{'nature': {stale_official!r}}}, {{'nature': {format_specs['nature']!r}}})\n",
+        f"{{'nature': {stale_official!r}}}, {{'nature': {format_specs['nature']!r}}}, "
+        f"{{'nature': {examples['nature']!r}}})\n",
         encoding="utf-8",
     )
 
