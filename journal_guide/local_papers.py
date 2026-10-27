@@ -40,6 +40,8 @@ def load_local_papers(
     papers = raw["papers"]
     if not isinstance(papers, dict):
         raise ValueError("local paper manifest papers must be a mapping")
+    if len(papers) != 3:
+        raise ValueError("local paper manifest must contain exactly 3 papers")
 
     curated: dict[str, tuple[str, dict[str, object]]] = {}
     for journal_id, records in examples.items():

@@ -64,6 +64,7 @@ def test_manifest_identifies_each_pdf_with_its_curated_example() -> None:
 @pytest.mark.parametrize(
     ("mutation", "message"),
     [
+        ("wrong_count", r"exactly 3"),
         ("unknown_doi", r"unknown curated example"),
         ("wrong_journal", r"journal_id does not match"),
         ("wrong_title", r"title does not match"),
@@ -80,7 +81,9 @@ def test_loader_rejects_untrusted_or_mismatched_manifest_entries(
     data = yaml.safe_load(MANIFEST_PATH.read_text(encoding="utf-8"))
     doi = "https://doi.org/10.1038/nature17981"
     record = data["papers"][doi]
-    if mutation == "unknown_doi":
+    if mutation == "wrong_count":
+        data["papers"].pop(doi)
+    elif mutation == "unknown_doi":
         data["papers"]["https://doi.org/10.0000/unknown"] = data["papers"].pop(doi)
     elif mutation == "wrong_journal":
         record["journal_id"] = "science"
