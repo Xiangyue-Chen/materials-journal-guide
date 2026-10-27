@@ -1,0 +1,391 @@
+journals:
+  nature:
+    - title: "Metastable high-entropy dual-phase alloys overcome the strength–ductility trade-off"
+      year: 2016
+      article_type: "Article"
+      topic: "亚稳双相高熵合金"
+      why_recommended: "用一个相变设计概念串联成分、相稳定性、力学性能和普适意义，是主刊短篇材料论文的经典叙事。"
+      look_at: "重点看概要段如何迅速提出强塑倒置，以及主图如何从相结构推进到拉伸机制。"
+      url: "https://doi.org/10.1038/nature17981"
+    - title: "Short-range order and its impact on the CrCoNi medium-entropy alloy"
+      year: 2020
+      article_type: "Article"
+      topic: "化学短程有序"
+      why_recommended: "把原子尺度争议转化为可测量问题，并用实验与模拟共同回答机制问题。"
+      look_at: "重点看标题、第一段和 Extended Data 如何区分直接证据、模型结果与推断。"
+      url: "https://doi.org/10.1038/s41586-020-2275-z"
+    - title: "Strong yet ductile nanolamellar high-entropy alloys by additive manufacturing"
+      year: 2022
+      article_type: "Article"
+      topic: "增材制造与纳米层片"
+      why_recommended: "把加工路径、层级组织和强塑协同压缩成跨领域读者也能理解的完整证据链。"
+      look_at: "重点看 Fig. 1 的设计总览、性能基准比较和后续机制图之间如何分工。"
+      url: "https://doi.org/10.1038/s41586-022-04914-8"
+
+  science:
+    - title: "A fracture-resistant high-entropy alloy for cryogenic applications"
+      year: 2014
+      article_type: "Research Article"
+      topic: "低温断裂韧性"
+      why_recommended: "以极端低温下同时提升强度、塑性和韧性构成清晰主张，并用断裂力学支撑广泛意义。"
+      look_at: "重点看摘要的定量结果密度、性能地图和断口/裂纹尖端机制证据的组织。"
+      url: "https://doi.org/10.1126/science.1254581"
+    - title: "Gradient cell–structured high-entropy alloy with exceptional strength and ductility"
+      year: 2021
+      article_type: "Research Article"
+      topic: "梯度胞状组织"
+      why_recommended: "结构设计、局部应变协调和宏观强塑协同形成一条紧凑的因果链。"
+      look_at: "重点看大写分图 A、B、C 的组织方式，以及结果段怎样逐层排除常规强化解释。"
+      url: "https://doi.org/10.1126/science.abj8114"
+    - title: "Machine learning–enabled high-entropy alloy discovery"
+      year: 2022
+      article_type: "Research Article"
+      topic: "机器学习合金发现"
+      why_recommended: "把算法、候选筛选、实验制备和性能验证闭环，适合学习计算材料论文如何避免只停留在预测。"
+      look_at: "重点看工作流图、训练/验证边界、实验确认和失败候选如何共同支撑发现结论。"
+      url: "https://doi.org/10.1126/science.abo4940"
+
+  nature-communications:
+    - title: "Exceptional damage-tolerance of a medium-entropy alloy CrCoNi at cryogenic temperatures"
+      year: 2016
+      article_type: "Article"
+      topic: "CrCoNi 低温损伤容限"
+      why_recommended: "用完整拉伸与断裂韧性数据建立性能主张，再用加工硬化和纳米孪晶解释。"
+      look_at: "重点看摘要中的定量指标、Results 小标题和性能—机制主图的对应关系。"
+      url: "https://doi.org/10.1038/ncomms10602"
+    - title: "Nanoscale origins of the damage tolerance of the high-entropy alloy CrMnFeCoNi"
+      year: 2015
+      article_type: "Article"
+      topic: "裂纹尖端纳米机制"
+      why_recommended: "围绕一个明确问题，把原位/高分辨证据集中到裂纹尖端过程，而不是堆砌常规表征。"
+      look_at: "重点看问题导向的 Introduction、图注自洽性和纳米机制图如何回答宏观韧性。"
+      url: "https://doi.org/10.1038/ncomms10143"
+    - title: "Strengthening in multi-principal element alloys with local-chemical-order roughened dislocation pathways"
+      year: 2019
+      article_type: "Article"
+      topic: "局部化学有序与位错"
+      why_recommended: "将化学有序、位错路径和强化效应跨尺度连接，适合学习机制论文的论证边界。"
+      look_at: "重点看实验图与模拟图如何交替，以及 Discussion 怎样从观察收束到可检验机制。"
+      url: "https://doi.org/10.1038/s41467-019-11464-7"
+
+  nature-materials:
+    - title: "Natural-mixing guided design of refractory high-entropy alloys with as-cast tensile ductility"
+      year: 2020
+      article_type: "Article"
+      topic: "难熔高熵合金设计"
+      why_recommended: "从自然混合准则提出设计框架，再用多组合金和铸态拉伸验证可推广性。"
+      look_at: "重点看引言如何提出材料设计原则，以及图组怎样从设计空间落到组织和性能。"
+      url: "https://doi.org/10.1038/s41563-020-0750-4"
+    - title: "Harnessing instability for work hardening in multi-principal element alloys"
+      year: 2024
+      article_type: "Article"
+      topic: "相稳定性与加工硬化"
+      why_recommended: "把亚稳性从现象提升为可调控的加工硬化策略，兼顾材料概念与机制深度。"
+      look_at: "重点看正文不设传统长结论时，最后一段如何明确机制、边界和设计意义。"
+      url: "https://doi.org/10.1038/s41563-024-01871-7"
+    - title: "Quantifying short-range order using atom probe tomography"
+      year: 2024
+      article_type: "Article"
+      topic: "原子探针短程有序定量"
+      why_recommended: "方法创新直接服务于复杂合金中的关键科学争议，展示了方法论文如何保持材料学主线。"
+      look_at: "重点看方法可信度、统计对照、局限说明和主文/Methods 的内容分配。"
+      url: "https://doi.org/10.1038/s41563-024-01912-1"
+
+  science-advances:
+    - title: "A high-entropy alloy with hierarchical nanoprecipitates and ultrahigh strength"
+      year: 2018
+      article_type: "Research Article"
+      topic: "层级纳米析出强化"
+      why_recommended: "成分设计、析出层级、力学响应与强化机制完整，适合学习长篇 Research Article 的展开。"
+      look_at: "重点看 Results 分节如何一节对应一个主问题，以及大写分图与图注的配合。"
+      url: "https://doi.org/10.1126/sciadv.aat8712"
+    - title: "Outstanding radiation resistance of tungsten-based high-entropy alloys"
+      year: 2019
+      article_type: "Research Article"
+      topic: "难熔高熵合金抗辐照"
+      why_recommended: "围绕极端服役场景组织材料设计、辐照实验和缺陷演化证据。"
+      look_at: "重点看对照材料设置、表征尺度衔接和 Discussion 对应用外推的约束。"
+      url: "https://doi.org/10.1126/sciadv.aav2002"
+    - title: "Amorphization in extreme deformation of the CrMnFeCoNi high-entropy alloy"
+      year: 2021
+      article_type: "Research Article"
+      topic: "极端变形非晶化"
+      why_recommended: "以罕见变形机制为中心，使用多种加载与显微证据建立现象真实性。"
+      look_at: "重点看摘要如何先给现象再给机制，以及补充材料如何承接过程性证据。"
+      url: "https://doi.org/10.1126/sciadv.abb3108"
+
+  communications-materials:
+    - title: "Evading dynamic strength and ductility trade-off in a high-entropy alloy via local chemical ordering"
+      year: 2023
+      article_type: "Article"
+      topic: "动态载荷与局部化学有序"
+      why_recommended: "把动态性能、局部有序和变形机制联系起来，主题明确且证据层次适中。"
+      look_at: "重点看摘要、5–7 幅主图的节奏，以及局部结构证据如何服务力学结论。"
+      url: "https://doi.org/10.1038/s43246-023-00352-9"
+    - title: "Overcoming strength-toughness trade-off in a eutectic high entropy alloy by optimizing chemical and microstructural heterogeneities"
+      year: 2024
+      article_type: "Article"
+      topic: "共晶高熵合金异质性"
+      why_recommended: "化学异质与组织异质被分别量化，再共同解释强韧协同，适合作为机制稿结构参考。"
+      look_at: "重点看变量拆分、对照组和图注中的样品命名能否让读者独立读图。"
+      url: "https://doi.org/10.1038/s43246-024-00450-2"
+    - title: "Additive manufacturing of defect-free TiZrNbTa refractory high-entropy alloy with enhanced elastic isotropy via in-situ alloying of elemental powders"
+      year: 2024
+      article_type: "Article"
+      topic: "难熔高熵合金增材制造"
+      why_recommended: "工艺窗口、缺陷控制、成分均匀性和弹性各向同性形成工程—机理结合的完整案例。"
+      look_at: "重点看工艺参数如何移入 Methods，正文只保留支撑缺陷控制和性能结论的关键图。"
+      url: "https://doi.org/10.1038/s43246-024-00452-0"
+
+  advanced-materials:
+    - title: "Phase-Transformation Ductilization of Brittle High-Entropy Alloys via Metastability Engineering"
+      year: 2017
+      article_type: "Research Article"
+      topic: "亚稳工程与相变增塑"
+      why_recommended: "标题直接表达策略和结果，正文围绕一个材料设计动作构建强塑协同证据。"
+      look_at: "重点看短摘要、概念示意、主图数量和方括号参考文献在版面中的实际呈现。"
+      url: "https://doi.org/10.1002/adma.201701678"
+    - title: "Ultrastrong Medium-Entropy Single-Phase Alloys Designed via Severe Lattice Distortion"
+      year: 2018
+      article_type: "Research Article"
+      topic: "晶格畸变强化"
+      why_recommended: "用明确设计变量连接单相稳定、晶格畸变和超高强度，叙事集中。"
+      look_at: "重点看图内小写 a、b、c 的排版、结果段长度和结论式图题。"
+      url: "https://doi.org/10.1002/adma.201807142"
+    - title: "Manipulating Stacking Fault Energy to Achieve Crack Inhibition and Superior Strength–Ductility Synergy in an Additively Manufactured High-Entropy Alloy"
+      year: 2024
+      article_type: "Research Article"
+      topic: "层错能与增材裂纹控制"
+      why_recommended: "把层错能这一物理量用于解决增材制造裂纹与强塑性问题，兼顾设计和机制。"
+      look_at: "重点看标题—摘要—图组是否始终围绕同一设计变量，以及补充信息的分流方式。"
+      url: "https://doi.org/10.1002/adma.202310160"
+
+  materials-today:
+    - title: "High-entropy alloy: challenges and prospects"
+      year: 2015
+      article_type: "Review"
+      topic: "高熵合金领域综述"
+      why_recommended: "适合观察旗舰综述如何从概念争议、性能版图和关键挑战建立领域框架。"
+      look_at: "重点看章节层级、综合示意图、观点性结论和参考文献覆盖范围。"
+      url: "https://doi.org/10.1016/j.mattod.2015.11.026"
+    - title: "Real-time nanoscale observation of deformation mechanisms in CrCoNi-based medium- to high-entropy alloys at cryogenic temperatures"
+      year: 2019
+      article_type: "Research Article"
+      topic: "原位低温纳米变形"
+      why_recommended: "原位观察直接回答低温变形机制，展示了方法亮点如何与材料问题绑定。"
+      look_at: "重点看原位序列图、视频/补充材料引用和机制模型如何避免重复展示。"
+      url: "https://doi.org/10.1016/j.mattod.2019.03.001"
+    - title: "Solving oxygen embrittlement of refractory high-entropy alloy via grain boundary engineering"
+      year: 2022
+      article_type: "Research Article"
+      topic: "晶界工程抗氧脆"
+      why_recommended: "从失效问题出发，以晶界工程给出可操作策略并用多尺度证据验证。"
+      look_at: "重点看问题—策略—验证—通用性四段式叙事和最终机制示意图。"
+      url: "https://doi.org/10.1016/j.mattod.2022.02.006"
+
+  pnas:
+    - title: "Dynamically reinforced heterogeneous grain structure prolongs ductility in a medium-entropy alloy with gigapascal yield strength"
+      year: 2018
+      article_type: "Research Article"
+      topic: "异质晶粒动态强化"
+      why_recommended: "以高屈服后的塑性保持为核心问题，把异质组织、应变分配和加工硬化闭环。"
+      look_at: "重点看 250 词内摘要、大写 A/B/C 分图、Significance Statement 和括号编号引用。"
+      url: "https://doi.org/10.1073/pnas.1807817115"
+    - title: "Nanoscale precipitates as sustainable dislocation sources for enhanced ductility and high strength"
+      year: 2020
+      article_type: "Research Article"
+      topic: "纳米析出物位错源"
+      why_recommended: "从传统析出物角色反转出发提出机制，概念清楚且微观证据服务于宏观性能。"
+      look_at: "重点看 Significance Statement 如何区别于摘要，以及四幅左右主图如何覆盖完整论证。"
+      url: "https://doi.org/10.1073/pnas.1914615117"
+    - title: "Heterogeneous lattice strain strengthening in severely distorted crystalline solids"
+      year: 2022
+      article_type: "Research Article"
+      topic: "异质晶格应变强化"
+      why_recommended: "把复杂合金中的晶格应变从定性描述推进到定量强化机制。"
+      look_at: "重点看定量模型、实验验证和误差表达，以及参考文献括号编号的真实版式。"
+      url: "https://doi.org/10.1073/pnas.2200607119"
+
+  acta-materialia:
+    - title: "A precipitation-hardened high-entropy alloy with outstanding tensile properties"
+      year: 2015
+      article_type: "Research Article"
+      topic: "相干析出强化"
+      why_recommended: "成分—热机械处理—析出结构—强化分解完整，是 Acta 机制型力学稿的典型范例。"
+      look_at: "重点看 Experimental、Results、Discussion 分工，以及强化贡献的定量拆解。"
+      url: "https://doi.org/10.1016/j.actamat.2015.08.076"
+    - title: "Reasons for the superior mechanical properties of medium-entropy CrCoNi compared to high-entropy CrMnFeCoNi"
+      year: 2017
+      article_type: "Research Article"
+      topic: "CrCoNi 与 Cantor 合金对比"
+      why_recommended: "通过严格成分对照回答‘为什么更好’，比单一材料性能展示更接近 Acta 的机制要求。"
+      look_at: "重点看对照变量控制、性能—层错能—变形机制之间的讨论结构。"
+      url: "https://doi.org/10.1016/j.actamat.2017.02.036"
+    - title: "Directly cast bulk eutectic and near-eutectic high entropy alloys with balanced strength and ductility in a wide temperature range"
+      year: 2016
+      article_type: "Research Article"
+      topic: "共晶高熵合金宽温力学"
+      why_recommended: "将凝固组织与宽温性能结合，展示加工、组织和力学如何在长文中形成主线。"
+      look_at: "重点看相图/凝固分析、组织定量、拉伸曲线和断裂机制的章节衔接。"
+      url: "https://doi.org/10.1016/j.actamat.2016.11.016"
+
+  corrosion-science:
+    - title: "Corrosion behavior of an equiatomic CoCrFeMnNi high-entropy alloy compared with 304 stainless steel in sulfuric acid solution"
+      year: 2018
+      article_type: "Research Article"
+      topic: "硫酸中腐蚀对比"
+      why_recommended: "使用 304 不锈钢作为工程对照，把电化学响应和表面膜分析放在同一问题下。"
+      look_at: "重点看介质条件、重复性、极化/EIS 和表面化学证据如何相互验证。"
+      url: "https://doi.org/10.1016/j.corsci.2018.02.031"
+    - title: "Corrosion resistant nanostructured eutectic high entropy alloy"
+      year: 2019
+      article_type: "Research Article"
+      topic: "纳米结构共晶合金耐蚀性"
+      why_recommended: "把纳米组织与腐蚀行为直接关联，题目和主图高度集中。"
+      look_at: "重点看腐蚀速率、钝化膜、局部腐蚀形貌和机制讨论是否形成闭环。"
+      url: "https://doi.org/10.1016/j.corsci.2019.108315"
+    - title: "Microbiologically influenced corrosion of FeCoCrNiMo0.1 high-entropy alloys by marine Pseudomonas aeruginosa"
+      year: 2019
+      article_type: "Research Article"
+      topic: "微生物腐蚀"
+      why_recommended: "环境变量明确，联合生物膜、电化学和表面证据解释局部腐蚀。"
+      look_at: "重点看实验对照、暴露时间线、微生物证据与腐蚀证据如何避免因果越界。"
+      url: "https://doi.org/10.1016/j.corsci.2019.108390"
+
+  intermetallics:
+    - title: "Entropy-driven phase stability and slow diffusion kinetics in an Al0.5CoCrCuFeNi high entropy alloy"
+      year: 2012
+      article_type: "Research Article"
+      topic: "相稳定与扩散动力学"
+      why_recommended: "把高熵概念落实到相稳定和动力学可观测量，适合学习相变类稿件的论证。"
+      look_at: "重点看热处理矩阵、相鉴定、动力学比较和结论边界。"
+      url: "https://doi.org/10.1016/j.intermet.2012.07.001"
+    - title: "Synergistic effect of Ti and Al on L12-phase design in CoCrFeNi-based high entropy alloys"
+      year: 2019
+      article_type: "Research Article"
+      topic: "L1₂ 析出相设计"
+      why_recommended: "双元素协同设计与有序相形成直接对应，符合 Intermetallics 的相结构主线。"
+      look_at: "重点看成分梯度、相区识别、显微组织和性能之间的变量控制。"
+      url: "https://doi.org/10.1016/j.intermet.2019.106476"
+    - title: "On the influence of Mn on the phase stability of the CrMnxFeCoNi high entropy alloys"
+      year: 2017
+      article_type: "Research Article"
+      topic: "Mn 对相稳定性的影响"
+      why_recommended: "以单一成分变量回答相稳定问题，结构简洁且容易借鉴。"
+      look_at: "重点看成分系列、热力学讨论和实验相鉴定如何对应，而不是只列 XRD。"
+      url: "https://doi.org/10.1016/j.intermet.2017.09.011"
+
+  journal-alloys-compounds:
+    - title: "Temperature dependencies of the elastic moduli and thermal expansion coefficient of an equiatomic, single-phase CoCrFeMnNi high-entropy alloy"
+      year: 2014
+      article_type: "Research Article"
+      topic: "弹性模量与热膨胀系数"
+      why_recommended: "温度依赖物性、实验方法和基准比较清楚，特别适合热膨胀数据类稿件参考。"
+      look_at: "重点看温度程序、拟合表达、误差与文献对照，以及热膨胀曲线如何支撑结论。"
+      url: "https://doi.org/10.1016/j.jallcom.2014.11.061"
+    - title: "Nano-twin mediated plasticity in carbon-containing FeNiCoCrMn high entropy alloys"
+      year: 2015
+      article_type: "Research Article"
+      topic: "碳合金化与纳米孪晶"
+      why_recommended: "微量元素、纳米孪晶和塑性机制联系紧密，是组织—性能短链条的好例子。"
+      look_at: "重点看成分对照、TEM 证据、拉伸响应和机制示意之间的对应。"
+      url: "https://doi.org/10.1016/j.jallcom.2015.05.224"
+    - title: "Grain growth and Hall-Petch relationship in a refractory HfNbTaZrTi high-entropy alloy"
+      year: 2019
+      article_type: "Research Article"
+      topic: "晶粒长大与 Hall–Petch"
+      why_recommended: "把热处理、晶粒统计和强度模型放在同一可量化框架中。"
+      look_at: "重点看晶粒统计量、拟合区间、异常点解释和 Hall–Petch 结论的适用范围。"
+      url: "https://doi.org/10.1016/j.jallcom.2019.04.291"
+
+  journal-materials-science-technology:
+    - title: "Strengthening FCC-CoCrFeMnNi high entropy alloys by Mo addition"
+      year: 2018
+      article_type: "Research Article"
+      topic: "Mo 合金化强化"
+      why_recommended: "单一合金化变量对应组织和强度变化，适合 JMST 常见的成分优化论文。"
+      look_at: "重点看不同 Mo 含量的比较表、相演变、拉伸结果和强化讨论。"
+      url: "https://doi.org/10.1016/j.jmst.2018.10.009"
+    - title: "Remarkably high fracture toughness of HfNbTaTiZr refractory high-entropy alloy"
+      year: 2022
+      article_type: "Research Article"
+      topic: "难熔高熵合金断裂韧性"
+      why_recommended: "把难熔合金的高韧性主张建立在规范断裂测试和裂纹机制上。"
+      look_at: "重点看试样与测试标准、R 曲线或韧性指标、断口和裂纹尖端证据。"
+      url: "https://doi.org/10.1016/j.jmst.2022.01.017"
+    - title: "Effect of lattice distortion on solid solution strengthening of BCC high-entropy alloys"
+      year: 2017
+      article_type: "Research Article"
+      topic: "BCC 晶格畸变与固溶强化"
+      why_recommended: "将常被定性描述的晶格畸变与固溶强化模型联系，机制问题明确。"
+      look_at: "重点看描述符定义、模型假设、实验/计算对照和过度外推的避免。"
+      url: "https://doi.org/10.1016/j.jmst.2017.07.013"
+
+  materials-design:
+    - title: "A hexagonal close-packed high-entropy alloy: The effect of entropy"
+      year: 2016
+      article_type: "Research Article"
+      topic: "HCP 高熵合金"
+      why_recommended: "用熵效应解释新相形成，材料设计动机和相结构结果直接对应。"
+      look_at: "重点看设计假设、相鉴定、对照合金和标题所称‘entropy effect’的证据边界。"
+      url: "https://doi.org/10.1016/j.matdes.2016.01.149"
+    - title: "Microstructure, mechanical properties and tribological performance of CoCrFeNi high entropy alloy matrix self-lubricating composite"
+      year: 2016
+      article_type: "Research Article"
+      topic: "高熵合金基自润滑复合材料"
+      why_recommended: "组织、力学与摩擦性能共同服务工程设计目标，符合 Materials & Design 的应用取向。"
+      look_at: "重点看多性能指标如何围绕同一设计目标组织，而不是分散成互不相关的结果。"
+      url: "https://doi.org/10.1016/j.matdes.2016.11.072"
+    - title: "Understanding phase stability of Al-Co-Cr-Fe-Ni high entropy alloys"
+      year: 2016
+      article_type: "Research Article"
+      topic: "Al–Co–Cr–Fe–Ni 相稳定"
+      why_recommended: "以理解相稳定为目标，连接成分、实验相和热力学解释。"
+      look_at: "重点看成分空间选择、相图/计算与实验验证如何相互约束。"
+      url: "https://doi.org/10.1016/j.matdes.2016.07.073"
+
+  materials-science-engineering-a:
+    - title: "Tensile deformation behavior and deformation twinning of an equimolar CoCrFeMnNi high-entropy alloy"
+      year: 2017
+      article_type: "Research Article"
+      topic: "拉伸变形与孪生"
+      why_recommended: "拉伸中断、EBSD/TEM 和加工硬化分析围绕变形孪生形成清晰证据链。"
+      look_at: "重点看应力–应变分段、均匀变形区取样、组织演变和机制讨论的对应。"
+      url: "https://doi.org/10.1016/j.msea.2017.02.043"
+    - title: "Combining thermodynamic modeling and 3D printing of elemental powder blends for high-throughput investigation of high-entropy alloys – Towards rapid alloy screening and design"
+      year: 2017
+      article_type: "Research Article"
+      topic: "热力学建模与快速合金筛选"
+      why_recommended: "计算筛选、粉末增材和实验表征相互闭环，适合计算—实验联合论文。"
+      look_at: "重点看筛选流程、成分/工艺映射、失败区域和实验验证如何透明呈现。"
+      url: "https://doi.org/10.1016/j.msea.2017.01.099"
+    - title: "Additive manufacturing of fine-grained and dislocation-populated CrMnFeCoNi high entropy alloy by laser engineered net shaping"
+      year: 2019
+      article_type: "Research Article"
+      topic: "LENS 增材制造 Cantor 合金"
+      why_recommended: "工艺诱导的细晶和高位错组织直接用于解释力学性能，主题集中。"
+      look_at: "重点看工艺参数的取舍、组织定量、拉伸曲线与断裂/位错证据。"
+      url: "https://doi.org/10.1016/j.msea.2019.138056"
+
+  scripta-materialia:
+    - title: "Precipitation in the equiatomic high-entropy alloy CrMnFeCoNi"
+      year: 2015
+      article_type: "Regular Article"
+      topic: "Cantor 合金析出行为"
+      why_recommended: "单一发现、短篇幅和直接显微证据非常适合学习 Scripta 的聚焦写法。"
+      look_at: "重点看如何用少量主图报告一个清晰发现，以及讨论不扩展成完整综述。"
+      url: "https://doi.org/10.1016/j.scriptamat.2015.10.025"
+    - title: "Weldability of a high entropy CrMnFeCoNi alloy"
+      year: 2016
+      article_type: "Regular Article"
+      topic: "高熵合金焊接性"
+      why_recommended: "围绕焊接性这一工程问题，用熔合区组织和室温/低温性能快速给出答案。"
+      look_at: "重点看约 5 幅以内的图如何覆盖工艺、组织、性能和孪生机制。"
+      url: "https://doi.org/10.1016/j.scriptamat.2016.06.046"
+    - title: "Revealing hot tearing mechanism for an additively manufactured high-entropy alloy via selective laser melting"
+      year: 2019
+      article_type: "Regular Article"
+      topic: "增材制造热裂机制"
+      why_recommended: "聚焦一个失效机制，使用凝固组织和裂纹证据快速闭环。"
+      look_at: "重点看短摘要、紧凑 Results and Discussion 和结论段如何只回答核心问题。"
+      url: "https://doi.org/10.1016/j.scriptamat.2019.04.036"

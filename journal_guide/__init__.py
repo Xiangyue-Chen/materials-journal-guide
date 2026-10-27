@@ -1,6 +1,7 @@
 """Materials journal guide core package."""
 
 from .data import freshness_notice, load_journals, validate_journals
+from .examples import load_examples
 from .filters import filter_journals, select_for_comparison
 from .format_specs import load_format_specs
 from .guidance import build_workbench, explain_requirement, load_guidance
@@ -15,6 +16,7 @@ __all__ = [
     "explain_requirement",
     "filter_journals",
     "freshness_notice",
+    "load_examples",
     "load_guidance",
     "load_format_specs",
     "load_journals",
