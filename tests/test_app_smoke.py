@@ -9,6 +9,7 @@ from journal_guide import (
     load_format_specs,
     load_guidance,
     load_journals,
+    load_local_papers,
     load_official_requirements,
 )
 
@@ -117,6 +118,65 @@ def test_examples_follow_the_selected_journal() -> None:
     assert "Metastable high-entropy dual-phase alloys" not in markdown
 
 
+def test_nature_workbench_embeds_user_supplied_pdf_for_personal_study() -> None:
+    app = AppTest.from_file(str(APP_PATH)).run(timeout=20)
+
+    assert not app.exception
+    assert any("站内 PDF 正文" in heading.value for heading in app.subheader)
+    captions = "\n".join(element.value for element in app.caption)
+    assert "用户从本地论文库提供的个人学习副本" in captions
+    assert "当前应用仍为公开访问" in captions
+    markdown = "\n".join(element.value for element in app.markdown)
+    assert "站内 PDF" in markdown
+    viewers = app.get("bidi_component")
+    assert len(viewers) == 1
+    assert viewers[0].proto.component_name == "streamlit-pdf.pdf_viewer"
+    assert "Metastable high-entropy dual-phase alloys" in viewers[0].proto.json
+    assert any(button.label == "下载这篇 PDF" for button in app.download_button)
+
+
+def test_science_selection_embeds_its_own_packaged_pdf() -> None:
+    app = AppTest.from_file(str(APP_PATH)).run(timeout=20)
+    workbench = next(
+        widget for widget in app.selectbox if widget.key == "workbench_journal"
+    )
+    workbench.set_value("Science")
+    app.run(timeout=20)
+
+    assert not app.exception
+    viewers = app.get("bidi_component")
+    assert len(viewers) == 1
+    assert "A fracture-resistant high-entropy alloy" in viewers[0].proto.json
+    assert "Metastable high-entropy dual-phase" not in viewers[0].proto.json
+
+
+def test_acta_selection_embeds_its_own_packaged_pdf() -> None:
+    app = AppTest.from_file(str(APP_PATH)).run(timeout=20)
+    workbench = next(
+        widget for widget in app.selectbox if widget.key == "workbench_journal"
+    )
+    workbench.set_value("Acta Materialia")
+    app.run(timeout=20)
+
+    assert not app.exception
+    viewers = app.get("bidi_component")
+    assert len(viewers) == 1
+    assert "A precipitation-hardened high-entropy alloy" in viewers[0].proto.json
+
+
+def test_journal_without_packaged_pdf_has_no_viewer() -> None:
+    app = AppTest.from_file(str(APP_PATH)).run(timeout=20)
+    workbench = next(
+        widget for widget in app.selectbox if widget.key == "workbench_journal"
+    )
+    workbench.set_value("Nature Communications")
+    app.run(timeout=20)
+
+    assert not app.exception
+    assert len(app.get("bidi_component")) == 0
+    assert not any("站内 PDF 正文" in heading.value for heading in app.subheader)
+
+
 def test_nature_workbench_shows_house_style_and_source_backed_limits() -> None:
     app = AppTest.from_file(str(APP_PATH)).run(timeout=20)
     workbench = next(
@@ -217,14 +277,20 @@ def test_workbench_warns_when_official_requirements_are_stale(tmp_path: Path) ->
         APP_PATH.parent / "data" / "journal_examples.yaml",
         {item["id"] for item in records},
     )
+    local_papers = load_local_papers(
+        APP_PATH.parent / "data" / "local_papers.yaml",
+        APP_PATH.parent,
+        examples,
+    )
     stale_official = dict(official["nature"])
     stale_official["verified_on"] = "2020-01-01"
     script = tmp_path / "stale_workbench.py"
     script.write_text(
+        "from pathlib import PosixPath, WindowsPath\n"
         "from app import render_deep_workbench\n"
         f"render_deep_workbench({[record]!r}, {{'nature': {guidance['nature']!r}}}, "
         f"{{'nature': {stale_official!r}}}, {{'nature': {format_specs['nature']!r}}}, "
-        f"{{'nature': {examples['nature']!r}}})\n",
+        f"{{'nature': {examples['nature']!r}}}, {local_papers!r})\n",
         encoding="utf-8",
     )
 

@@ -1,2 +1,2 @@
 PyYAML>=6.0,<7
-streamlit>=1.40,<2
+streamlit[pdf]>=1.50,<2

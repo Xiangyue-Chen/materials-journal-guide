@@ -20,6 +20,7 @@ from journal_guide import (
 )
 from journal_guide.format_specs import load_format_specs
 from journal_guide.examples import load_examples
+from journal_guide.local_papers import load_local_papers
 
 
 ROOT = Path(__file__).resolve().parent
@@ -28,6 +29,7 @@ GUIDANCE_PATH = ROOT / "data" / "journal_guidance.yaml"
 OFFICIAL_REQUIREMENTS_PATH = ROOT / "data" / "journal_official_requirements.yaml"
 FORMAT_SPECS_PATH = ROOT / "data" / "journal_format_specs.yaml"
 EXAMPLES_PATH = ROOT / "data" / "journal_examples.yaml"
+LOCAL_PAPERS_PATH = ROOT / "data" / "local_papers.yaml"
 
 TIER_DESCRIPTIONS = {
     "正刊": "跨学科影响与普适意义",
@@ -106,6 +108,14 @@ def get_examples(
     journal_ids: tuple[str, ...],
 ) -> dict[str, list[dict[str, object]]]:
     return load_examples(EXAMPLES_PATH, set(journal_ids))
+
+
+@st.cache_data(show_spinner=False)
+def get_local_papers(
+    journal_ids: tuple[str, ...],
+) -> dict[str, dict[str, object]]:
+    examples = load_examples(EXAMPLES_PATH, set(journal_ids))
+    return load_local_papers(LOCAL_PAPERS_PATH, ROOT, examples)
 
 
 def _unique(records: list[dict[str, Any]], field: str) -> list[str]:
@@ -395,7 +405,9 @@ def render_format_quick_sheet(
 
 
 def render_paper_examples(
-    record: dict[str, Any], examples: list[dict[str, object]]
+    record: dict[str, Any],
+    examples: list[dict[str, object]],
+    local_papers: dict[str, dict[str, object]],
 ) -> None:
     """Render three real papers as learning examples, not official templates."""
 
@@ -406,6 +418,8 @@ def render_paper_examples(
     )
     columns = st.columns(3)
     for index, item in enumerate(examples):
+        has_local_pdf = str(item["url"]) in local_papers
+        local_badge = '<span class="tag">站内 PDF</span>' if has_local_pdf else ""
         with columns[index]:
             with st.container(border=True):
                 st.markdown(
@@ -415,6 +429,7 @@ def render_paper_examples(
                     f'<span class="tag">{escape(str(item["year"]))}</span>'
                     f'<span class="tag">{escape(str(item["article_type"]))}</span>'
                     f'<span class="tag">{escape(str(item["topic"]))}</span>'
+                    f'{local_badge}'
                     f'</div>'
                     f'<div class="paper-copy"><strong>为什么选</strong>　'
                     f'{escape(str(item["why_recommended"]))}</div>'
@@ -423,6 +438,53 @@ def render_paper_examples(
                     unsafe_allow_html=True,
                 )
 
+    available = [
+        local_papers[str(item["url"])]
+        for item in examples
+        if str(item["url"]) in local_papers
+    ]
+    if not available:
+        return
+
+    st.subheader("站内 PDF 正文")
+    st.caption(
+        "以下为用户从本地论文库提供的个人学习副本。当前应用仍为公开访问；"
+        "论文版权归作者与出版社，本站实例不等同于官方模板。"
+    )
+    if len(available) == 1:
+        selected = available[0]
+    else:
+        titles = [str(item["title"]) for item in available]
+        selected_title = st.selectbox(
+            "选择站内论文",
+            titles,
+            key=f"local_pdf_{record['id']}",
+        )
+        selected = available[titles.index(selected_title)]
+
+    st.markdown(f"**{escape(str(selected['title']))}**")
+    pdf_path = Path(selected["path"])
+    st.pdf(
+        pdf_path,
+        height=900,
+        key=f"pdf_viewer_{record['id']}_{selected['sha256']}",
+        alt=str(selected["title"]),
+    )
+    actions = st.columns([1, 1, 2])
+    with actions[0]:
+        st.download_button(
+            "下载这篇 PDF",
+            data=pdf_path.read_bytes(),
+            file_name=Path(str(selected["file"])).name,
+            mime="application/pdf",
+            key=f"download_pdf_{record['id']}_{selected['sha256']}",
+        )
+    with actions[1]:
+        source_url = next(
+            item["url"] for item in examples if item["title"] == selected["title"]
+        )
+        st.link_button("核验 DOI 原文", str(source_url))
+
 
 def render_deep_workbench(
     records: list[dict[str, Any]],
@@ -430,6 +492,7 @@ def render_deep_workbench(
     official_requirements: dict[str, dict[str, Any]],
     format_specs: dict[str, dict[str, Any]],
     examples: dict[str, list[dict[str, object]]],
+    local_papers: dict[str, dict[str, object]],
 ) -> None:
     st.subheader("深度投稿工作台")
     st.caption("先按官方要求搭好稿件，再使用本站建议检查选刊契合度。默认展示原创研究论文。")
@@ -488,7 +551,7 @@ def render_deep_workbench(
             unsafe_allow_html=True,
         )
 
-    render_paper_examples(record, examples[journal_id])
+    render_paper_examples(record, examples[journal_id], local_papers)
 
     with st.expander("本站建议 · 选刊契合度与投稿前自查"):
         st.markdown(
@@ -587,13 +650,19 @@ def main() -> None:
     official_requirements = get_official_requirements(journal_ids)
     format_specs = get_format_specs(journal_ids)
     examples = get_examples(journal_ids)
+    local_papers = get_local_papers(journal_ids)
     render_header(records)
     filters = render_sidebar(records)
     filtered = filter_journals(records, **filters)
     render_tier_guide(records)
     st.divider()
     render_deep_workbench(
-        records, guidance, official_requirements, format_specs, examples
+        records,
+        guidance,
+        official_requirements,
+        format_specs,
+        examples,
+        local_papers,
     )
     st.divider()
     render_catalogue(filtered)
