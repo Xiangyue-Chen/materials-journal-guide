@@ -126,6 +126,9 @@ def test_nature_workbench_embeds_user_supplied_pdf_for_personal_study() -> None:
     captions = "\n".join(element.value for element in app.caption)
     assert "用户从本地论文库提供的个人学习副本" in captions
     assert "当前应用仍为公开访问" in captions
+    assert "nature17981.pdf" in captions
+    assert "下载这篇 PDF" in captions
+    assert "核验 DOI 原文" in captions
     markdown = "\n".join(element.value for element in app.markdown)
     assert "站内 PDF" in markdown
     viewers = app.get("bidi_component")

@@ -462,8 +462,12 @@ def render_paper_examples(
         )
         selected = available[titles.index(selected_title)]
 
-    st.markdown(f"**{escape(str(selected['title']))}**")
     pdf_path = Path(selected["path"])
+    file_name = Path(str(selected["file"])).name
+    st.markdown(f"**{escape(str(selected['title']))}**")
+    st.caption(
+        f"文件：{file_name} · 下方可下载这篇 PDF，并可核验 DOI 原文。"
+    )
     st.pdf(
         pdf_path,
         height=900,
@@ -475,7 +479,7 @@ def render_paper_examples(
         st.download_button(
             "下载这篇 PDF",
             data=pdf_path.read_bytes(),
-            file_name=Path(str(selected["file"])).name,
+            file_name=file_name,
             mime="application/pdf",
             key=f"download_pdf_{record['id']}_{selected['sha256']}",
         )
