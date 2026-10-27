@@ -5,6 +5,7 @@ from .examples import load_examples
 from .filters import filter_journals, select_for_comparison
 from .format_specs import load_format_specs
 from .guidance import build_workbench, explain_requirement, load_guidance
+from .local_papers import load_local_papers
 from .official_requirements import (
     build_official_workbench,
     load_official_requirements,
@@ -20,6 +21,7 @@ __all__ = [
     "load_guidance",
     "load_format_specs",
     "load_journals",
+    "load_local_papers",
     "load_official_requirements",
     "select_for_comparison",
     "validate_journals",
