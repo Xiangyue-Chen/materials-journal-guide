@@ -96,4 +96,3 @@ def load_local_papers(
         item["path"] = candidate
         validated[str(url)] = item
     return validated
-

@@ -122,4 +122,3 @@ Run the full test suite, Python compilation, manifest hash audit, and `git diff 
 - [ ] **Step 3: Merge, push, and verify the public release**
 
 Confirm remote `main`, `script_finished`, all expected UI phrases, and that each published PDF URL/download returns the recorded byte count.
-

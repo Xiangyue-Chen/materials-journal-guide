@@ -105,4 +105,3 @@ def test_loader_rejects_untrusted_or_mismatched_manifest_entries(
 
     with pytest.raises(ValueError, match=message):
         load_local_papers(path, ROOT, example_records())
-

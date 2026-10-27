@@ -33,4 +33,3 @@ Make selected published-paper examples readable inside the existing Streamlit jo
 ## Design
 
 `data/local_papers.yaml` is a strict manifest keyed by DOI URL. Each record stores journal ID, title, repository-relative file path, byte size, and SHA-256. `journal_guide/local_papers.py` validates the manifest against the existing example dataset and returns resolved file paths. The workbench marks cards that have a packaged PDF, then renders a selector and a full-width `st.pdf` viewer below the card row. A visible notice states that the files are user-supplied copies for personal study and that copyright remains with the authors and publishers.
-
