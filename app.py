@@ -252,7 +252,6 @@ def render_header(records: list[dict[str, Any]]) -> None:
     st.markdown('<div class="hero-rule"></div>', unsafe_allow_html=True)
     st.write(
         "从综合正刊到金属材料核心刊，集中查询投稿格式、文章类型、图表要求与数据政策。"
-        "首版聚焦高熵合金、结构材料、力学性能和腐蚀研究。"
     )
 
     metrics = st.columns(4)
@@ -261,8 +260,11 @@ def render_header(records: list[dict[str, Any]]) -> None:
     metrics[2].metric("出版社", str(len({r['publisher'] for r in records})))
     metrics[3].metric("最近核验", max(str(r["verified_on"]) for r in records))
 
-    st.info(
-        "页面摘要仅整理官方作者指南与出版社页面；投稿要求会更新，正式提交前请点击“官方作者指南”再次核对。"
+    st.markdown("#### 官方作者指南直达")
+    st.markdown(
+        " · ".join(
+            f'[{record["name"]}]({record["guide_url"]})' for record in records
+        )
     )
 
 
@@ -310,9 +312,6 @@ def render_tier_guide(records: list[dict[str, Any]]) -> None:
         with column:
             st.markdown(f"**{tier}**")
             st.caption(f"{TIER_DESCRIPTIONS.get(tier, '')} · {count} 本")
-    st.caption("梯队为本站检索导航，不是官方排名，也不等同于影响因子或中科院分区。")
-
-
 def render_journal_card(record: dict[str, Any]) -> None:
     topics = "".join(
         f'<span class="tag">{escape(str(topic))}</span>' for topic in record["topics"]
@@ -371,12 +370,15 @@ def render_format_quick_sheet(
     st.subheader("投稿硬参数速查")
     st.caption(
         f"默认稿型：{spec['default_article_type']}　·　"
-        f"规则核验：{spec['verified_on']}　·　"
-        "“官网未规定固定上限”表示该数字是本站排稿建议，不冒充期刊硬性要求。"
+        f"规则核验：{spec['verified_on']}"
     )
+    available_specs = [
+        (label, key, spec["quick_specs"][key])
+        for label, key in FORMAT_SPEC_FIELDS
+        if spec["quick_specs"][key]["scope"] != "官网未规定固定上限"
+    ]
     cards = st.columns(2)
-    for index, (label, key) in enumerate(FORMAT_SPEC_FIELDS):
-        item = spec["quick_specs"][key]
+    for index, (label, _, item) in enumerate(available_specs):
         with cards[index % 2]:
             with st.container(border=True):
                 st.markdown(
@@ -412,10 +414,7 @@ def render_paper_examples(
     """Render three real papers as learning examples, not official templates."""
 
     st.subheader("精选已发表实例")
-    st.caption(
-        "已发表论文只用于观察真实写法、图组和参考文献呈现，不是期刊强制模板，"
-        "也不代表编辑部推荐。"
-    )
+    st.caption("查看同刊真实论文的写法、图组和参考文献呈现。")
     columns = st.columns(3)
     for index, item in enumerate(examples):
         has_local_pdf = str(item["url"]) in local_papers
@@ -447,10 +446,7 @@ def render_paper_examples(
         return
 
     st.subheader("站内 PDF 正文")
-    st.caption(
-        "以下为用户从本地论文库提供的个人学习副本。当前应用仍为公开访问；"
-        "论文版权归作者与出版社，本站实例不等同于官方模板。"
-    )
+    st.caption("以下为用户从本地论文库提供的论文副本。")
     if len(available) == 1:
         selected = available[0]
     else:
@@ -499,7 +495,7 @@ def render_deep_workbench(
     local_papers: dict[str, dict[str, object]],
 ) -> None:
     st.subheader("深度投稿工作台")
-    st.caption("先按官方要求搭好稿件，再使用本站建议检查选刊契合度。默认展示原创研究论文。")
+    st.caption("先按官方要求搭好稿件，再使用本站建议检查选刊契合度。")
     names = [str(record["name"]) for record in records]
     selected_name = st.selectbox(
         "选择要准备的期刊",
@@ -539,14 +535,14 @@ def render_deep_workbench(
         st.error(notice)
 
     st.subheader("稿件各部分格式")
-    st.caption("每一行都给出证据范围和官方原文；出版社通用规则不会冒充本刊专属要求。")
+    st.caption("每一行包含官方要求、适用范围和官方原文入口。")
     st.table(_requirement_rows(official["section_requirements"], "section"))
 
     st.subheader("提交文件与技术规格")
     st.table(_requirement_rows(official["technical_requirements"], "item"))
 
     st.subheader("官方模板与实例")
-    st.caption("实例用于观察真实呈现，不等同于强制模板；请以资源类型标签为准。")
+    st.caption("按资源类型查看官方模板、官方示例和已发表论文实例。")
     for resource in official["resources"]:
         st.markdown(
             f'**[{resource["label"]}]({resource["url"]})**　'
@@ -631,15 +627,6 @@ def render_comparison(records: list[dict[str, Any]]) -> None:
     st.caption("证据状态已区分官网明确、按文章类型变化、官网未给统一值和投稿系统动态项；对比后可打开对应官方指南定位原文。")
 
 
-def render_footer() -> None:
-    st.divider()
-    st.markdown("#### 数据边界")
-    st.caption(
-        "不把投稿梯队当作官方排名；不固定展示易过时的影响因子、分区、APC 或非官方审稿时长。"
-        "当前信息以原创研究论文为主，不同文章类型可能有独立限制。"
-    )
-
-
 def main() -> None:
     st.set_page_config(
         page_title="金属材料期刊导航",
@@ -672,7 +659,6 @@ def main() -> None:
     render_catalogue(filtered)
     st.divider()
     render_comparison(records)
-    render_footer()
 
 
 if __name__ == "__main__":

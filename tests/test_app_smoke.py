@@ -30,7 +30,7 @@ def table_text(app: AppTest) -> str:
     )
 
 
-def test_app_starts_with_catalogue_filters_and_evidence_notice() -> None:
+def test_app_starts_with_filters_and_direct_official_guide_links() -> None:
     app = AppTest.from_file(str(APP_PATH)).run(timeout=20)
 
     assert not app.exception
@@ -38,7 +38,26 @@ def test_app_starts_with_catalogue_filters_and_evidence_notice() -> None:
     assert app.metric[0].value == "17"
     assert len(app.text_input) == 1
     assert len(app.multiselect) >= 5
-    assert any("官方作者指南" in notice.value for notice in app.info)
+    markdown = "\n".join(element.value for element in app.markdown)
+    assert "官方作者指南直达" in markdown
+    assert "https://www.nature.com/nature/for-authors/formatting-guide" in markdown
+    assert "https://www.sciencedirect.com/journal/acta-materialia/publish/guide-for-authors" in markdown
+
+
+def test_page_omits_defensive_intro_and_footer_copy() -> None:
+    app = AppTest.from_file(str(APP_PATH)).run(timeout=20)
+
+    assert not app.exception
+    text = visible_text(app)
+    assert "首版聚焦高熵合金" not in text
+    assert "页面摘要仅整理官方作者指南" not in text
+    assert "数据边界" not in text
+    assert "不把投稿梯队当作官方排名" not in text
+    assert "梯队为本站检索导航" not in text
+    assert "当前应用仍为公开访问" not in text
+    assert "不等同于官方模板" not in text
+    assert "不代表编辑部推荐" not in text
+    assert "出版社通用规则不会冒充" not in text
 
 
 def test_app_can_render_a_two_journal_comparison() -> None:
@@ -93,7 +112,7 @@ def test_nature_workbench_shows_three_curated_papers_with_learning_cues() -> Non
     assert not app.exception
     markdown = "\n".join(element.value for element in app.markdown)
     captions = "\n".join(element.value for element in app.caption)
-    assert "已发表论文只用于观察" in captions
+    assert "查看同刊真实论文的写法" in captions
     assert "Metastable high-entropy dual-phase alloys" in markdown
     assert "Short-range order and its impact on the CrCoNi" in markdown
     assert "Strong yet ductile nanolamellar high-entropy alloys" in markdown
@@ -124,8 +143,7 @@ def test_nature_workbench_embeds_user_supplied_pdf_for_personal_study() -> None:
     assert not app.exception
     assert any("站内 PDF 正文" in heading.value for heading in app.subheader)
     captions = "\n".join(element.value for element in app.caption)
-    assert "用户从本地论文库提供的个人学习副本" in captions
-    assert "当前应用仍为公开访问" in captions
+    assert "用户从本地论文库提供的论文副本" in captions
     assert "nature17981.pdf" in captions
     assert "下载这篇 PDF" in captions
     assert "核验 DOI 原文" in captions
@@ -198,6 +216,29 @@ def test_nature_workbench_shows_house_style_and_source_backed_limits() -> None:
     assert "上标编号" in markdown and "最多 50 条" in markdown
     assert "Nature 格式指南" in markdown
     assert "概要段 → 主文开端" in text
+
+
+def test_science_quick_sheet_omits_parameters_without_official_values() -> None:
+    app = AppTest.from_file(str(APP_PATH)).run(timeout=20)
+    workbench = next(
+        widget for widget in app.selectbox if widget.key == "workbench_journal"
+    )
+    workbench.set_value("Science")
+    app.run(timeout=20)
+
+    assert not app.exception
+    cards = [
+        element.value
+        for element in app.markdown
+        if element.value.startswith('<div class="format-card-title">')
+    ]
+    card_text = "\n".join(cards)
+    assert len(cards) == 4
+    assert '<div class="format-card-title">摘要</div>' not in card_text
+    assert '<div class="format-card-title">图表数量</div>' not in card_text
+    assert "官网未规定固定上限" not in card_text
+    assert '<div class="format-card-title">正文骨架</div>' in card_text
+    assert '<div class="format-card-title">参考文献</div>' in card_text
 
 
 def test_workbench_explains_unknown_requirements_without_raw_placeholder() -> None:
